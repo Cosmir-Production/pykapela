@@ -1,6 +1,7 @@
 
 ### Custom ignores ###
-settings_local.py
+meteleska/settings/settings_local.py
+meteleska/settings/database.py
 
 ### PyCharm ###
 
@@ -153,4 +154,4 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
-!media/empty
+static

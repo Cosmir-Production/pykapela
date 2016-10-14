@@ -31,7 +31,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'debug_toolbar',
+    'tinymce',
+
+    'meteleska.base',
+    'meteleska.events',
 ]
 
 MIDDLEWARE = [
@@ -104,8 +109,3 @@ STATIC_ROOT = BASE_DIR + '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR + '/media/'
-
-try:
-    from .settings_local import *
-except ImportError:
-    pass
