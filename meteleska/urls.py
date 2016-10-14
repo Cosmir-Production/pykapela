@@ -25,7 +25,7 @@ admin.autodiscover()
 urlpatterns = [
 
     url(r'concerts/', include('meteleska.events.urls')),
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.WebView.as_view(), name='index'),
 
     url(r'^tinymce/', include('tinymce.urls')),
 
