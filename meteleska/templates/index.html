@@ -1,1 +1,10 @@
-Gi
+{% load i18n %}
+{##}
+{#{% load sitetree %}#}
+{#{% sitetree_menu from "menu" include "trunk" %}#}
+{#<br>#}
+
+{% for event in events %}
+    {% trans 'front-homepage_event_title' %}
+    <p>{{ event.title }}</p>
+{% endfor %}

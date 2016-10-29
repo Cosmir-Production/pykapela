@@ -6,4 +6,5 @@ from meteleska.events.models import Event
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'datetime', 'is_promoted', 'is_published')
+    date_hierarchy = 'datetime'
