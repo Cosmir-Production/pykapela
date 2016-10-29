@@ -1,5 +1,5 @@
 
-from meteleska.settings import *
+import os
 
 BASE_LOG_DIR = '/tmp'
 

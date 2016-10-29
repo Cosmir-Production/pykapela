@@ -119,3 +119,12 @@ STATIC_ROOT = BASE_DIR + '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR + '/media/'
+
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, '/locale')
+]
+
+# Path to project basedir / workdir - root folder of project
+# TRANSLATIONS_BASE_DIR = '/foo/bar'
+TRANSLATIONS_BASE_DIR = os.path.join(BASE_DIR, '/')

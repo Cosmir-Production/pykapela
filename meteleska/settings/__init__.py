@@ -1,8 +1,8 @@
 
-from .settings import *
-from .settings_local import *
-from .tinymce import *
-from .database import *
-from .translation_manager import *
-from .logging import *
-from .emails import *
+from meteleska.settings.main import *
+from meteleska.settings.settings_local import *
+from meteleska.settings.tinymce import *
+from meteleska.settings.database import *
+from meteleska.settings.translation_manager import *
+from meteleska.settings.logging import *
+from meteleska.settings.emails import *

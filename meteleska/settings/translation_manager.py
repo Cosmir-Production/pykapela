@@ -4,21 +4,12 @@ Please modify according to your requirements.
 Usage can be found in example project.
 """
 
-from .settings import *
-
 # Required paths to all locale dirs
 # LOCALE_PATHS = [
 #     '/foo/bar/locale',
 #     '/foo/foo/bar/locale',
 # ]
 
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, '/locale')
-]
-
-# Path to project basedir / workdir - root folder of project
-# TRANSLATIONS_BASE_DIR = '/foo/bar'
-TRANSLATIONS_BASE_DIR = os.path.join(BASE_DIR, '/')
 
 # Mode the translation manager behaves when creating
 # translations mainly from multiple locale files
@@ -38,11 +29,11 @@ TRANSLATIONS_MODE = "N"
 # application will be stored.
 TRANSLATIONS_ALLOW_NO_OCCURRENCES = False
 
-# Dirs and files ignored for makemessages.
+# Dirs and files ignored for make messages.
 # TRANSLATIONS_IGNORED_PATHS = ['env', 'foo', 'bar']
 TRANSLATIONS_IGNORED_PATHS = ['env']
 
-# Backup on makemessages:
+# Backup on make messages:
 TRANSLATIONS_MAKE_BACKUPS = True
 
 # Clean .po files (delete content) after backup (this prevents duplicities)
