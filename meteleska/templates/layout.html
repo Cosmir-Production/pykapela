@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+{% load i18n %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% trans '' %}</title>
+        <link rel="stylesheet" href="/static/css/foundation.css">
+        <link rel="stylesheet" href="/static/css/app.css"><meta name="author" content="coex.cz" />
+    </head>
+    <body>
+
+        {% block heading %}
+        {%  endblock %}
+
+        <div class="top-bar sticky">
+            <div class="top-bar-center">
+                {% load sitetree %}
+                {% sitetree_menu from "menu" include "trunk, menu" %}
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <script src="/static/js/vendor/jquery.js"></script>
+        <script src="/static/js/vendor/what-input.js"></script>
+        <script src="/static/js/vendor/foundation.js"></script>
+        <script src="/static/js/app.js"></script>
+    </body>
+</html>

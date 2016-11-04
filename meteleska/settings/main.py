@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'tinymce',
 
+    'meteleska.project',
     'meteleska.base',
     'meteleska.events',
 ]
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',  # should be called as soon as possible
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,9 +124,9 @@ MEDIA_ROOT = BASE_DIR + '/media/'
 
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, '/locale')
+    os.path.join(BASE_DIR, 'locale')
 ]
 
 # Path to project basedir / workdir - root folder of project
 # TRANSLATIONS_BASE_DIR = '/foo/bar'
-TRANSLATIONS_BASE_DIR = os.path.join(BASE_DIR, '/')
+TRANSLATIONS_BASE_DIR = os.path.join(BASE_DIR, '')

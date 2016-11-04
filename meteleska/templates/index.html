@@ -1,10 +1,19 @@
+{% extends 'layout.html' %}
 {% load i18n %}
-{##}
-{#{% load sitetree %}#}
-{#{% sitetree_menu from "menu" include "trunk" %}#}
-{#<br>#}
 
-{% for event in events %}
-    {% trans 'front-homepage_event_title' %}
-    <p>{{ event.title }}</p>
-{% endfor %}
+{% block heading %}
+    <div class="heading">
+        foto meteleska
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <h2>{% trans 'front-homepage_event_title' %}</h2>
+    {% for event in events %}
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description | safe }}</p>
+    {% endfor %}
+
+{% endblock %}
