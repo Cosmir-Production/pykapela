@@ -27,7 +27,7 @@ if settings.DEBUG:
     )
 
 urlpatterns += i18n_patterns(
-    url(r'concerts/', include('meteleska.events.urls')),
+    url(r'concerts/', include('project.events.urls')),
     url(r'^$', views.WebView.as_view(), name='index'),
 )
 

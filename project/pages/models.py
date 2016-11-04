@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from tinymce.models import HTMLField
 
-from meteleska.base.models import BaseModel
+from project.base.models import BaseModel
 
 
 class Page(BaseModel):

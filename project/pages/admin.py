@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from meteleska.pages.models import Page
+from project.pages.models import Page
 
 
 @admin.register(Pages)

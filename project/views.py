@@ -1,8 +1,8 @@
 
 from django.shortcuts import render
 
-from meteleska.base.views import BaseView
-from meteleska.events.models import Event
+from project.base.views import BaseView
+from project.events.models import Event
 
 
 class WebView(BaseView):

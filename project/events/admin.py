@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from meteleska.events.models import Event
+from project.events.models import Event
 
 
 @admin.register(Event)

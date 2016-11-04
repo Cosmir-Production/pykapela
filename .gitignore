@@ -1,7 +1,7 @@
 
 ### Custom ignores ###
-meteleska/settings/settings_local.py
-meteleska/settings/database.py
+project/settings/settings_local.py
+project/settings/database.py
 
 ### PyCharm ###
 
