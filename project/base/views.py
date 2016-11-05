@@ -1,5 +1,8 @@
 from django.http import HttpResponse
+from django.template.defaultfilters import slugify
 from django.views import generic
+
+from project.preferences.models import Preference
 
 
 class BaseView(generic.View):
@@ -23,5 +26,13 @@ class BaseView(generic.View):
 
     @staticmethod
     def _prepare_context():
-        context = {'title': 'METELESKA'}
+        context = {}
+        preferences = Preference.objects.all()
+        for preference in preferences:
+            context.update({
+                'settings-' + slugify(preference.name): {
+                    'type': preference.type,
+                    'content': preference.content,
+                }
+            })
         return context

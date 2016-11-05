@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'tinymce',
 
+    'project.preferences',
     'project.base',
+    'project.social',
     'project.events',
 ]
 
