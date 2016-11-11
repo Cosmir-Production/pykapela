@@ -1,7 +1,65 @@
-.container {
+
+#page, .sticky, .row {
+    width: 100%;
+    max-width: 1984px;  /* George Orwell! */
+}
+.top-bar {
+    text-align:center;
+    overflow: auto;
+    background-color: black;
+    padding: 0;
+    opacity: 0.9;
+}
+.top-bar ul {
+    background-color: black;
+    margin: 0;
+    opacity: 0.9;
+}
+.top-bar li {
+    display: inline-block;
+    background-color: black;
+    opacity: 1.0;
+}
+.top-bar li a {
+    color: #fff;
+    margin: 0;
+    padding: 0.9rem 1rem;
+    text-transform: uppercase;
+}
+.top-bar li:hover {
+    background-color: #323232;
+}
+.top-bar .current_item {
+    background-color: #303030;
+}
+.parallax-background {
+    height: 100vh;
+    background-image: url("/static/img/meteleska.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
     width: 100%;
 }
-.heading {
-    display: block;
-    height: 100%;
+parallax-2 { background-image: url("/static/img/meteleska-2.jpg"); }
+.parallax-content {
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
+    top: 100vh;
+    padding: 50px;
+    font-size: 20px;
+    background-color: #fff;
+}
+@media screen and (max-width: 40em) {
+    .top-bar li {
+        display: block;
+        width: 100%;
+    }
+}
+
+.section-title {
+    text-transform: uppercase;
+    text-align: center;
 }

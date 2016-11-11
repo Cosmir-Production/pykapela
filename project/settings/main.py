@@ -123,6 +123,8 @@ STATIC_ROOT = BASE_DIR + '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR + '/media/'
 
+IMAGE_ROOT = os.path.join(MEDIA_ROOT, "image")
+IMAGE_URL = os.path.join(MEDIA_URL, "image")
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')

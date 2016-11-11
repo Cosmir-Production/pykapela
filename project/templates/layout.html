@@ -15,17 +15,17 @@
         <link rel="stylesheet" href="{% static "css/foundation.css" %}">
         <link rel="stylesheet" href="{% static "css/app.css" %}">
 
-        <meta name="author" content="Dorian Podulka" />
+        <meta name="author" content="Dorian Podulka, https://github.com/dorianpodulka" />
     {% endblock %}
     </head>
     <body>
         <div id="page">
 
-            {%  block maain_menu %}
+            {%  block main_menu %}
             <div class="top-bar-container" data-sticky-container>
-                <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+                <div class="sticky" data-sticky data-options="marginTop: 0; stickyOn: small;">
                     <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-                        <button class="menu-icon" type="button" data-toggle> menu</button>
+                        <button class="menu-icon" type="button" data-toggle></button>
                         <div class="title-bar-title">Menu</div>
                     </div>
                     <div class="top-bar" id="main-menu">
@@ -52,7 +52,7 @@
 
         <script src="{% static "js/vendor/jquery.js" %}"></script>
         <script src="{% static "js/vendor/what-input.js" %}"></script>
-        <script src="/static/js/vendor/foundation.js"></script>
-        <script src="/static/js/app.js"></script>
+        <script src="{% static 'js/vendor/foundation.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
     </body>
 </html>
