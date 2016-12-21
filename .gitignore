@@ -154,6 +154,5 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
-static
-!/project/static
+project/static/
 */locale/*/LC_MESSAGES
