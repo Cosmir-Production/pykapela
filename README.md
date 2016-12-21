@@ -27,21 +27,48 @@ What you may need is knowledge of HTML and CSS
 * postgres or other database
 
 ### Installation ###
-make virtualenv (ie using vitualenv):
+
+get in working directory
 
 `cd <yourworkingdirectory>`
 
-`git clone git@bitbucket.org:dorianpodulka/meteleska-python.git .`
+make virtualenv (I suggest Vitualenv):
 
 `mkvirtualenv --python=/usr/bin/python3 <yourwebsitename>`
 
+clone the code!
+
+`git clone git@bitbucket.org:dorianpodulka/meteleska-python.git .`
+
+create and update database settings:
+
+`cp project/settings/database.default.py project/settings/database.py`
+
+create and update local settings:
+
+`cp project/settings/settings_local.default.py project/settings/settings_local.py`
+
+start environment:
+
 `workon <yourwebsitename>`
+
+install dependencies:
 
 `pip3 install -r requirements/production.txt`
 
+run database migrations:
+
 `./manage.py makemigrations`
 
+run local server:
+
 `./manage.py runserver`
+
+Type this in your browser
+
+`http://127.0.0.1:8000/`
+
+Celebrate ;-)
 
 ### Contribution guidelines ###
 
