@@ -1,18 +1,11 @@
 from __future__ import unicode_literals
 
-from django.conf import settings
-from django.core.files.storage import FileSystemStorage
 from django.db import models
 from django.utils.translation import ugettext as _
 
 from tinymce.models import HTMLField
 
 from project.base.models import BaseModel
-from project.base.utils import get_uuid
-
-
-class ImageStorage(FileSystemStorage):
-    pass
 
 
 class Event(BaseModel):
@@ -28,19 +21,11 @@ class Event(BaseModel):
     is_published = models.BooleanField(default=True)
     is_promoted = models.BooleanField(default=False)
 
-    def upload_to(self):
-        return u'concerts/{image_name}'.format(
-            image_name=get_uuid(),
-        )
-
     image = models.ImageField(
-        upload_to=upload_to,
+        upload_to='images/concerts/',
         verbose_name=_('admin-events-image'),
-        storage=ImageStorage(
-            location=settings.IMAGE_ROOT,
-            base_url=settings.IMAGE_URL
-        ),
         null=True,
+        blank=True,
     )
 
     IMAGE_GEOMETRY = {
