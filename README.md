@@ -22,17 +22,26 @@ What you may need is knowledge of HTML and CSS
 * Events - events are smart way module to promote your concerts
 * Social network module will connect your website with these
 
-### Setup ###
+### Requirements ###
+* python3
+* postgres or other database
 
-### How do I get set up? ###
+### Installation ###
+make virtualenv (ie using vitualenv):
 
-* Summary of set up
+`cd <yourworkingdirectory>`
 
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+`git clone git@bitbucket.org:dorianpodulka/meteleska-python.git .`
+
+`mkvirtualenv --python=/usr/bin/python3 <yourwebsitename>`
+
+`workon <yourwebsitename>`
+
+`pip3 install -r requirements/production.txt`
+
+`./manage.py makemigrations`
+
+`./manage.py runserver`
 
 ### Contribution guidelines ###
 

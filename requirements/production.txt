@@ -1,4 +1,10 @@
-Django==1.10.2
 argparse==1.4.0
+Django==1.10.2
 django-debug-toolbar==1.6
+django-sitetree==1.6.0
+django-tinymce==2.4.0
+django-translation-manager==0.4.0
+Pillow==3.4.2
+psycopg2==2.6.2
 sqlparse==0.2.1
+raven==5.32.0
