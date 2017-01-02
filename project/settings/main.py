@@ -32,12 +32,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'translation_manager',
     'sitetree',
     'debug_toolbar',
     'tinymce',
+    'photologue',
+    'sortedm2m',
+    'taggit',
 
+    'project.photologue_custom',
     'project.preferences',
     'project.base',
     'project.social',

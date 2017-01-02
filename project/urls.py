@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^backoffice/', admin.site.urls),
+    url(r'^images/', include('photologue.urls', namespace='photologue')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

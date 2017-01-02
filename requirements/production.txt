@@ -1,6 +1,7 @@
 argparse==1.4.0
 Django==1.10.2
 django-debug-toolbar==1.6
+django-photologue==3.6
 django-sitetree==1.6.0
 django-tinymce==2.4.0
 django-translation-manager==0.4.0
