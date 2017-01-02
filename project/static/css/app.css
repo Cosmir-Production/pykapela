@@ -63,3 +63,14 @@ parallax-2 { background-image: url("/static/img/meteleska-2.jpg"); }
     text-transform: uppercase;
     text-align: center;
 }
+
+.fi-social-bandzone:before {
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    text-decoration: inherit;
+    background-image: url("/static/css/img/bandzone.svg");
+}

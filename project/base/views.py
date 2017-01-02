@@ -3,6 +3,7 @@ from django.template.defaultfilters import slugify
 from django.views import generic
 
 from project.preferences.models import Preference
+from project.social.models import Social
 
 
 class BaseView(generic.View):
@@ -35,4 +36,11 @@ class BaseView(generic.View):
                     'content': preference.content,
                 }
             })
+
+        socials = Social.objects.filter(
+            is_published=True,
+        )
+        context.update({
+            "socials": socials
+        })
         return context

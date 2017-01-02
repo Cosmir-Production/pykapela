@@ -9,8 +9,8 @@ class Social(BaseModel):
 
     title = models.CharField(max_length=256)
     url = models.CharField(max_length=256)
-    secret_key = models.CharField(max_length=256, null=True)
+    secret_key = models.CharField(max_length=256, blank=True, default='')
     is_promoted = models.BooleanField(default=True)
     is_published = models.BooleanField(default=True)
     position = models.IntegerField(default=0)
-    widget_code = models.TextField(default='')
+    widget_code = models.TextField(default='', blank=True)
