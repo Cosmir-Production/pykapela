@@ -2,8 +2,9 @@
 from django.conf.urls import url, include
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
-from django.conf.urls.static import static
+from django.views.static import serve
 from django.conf import settings
+from django.urls import re_path
 
 from sitetree.sitetreeapp import register_i18n_trees
 
@@ -15,10 +16,10 @@ urlpatterns = [
 
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^backoffice/', admin.site.urls),
     url(r'^images/', include('photologue.urls', namespace='photologue')),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 if settings.DEBUG:
     import debug_toolbar

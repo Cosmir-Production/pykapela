@@ -8,9 +8,15 @@ from project.preferences import choices
 
 class Preference(BaseModel):
 
-    name = models.CharField(max_length=256)
-    type = models.IntegerField(
-        choices=choices.PREFERENCES_TYPES,
-        default=0,
-    )
-    content = models.TextField(default='')
+    site_name = models.CharField(max_length=256)
+
+    @staticmethod
+    def get_values():
+        result = {}
+        preferences = Preference.objects.all().first()
+        for key in preferences._meta.fields:
+            result.update({
+                'config_' + str(key.column): getattr(preferences, str(key.column)),
+            })
+        return result
+

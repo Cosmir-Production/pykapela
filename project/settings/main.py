@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['meteleska.cz', 'meteleska.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'project.photologue_custom',
     'project.preferences',
     'project.base',
+    'project.app',
     'project.social',
     'project.events',
 ]
@@ -131,10 +132,9 @@ MEDIA_ROOT = BASE_DIR + '/media/'
 IMAGE_ROOT = os.path.join(MEDIA_ROOT, "image")
 IMAGE_URL = os.path.join(MEDIA_URL, "image")
 
+# translation manager:
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')
 ]
 
-# Path to project basedir / workdir - root folder of project
-# TRANSLATIONS_BASE_DIR = '/foo/bar'
 TRANSLATIONS_BASE_DIR = os.path.join(BASE_DIR, '')

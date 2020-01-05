@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="row parallax-background cover">
+<a name="home"></a>
+<div class="row parallax-background-1 cover">
     <div class="large-12 columns">
         <div class="">
-            <h1 class="main-logo"><span class="hide">METELESKA</span></h1>
-            <div>
+            <h1 class="main-logo"><span class="hide">{{ config_site_name }}</span></h1>
+            <div class="socials">
                 {% for social in socials %}
-                    <a href="{{ social.url }}"><i class="large fi-social-{{ social.title|slugify }}"></i></a>
+                    <a href="{{ social.url }}" title="{{ config_site_name }} {{ social.title }}"><i class="large fi-social-{{ social.title|slugify }}"></i></a>
                 {% endfor %}
             </div>
         </div>
@@ -21,7 +22,7 @@
 {% if events_count > 0 %}
     <div class="row parallax-content cover parallax-background-2">
 
-        <h2 class="section-title">{% trans 'front-homepage_event_title' %}</h2>
+        <h2 class="section-title">{% trans 'Upcomming Shows' %}</h2>
 
         {% if events_count > 1 %}
         <div class="large-6 medium-6 small-12 columns">
@@ -68,7 +69,7 @@
 {% endif %}
 
 <div class="row parallax-content cover parallax-background-3">
-    <h2 class="section-title">{% trans 'front-homepage_music_title' %}</h2>
+    <h2 class="section-title">{% trans 'Music' %}</h2>
     <div class="large-6 columns">
         <p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Ak8-eMkWpnY?rel=0"
@@ -82,9 +83,10 @@
     </div>
 </div>
 
+<a name="bio"></a>
 <div class="row parallax-content cover parallax-background-4">
     <div class="large-12 columns">
-    <h2 class="section-title">{% trans 'front-homepage_bio_title' %}</h2>
+        <h2 class="section-title">{% trans 'METELESKA' %}</h2>
         <p>
             our bio<br>
             our bio<br>
@@ -107,7 +109,7 @@
 
 <div class="row parallax-content cover parallax-background-5">
     <div class="large-12 columns">
-    <h2 class="section-title">{% trans 'front-homepage_photos_title' %}</h2>
+    <h2 class="section-title">{% trans 'Photos' %}</h2>
         <p>
             our photos
         </p>
@@ -116,7 +118,7 @@
 
 <div class="row parallax-content cover parallax-background-6">
     <div class="large-12 columns">
-    <h2 class="section-title">{% trans 'front-homepage_support_title' %}</h2>
+    <h2 class="section-title">{% trans 'Support' %}</h2>
         <p>
             support us
         </p>
@@ -125,7 +127,7 @@
 
 <div class="row parallax-content cover parallax-background-7">
     <div class="large-12 columns">
-    <h2 class="section-title">{% trans 'front-homepage_contact_title' %}</h2>
+    <h2 class="section-title">{% trans 'Contact' %}</h2>
         <p>
             contact us / join / promoters
         </p>

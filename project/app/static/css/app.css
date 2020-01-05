@@ -41,24 +41,30 @@
 .top-bar .current_item {
     background-color: #303030;
 }
-.parallax-content {
+.parallax-background-1 {
+    height: 100vh;
+    background-image: url("/static/img/cover.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     position: fixed;
-    height: 100vh;
     width: 100%;
+}
+.parallax-content {
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
     top: 100vh;
     padding: 50px;
     font-size: 20px;
     background-color: #fff;
 }
-.parallax-background-1 {
-    background-image: url("/static/img/cover.jpg");
-}
+/*.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }*/
+.parallax-background-events { }
+.parallax-background-1 {  }
 .parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }
-.parallax-background-3 {  }
+.parallax-background-3 {}
 .parallax-background-4 { background-image: url("/static/img/cover-3.jpg"); }
 .parallax-background-5 { background-image: url("/static/img/cover-5.jpg"); }
 .parallax-background-6 { background-image: url("/static/img/cover-6.jpg"); }
@@ -80,7 +86,7 @@
 .socials {
     font-size: 5em;
     text-align: center;
-    position: static;
+    position: absolute;
     bottom: 1em;
     width: 100%;
 }

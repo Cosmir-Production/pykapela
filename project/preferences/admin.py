@@ -6,4 +6,4 @@ from project.preferences.models import Preference
 
 @admin.register(Preference)
 class PreferencesAdmin(admin.ModelAdmin):
-    list_display = ('name', 'type')
+    list_display = ('site_name', )

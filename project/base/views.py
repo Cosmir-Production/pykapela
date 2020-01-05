@@ -28,14 +28,9 @@ class BaseView(generic.View):
     @staticmethod
     def _prepare_context():
         context = {}
-        preferences = Preference.objects.all()
-        for preference in preferences:
-            context.update({
-                'settings-' + slugify(preference.name): {
-                    'type': preference.type,
-                    'content': preference.content,
-                }
-            })
+
+        preferences = Preference().get_values()
+        context.update(preferences)
 
         socials = Social.objects.filter(
             is_published=True,
