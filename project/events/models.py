@@ -10,14 +10,16 @@ from project.base.models import BaseModel
 
 class Event(BaseModel):
 
-    title = models.CharField(max_length=256, verbose_name='admin-title')
-    name = models.CharField(max_length=256, verbose_name='admin-name')
-    datetime = models.DateTimeField(verbose_name='admin-datetime')
-    perex = HTMLField(default='', verbose_name=_('admin-events-perex'))
-    description = HTMLField(default='', verbose_name=_('admin-events-description'))
-    venue = models.CharField(default='', max_length=256, verbose_name=_('admin-events-venue'))
+    # mandatory fields
+    title = models.CharField(max_length=256, verbose_name='Title')
+    datetime = models.DateTimeField(verbose_name='Starts at')
 
-    slug = models.SlugField()
+    location = models.CharField(max_length=256, default='', verbose_name=_('Name of a club or festival'))
+    address = models.CharField(max_length=256, verbose_name='Address')
+
+    description = HTMLField(default='', blank=True, verbose_name=_('Event description (optional)'))
+
+    slug = models.SlugField('URL slug')
     is_published = models.BooleanField(default=True)
     is_promoted = models.BooleanField(default=False)
 

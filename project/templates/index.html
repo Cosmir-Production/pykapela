@@ -26,44 +26,54 @@
 
         {% if events_count > 1 %}
         <div class="large-6 medium-6 small-12 columns">
+        {% else %}
+        <div class="large-12 medium-12 small-12 columns">
         {% endif %}
 
             {% for event in events|slice:":1" %}
-                <div class="row">
+                <div class="row promoted-event">
                     <div class="large-4 columns">
-                        <p>foto</p>
+                        {% if event.image %}
+                            <p><img src="{{ event.image }}"> </p>
+                        {% else %}
+                            <p><span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n." }}</span></p>
+                        {% endif %}
+                    </div>
+                    <div class="large-8 columns">
+                        <h2>
+                            {{ event.title }}
+                        </h2>
+                        <br>
+                        {% if event.image %}
+                            <span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n." }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% if events_count > 1 %}
+        </div>
+        <div class="large-6 medium-6 small-12 columns">
+        {% endif %}
+
+            {% for event in events|slice:"1:5" %}
+                <div class="row next-events">
+                    <div class="large-4 columns">
+                        <p class="event-date">{{ event.datetime|date:"j. n." }}</p>
                     </div>
                     <div class="large-8 columns">
                         <p>
-                            {{ event.title }}
-                            <br>
-                            {{ event.perex|safe }}
+                            {{ event.title }}<br>
+                            {{ event.venue }}
                         </p>
                     </div>
                 </div>
             {% endfor %}
         {% if events_count > 1 %}
         </div>
-        <div class="large-6 medium-6 small-12 columns">
-        {% endif %}
-            {% for event in events|slice:"1:5" %}
-                <div class="row">
-                    <div class="large-4 columns">
-                        <h3 class="event-date">{{ event.datetime|date:'d. F' }}</h3>
-                    </div>
-                    <div class="large-8 columns">
-                        <h3>
-                            {{ event.title }}<br>
-                            {{ event.venue }}
-                        </h3>
-                    </div>
-                </div>
-            {% endfor %}
-        {% if events_count > 1 %}
-        </div>
         {% endif %}
 
-        <a href="" class="secondary button">view all</a>
+        <a href="" class="secondary button view-all">all concerts</a>
 
     </div>
 {% endif %}

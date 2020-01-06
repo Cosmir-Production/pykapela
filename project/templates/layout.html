@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         {% block title %}
-            <title></title>
+            <title>{{ config_site_name }}</title>
         {% endblock %}
 
         <link rel="stylesheet" href="{% static "css/foundation.css" %}">
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{% static "css/foundation-icons.css" %}">
 
         <meta name="author" content="Dorian Podulka, https://github.com/dorianpodulka" />
+
     {% endblock %}
     </head>
     <body>

@@ -12,8 +12,16 @@ class Preference(BaseModel):
 
     @staticmethod
     def get_values():
+
+        try:
+            preferences = Preference.objects.get(pk=1)
+        except Preference.DoesNotExist:
+            Preference(
+                site_name='My great project!',
+            ).save()
+            preferences = Preference.objects.get(pk=1)
+
         result = {}
-        preferences = Preference.objects.all().first()
         for key in preferences._meta.fields:
             result.update({
                 'config_' + str(key.column): getattr(preferences, str(key.column)),

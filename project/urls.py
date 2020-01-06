@@ -33,4 +33,4 @@ urlpatterns += i18n_patterns(
     url(r'^$', views.WebView.as_view(), name='index'),
 )
 
-register_i18n_trees(['menu'])
+register_i18n_trees(['main_menu'])
