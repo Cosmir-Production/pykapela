@@ -64,6 +64,12 @@ run local server:
 
 `./manage.py runserver`
 
+run these to seed the database:
+
+`./manage.py collectstatic`
+
+`./manage.py sitetreeload --mode=replace treedump.json`
+
 Type this in your browser
 
 `http://127.0.0.1:8000/`

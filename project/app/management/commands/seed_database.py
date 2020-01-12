@@ -12,6 +12,7 @@ from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree, r
 from sitetree.utils import tree, item
 
 from project.events.models import Event
+from project.social.models import Social
 
 
 class Command(BaseCommand):
@@ -22,7 +23,48 @@ class Command(BaseCommand):
 
         print('Seeding database with some data...')
 
-        superuser
+        social = Social()
+        social.title = 'Meteleska Instagram'
+        social.name = 'instagram'
+        social.url = 'https://instagram.com/meteleska'
+        social.save()
+
+        social = Social()
+        social.title = 'Meteleska Facebook'
+        social.name = 'facebook'
+        social.position = 1
+        social.url = 'https://facebook.com/meteleska'
+        social.widget_code = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeteleska&amp;width=560&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23c0c0c0&amp;stream=true&amp;header=false&amp;height=395" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:560px; height:395px;" allowtransparency="true"></iframe>'
+        social.save()
+
+        social = Social()
+        social.title = 'Meteleska Twitter'
+        social.name = 'twitter'
+        social.position = 3
+        social.url = 'https://twitter.com/meteleska'
+        social.save()
+
+        social = Social()
+        social.title = 'Meteleska Soundcloud'
+        social.name = 'soundcloud'
+        social.position = 2
+        social.url = 'https://soundcloud.com/meteleska'
+        social.save()
+
+        social = Social()
+        social.title = 'Meteleska Bandzone'
+        social.name = 'bandzone'
+        social.position = 4
+        social.url = 'https://bandzone.cz/meteleska'
+        social.save()
+
+        social = Social()
+        social.title = 'Meteleska  Youtube'
+        social.name = 'youtube'
+        social.position = 5
+        social.url = 'https://youtube.com/user/meteleska'
+        social.save()
+
         user = User()
         user.username = 'admin'
         user.email = 'dorian.podulka+a@pohodli.com'
@@ -41,7 +83,7 @@ class Command(BaseCommand):
 
         event = Event()
         event.title = 'Privat akce'
-        event.datetime = timezone.now() + timedelta(days=16)
+        event.datetime = timezone.now() - timedelta(days=16)
         event.location = '-'
         event.address = '-'
         event.slug = 'privat-akce'

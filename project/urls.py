@@ -16,7 +16,7 @@ urlpatterns = [
 
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^images/', include('photologue.urls', namespace='photologue')),
+    url(r'^media/photologue/', include('photologue.urls', namespace='photologue')),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
 ]
