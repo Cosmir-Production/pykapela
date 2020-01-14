@@ -23,6 +23,7 @@ class Command(BaseCommand):
 
         print('Seeding database with some data...')
 
+        print('adding social links and widgets')
         social = Social()
         social.title = 'Meteleska Instagram'
         social.name = 'instagram'
@@ -34,7 +35,7 @@ class Command(BaseCommand):
         social.name = 'facebook'
         social.position = 1
         social.url = 'https://facebook.com/meteleska'
-        social.widget_code = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeteleska&amp;width=560&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23c0c0c0&amp;stream=true&amp;header=false&amp;height=395" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:560px; height:395px;" allowtransparency="true"></iframe>'
+        social.widget_code = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeteleska&amp;width=560&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23c0c0c0&amp;stream=true&amp;header=false&amp;height=450" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:560px; height:450px;" allowtransparency="true"></iframe>'
         social.save()
 
         social = Social()
@@ -42,6 +43,7 @@ class Command(BaseCommand):
         social.name = 'twitter'
         social.position = 3
         social.url = 'https://twitter.com/meteleska'
+        social.widget_code = '<a class="twitter-timeline" data-width="560" data-height="450" href="https://twitter.com/meteleska?ref_src=twsrc%5Etfw">Tweets by meteleska</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
         social.save()
 
         social = Social()
@@ -65,6 +67,7 @@ class Command(BaseCommand):
         social.url = 'https://youtube.com/user/meteleska'
         social.save()
 
+        print('Adding superuser admin!')
         user = User()
         user.username = 'admin'
         user.email = 'dorian.podulka+a@pohodli.com'
@@ -73,6 +76,7 @@ class Command(BaseCommand):
         user.is_staff = True
         user.save()
 
+        print('Add some events...')
         event = Event()
         event.title = 'Koncert na Míru @ Dejvická Klubovna'
         event.datetime = timezone.now() + timedelta(days=14)

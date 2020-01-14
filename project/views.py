@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from django.utils import timezone
+from photologue.models import Photo, Gallery
 
 from project.base.views import BaseView
 from project.events.models import Event
@@ -27,6 +28,12 @@ class WebView(BaseView):
              for widget in socials:
                 context[widget.name + '_widget'] = widget
         except Social.DoesNotExist:
+            pass
+
+        try:
+            context['images'] = Photo.objects.filter(sites__gallery=Gallery.objects.on_site().is_public().get(pk=2))[0:8]
+            #context['images'] = images
+        except Gallery.DoesNotExist:
             pass
 
         return render(request, 'index.html', context)

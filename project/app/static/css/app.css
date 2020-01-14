@@ -90,7 +90,7 @@
 .parallax-content .view-all {
     float: right;
     clear: both;
-    margin-top: 6em;
+    margin-top: 14em;
 }
 
 /* Events */
@@ -150,4 +150,15 @@
     display: inline-block;
     background-size: cover;
     background-image: url("/static/img/soundcloud.svg");
+}
+
+/* Images */
+.page-images, .page-images table tbody {
+    background-color: #000; border: none;
+}
+.image-nav .thumbnail {
+    margin: 0; box-shadow: none; border-color: #000;
+}
+.image-nav td {
+    font-size: 7em;
 }

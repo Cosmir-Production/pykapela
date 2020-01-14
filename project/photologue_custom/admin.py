@@ -16,5 +16,6 @@ class GalleryAdmin(GalleryAdminDefault):
 
     inlines = [GalleryExtendedInline, ]
 
+
 admin.site.unregister(Gallery)
 admin.site.register(Gallery, GalleryAdmin)

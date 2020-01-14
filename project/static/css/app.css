@@ -56,34 +56,41 @@
     max-width: 100%;
     position: relative;
     top: 100vh;
-    padding: 10em 1em 0 1em;
     font-size: 20px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+.parallax-inside {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    height: 100vh;
+    /*padding: 5em 2em;*/
+}
 .parallax-content.dark {
     color: #fff;
 }
-.dark .inside {
-    background-image: url("/static/img/dark.png");
+.parallax-inside h2 {
+    margin-top: 6em;
 }
+.parallax-background-2 .parallax-inside { /*background-image: url("/static/img/white.png");*/ }
 /*.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }*/
 .parallax-background-events { }
 .parallax-background-1 {  }
 .parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }
-.parallax-background-3 { background-color: url("/static/img/white.png"); }
-.parallax-background-4 { background-image: url("/static/img/cover-3.jpg"); }
-.parallax-background-5 { background-image: url("/static/img/cover-5.jpg"); }
-.parallax-background-6 { background-image: url("/static/img/cover-6.jpg"); }
-.parallax-background-7 { background-image: url("/static/img/cover-7.jpg"); }
+.parallax-background-3 { background-image: url("/static/img/cover-3.jpg"); }
+.parallax-background-4 { background-image: url("/static/img/white.png"); }
+.parallax-background-5 { text-align:center;  }
+.parallax-background-5 .parallax-inside { background-image: url("/static/img/dark.png");}
+.parallax-background-6 { background-image: url("/static/img/dark.png"); }
+.parallax-background-7 { background-image: url("/static/img/white.png"); }
 .parallax-background-8 { background-image: url("/static/img/cover-8.jpg"); }
 
 .parallax-content .view-all {
     float: right;
     clear: both;
-    margin-top: 6em;
+    margin-top: 14em;
 }
 
 /* Events */

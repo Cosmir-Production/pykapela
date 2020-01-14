@@ -8,9 +8,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        {% block title %}
-            <title>{{ config_site_name }}</title>
-        {% endblock %}
+        <title>{% block title %}{{ config_site_name }}{% endblock %}</title>
 
         <link rel="stylesheet" href="{% static "css/foundation.css" %}">
         <link rel="stylesheet" href="{% static "css/app.css" %}">
@@ -20,7 +18,7 @@
 
     {% endblock %}
     </head>
-    <body>
+    <body {% block body_class %}class="page-homepage"{% endblock %}>
         <div id="page">
 
             {%  block main_menu %}
