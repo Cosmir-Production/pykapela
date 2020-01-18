@@ -16,6 +16,8 @@ class WebView(BaseView):
     @staticmethod
     def index(request, context):
 
+        context['homepage'] = True
+
         # concert stay on homepage till this midnight
         context['events'] = Event.objects.filter(
             is_published=True,

@@ -1,4 +1,6 @@
-
+.columns,  .parallax-content{
+    /*border: 1px solid red;*/
+}
 #page, .sticky, .row {
     width: 100%;
     max-width: 1984px;  /* Tribute to George Orwell */
@@ -161,4 +163,9 @@
 }
 .image-nav td {
     font-size: 7em;
+}
+
+/* hacks */
+.homepage  .row, .homepage .row .row {
+    margin: 0;
 }

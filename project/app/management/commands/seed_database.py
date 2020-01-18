@@ -35,7 +35,7 @@ class Command(BaseCommand):
         social.name = 'facebook'
         social.position = 1
         social.url = 'https://facebook.com/meteleska'
-        social.widget_code = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeteleska&amp;width=560&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23c0c0c0&amp;stream=true&amp;header=false&amp;height=450" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:560px; height:450px;" allowtransparency="true"></iframe>'
+        social.widget_code = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeteleska&amp;width=560&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23c0c0c0&amp;stream=true&amp;header=false&amp;height=450" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:450px;" allowtransparency="true"></iframe>'
         social.save()
 
         social = Social()
