@@ -1,6 +1,7 @@
-
+from django.conf import settings
 from django.shortcuts import render
 from django.utils import timezone
+from django.views.decorators.cache import cache_page
 from photologue.models import Photo, Gallery
 
 from project.base.views import BaseView
@@ -14,6 +15,7 @@ class WebView(BaseView):
     Homepage
     """
     @staticmethod
+    # @cache_page(settings.CACHE_VIEWS_DEFAULT_TIME)
     def index(request, context):
 
         context['homepage'] = True

@@ -6,6 +6,15 @@
     max-width: 1984px;  /* Tribute to George Orwell */
 }
 
+body {
+    background-image: url("/static/img/cover.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .main-logo {
     text-indent: -3000px;
     background-image: url("/static/img/logo.png");
@@ -53,28 +62,31 @@
     position: fixed;
     width: 100%;
 }
-.parallax-content {
+.parallax-content, .parallax-content-first {
     height: 100vh;
     max-width: 100%;
     position: relative;
-    top: 100vh;
     font-size: 20px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+.parallax-content-first {
+
+}
 .parallax-inside {
     margin-left: 0.3em;
     margin-right: 0.3em;
     height: 100vh;
+    overflow: hidden;
     /*padding: 5em 2em;*/
 }
 .parallax-content.dark {
     color: #fff;
 }
 .parallax-inside h2 {
-    margin-top: 6em;
+    margin-top: 3.5em;
 }
 .parallax-background-2 .parallax-inside { /*background-image: url("/static/img/white.png");*/ }
 /*.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }*/
