@@ -1,7 +1,7 @@
 
 ### Custom ignores ###
-project/settings/settings_local.py
-project/settings/database.py
+#project/settings/settings_local.py
+#project/settings/database.py
 
 ### PyCharm ###
 

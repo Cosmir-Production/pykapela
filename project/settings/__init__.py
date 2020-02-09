@@ -1,7 +1,6 @@
 
 from project.settings.main import *
 from project.settings.app import *
-from project.settings.settings_local import *
 from project.settings.tinymce import *
 from project.settings.database import *
 from project.settings.translation_manager import *
