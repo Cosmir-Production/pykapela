@@ -27,7 +27,7 @@ else:
 
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['meteleska.cz', 'meteleska.com', 'localhost', 'https://meteleska.herokuapp.com/']
+ALLOWED_HOSTS = ['meteleska.cz', 'meteleska.com', 'localhost', 'meteleska.herokuapp.com']
 
 INTERNAL_IPS = [
     '127.0.0.1',
