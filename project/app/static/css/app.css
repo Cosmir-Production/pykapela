@@ -177,6 +177,12 @@ body {
     font-size: 7em;
 }
 
+.gallery-latest .image-table { display: table; }
+.gallery-latest .image-table .image-row{ display: table-row;  }
+.gallery-latest .image-table .image-td{ display: table-cell; }
+
+.gallery-latest .image-table img {border-color: #0a0a0a;}
+.gallery-latest .image-table a:hover {border-color: #000;}
 /* hacks */
 .homepage  .row, .homepage .row .row {
     margin: 0;

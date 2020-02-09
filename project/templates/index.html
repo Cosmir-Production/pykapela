@@ -121,18 +121,20 @@
     </div>
 </div>
 
-<div class="row parallax-content parallax-background-6 dark">
+<div class="row parallax-content parallax-background-6 dark gallery-latest">
     <a name="photos"></a>
     <div class="parallax-inside">
         <div class="large-12 columns">
         <h2 class="section-title">{% trans 'Photos' %}</h2>
             {% if images %}
-                <div class="row col-lg-12">
-                    {% for photo in images %}
-                        <a href="{{ photo.get_absolute_url }}">
-                             <img src="{{ photo.get_display_url }}" class="thumbnail" alt="{{ photo.title }}">
-                        </a>
-                    {% endfor %}
+                <div class="row image-table">
+                    <div class="image-row">
+                        {% for photo in images %}
+                            <a href="{{ photo.get_absolute_url }}" class="image-td">
+                                 <img src="{{ photo.get_display_url }}" class="thumbnail" alt="{{ photo.title }}">
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
             {% endif %}
         </div>

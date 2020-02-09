@@ -35,8 +35,7 @@ class WebView(BaseView):
             pass
 
         try:
-            context['images'] = Photo.objects.filter(sites__gallery=Gallery.objects.on_site().is_public().get(pk=2))[0:8]
-            #context['images'] = images
+            context['images'] = Photo.objects.filter(sites__gallery=Gallery.objects.on_site().is_public().get(pk=1))[0:6]
         except Gallery.DoesNotExist:
             pass
 
