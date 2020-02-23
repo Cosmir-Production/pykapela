@@ -33,10 +33,6 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
         },
-        'sentry': {
-            'level': 'ERROR',
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler'
-        },
         'debug': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
@@ -50,7 +46,7 @@ LOGGING = {
     },
     'loggers': {
         '*': {
-            'handlers': ['console', 'mail_admins', 'sentry'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': False,
         },
