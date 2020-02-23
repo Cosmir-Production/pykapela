@@ -5,6 +5,14 @@
     width: 100%;
     max-width: 1984px;  /* Tribute to George Orwell */
 }
+.home-admin-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.home-admin-link a:hover {
+    background-color: #000;
+}
 
 body {
     background-image: url("/static/img/cover.jpg");
@@ -124,6 +132,16 @@ body {
     text-align: center;
 }
 
+/* Footer */
+#footer, #footer a:link, #footer a:visited {
+    text-align: center;
+    background: #000;
+    /*opacity: 0.9;*/
+    color: white;
+}
+#footer p {
+    margin: 2em auto;
+}
 @media screen and (max-width: 40em) {
     .top-bar li {
         display: block;

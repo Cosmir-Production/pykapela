@@ -129,17 +129,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR + '/static/'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR + '/media/'
-
-IMAGE_ROOT = os.path.join(MEDIA_ROOT, "image")
-IMAGE_URL = os.path.join(MEDIA_URL, "image")
 
 # translation manager:
 LOCALE_PATHS = [
@@ -155,20 +144,3 @@ PHOTOLOGUE_DIR = 'images'
 #PHOTOLOGUE_PATH = os.path.join(BASE_DIR, 'media')
 
 CACHE_VIEWS_DEFAULT_TIME = 60 * 60  # one hour
-
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-try:
-    # If you want to test the example_project with S3, you'll have to configure the
-    # environment variables as specified below.
-    # (Secret keys are stored in environment variables for security - you don't want to
-    # accidentally commit and push them to a public repository).
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
-except KeyError:
-    raise KeyError('Need to define AWS environment variables: '
-                   'AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_STORAGE_BUCKET_NAME')

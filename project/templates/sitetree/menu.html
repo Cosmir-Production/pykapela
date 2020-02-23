@@ -10,4 +10,5 @@
 {#            {% endif %}#}
         </li>
         {% endfor %}
+        <li class="home-admin-link"><a href="/admin/">{% if user.is_authenticated %}Admin{% else %}&nbsp;{% endif %}</a></li>
     </ul>
