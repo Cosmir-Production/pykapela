@@ -18,13 +18,6 @@ from django.utils.translation import ugettext_lazy as _
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-if os_environ.get('PRODUCTION'):
-    DEBUG = False
-    SECRET_KEY = os_environ.get('SECRET_KEY')
-else:
-    DEBUG = True
-    SECRET_KEY = 'TADYtohlejelokalniamuzemverzovatujusdzduicxyls,d.,us('
-
 SITE_ID = 1
 
 ALLOWED_HOSTS = ['meteleska.cz', 'meteleska.com', 'localhost', 'meteleska.herokuapp.com', '172.105.91.130', 'meteleska.natydary.cz']

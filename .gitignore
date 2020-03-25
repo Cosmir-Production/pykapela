@@ -156,3 +156,4 @@ media
 project/static
 */locale/*/LC_MESSAGES
 /project/settings/database.py
+/project/settings/settings_local.py
