@@ -155,3 +155,4 @@ db.sqlite3
 media
 project/static
 */locale/*/LC_MESSAGES
+/project/settings/database.py
