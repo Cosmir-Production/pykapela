@@ -194,6 +194,14 @@ body {
 }
 
 /* Images */
+.page-images .page-header {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
+.page-images #page {
+    color: #fff;
+}
 .page-images, .page-images table tbody {
     background-color: #000; border: none;
 }
