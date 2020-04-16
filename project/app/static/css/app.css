@@ -126,6 +126,15 @@ body {
     text-align: right;
 }
 
+/* Music */
+.music .columns {
+    text-align: center;
+}
+.music iframe {
+    margin: 0 auto;
+}
+
+
 /* Contact */
 .contact-us {
     font-size: 2em;
