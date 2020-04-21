@@ -1,5 +1,5 @@
 <div class="row promoted-event">
-    <div class="large-2  large-offset-2 columns">
+    <div class="large-6 columns text-right">
         {% if event.image %}
             <p><img src="{{ event.image }}"> </p>
         {% endif %}
@@ -7,7 +7,7 @@
         <h1><span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n. \'y" }}</span></h1>
 
     </div>
-    <div class="large-8 columns">
+    <div class="large-6 columns">
         <h1>
             {{ event.title }}
         </h1>

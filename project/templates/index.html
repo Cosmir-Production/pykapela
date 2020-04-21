@@ -5,28 +5,27 @@
 {% endblock %}
 
 {% block content %}
-<a name="home"></a>
-<div class="row parallax-content-first parallax-background-1">
-    <div class="large-12 columns">
-        <div class="">
-            <h1 class="main-logo"><span class="hide">{{ config_site_name }}</span></h1>
-            <div class="socials">
-                {% for social in socials %}
-                    <a href="{{ social.url }}" title="{{ social.title }}"><i class="large fi-social-{{ social.name }}"></i></a>
-                {% endfor %}
+
+    <a name="home"></a>
+    <div class="row parallax-content-first parallax-background-1">
+        <div class="large-12 columns">
+            <div class="">
+                <h1 class="main-logo"><span class="hide">{{ config_site_name }}</span></h1>
+                <div class="socials">
+                    {% for social in socials %}
+                        <a href="{{ social.url }}" title="{{ social.title }}"><i class="large fi-social-{{ social.name }}"></i></a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-{% if events_count > 0 %} {#we show events later if there are now upcomming #}
+{% if events_count > 0 %} {# we show past events later - show fans some music first #}
+
+    <a name="shows"></a>
     <div class="row parallax-content parallax-background-2">
-
-        <a name="shows"></a>
-
         <div class="parallax-inside">
-
 
             {% if events_count > 1 %}
                 <h2 class="section-title">{% trans 'Upcomming Shows' %}</h2>
@@ -36,31 +35,33 @@
                 <div class="large-12 medium-12 small-12 columns">
             {% endif %}
 
+                {# First show is promoted #}
                 {% for event in events|slice:":1" %}
                     {% include "events/event-large.html" %}
                 {% endfor %}
 
             {% if events_count > 1 %}
-            </div>
-            <div class="large-6 medium-6 small-12 columns">
+                </div>
+                <div class="large-6 medium-6 small-12 columns">
             {% endif %}
 
+                {# few other events #}
                 {% for event in events|slice:"1:5" %}
                     {% include "events/event-small.html" %}
                 {% endfor %}
 
             </div>
 
-            <a href="" class="secondary button view-all">all concerts</a>
+            <a href="{% url "concerts" %}" class="secondary button view-all">all concerts</a>
             <div class="clearfix"></div>
 
         </div>
     </div>
 {% endif %}
 
-<div class="parallax-content parallax-background-3 dark music">
+<div class="row parallax-content parallax-background-3 dark music">
     <a name="music"></a>
-    <div class="row parallax-inside">
+    <div class="parallax-inside">
         <h2 class="section-title">{% trans 'Music' %}</h2>
         <div class="small-12 medium-12 large-6 columns">
             <div class="hide-for-small-only">
@@ -103,25 +104,6 @@
     </div>
 </div>
 
-<div class="row parallax-content parallax-background-5 dark">
-    <div class="parallax-inside">
-        <a name="bio"></a>
-        <div class="large-12 columns">
-            <h2 class="section-title">{% trans 'About' %}</h2>
-            <p>
-                Meteleska started in December 2008 in Prague (Kbely) in Czech Republic.<br>
-                <br>
-                Meteleska is based on rock, ska, balkan, reggae, gypsy and World Music.<br>
-                Come and join our dancing session.<br>
-                Be welcome.<br>
-                <br><br><br><br>
-                <br><br><br><br>
-            </p>
-        </div>
-
-        <div class="clearfix"></div>
-    </div>
-</div>
 
 <div class="row parallax-content parallax-background-6 dark gallery-latest">
     <a name="photos"></a>
@@ -145,6 +127,27 @@
         <div class="clearfix"></div>
     </div>
 </div>
+
+<a name="bio"></a>
+<div class="row parallax-content parallax-background-5 dark">
+    <div class="parallax-inside">
+        <div class="large-12 columns">
+            <h2 class="section-title">{% trans 'About' %}</h2>
+            <p>
+                Meteleska started in December 2008 in Prague (Kbely) in Czech Republic.<br>
+                <br>
+                Meteleska is based on rock, ska, balkan, reggae, gypsy and World Music.<br>
+                Come and join our dancing session.<br>
+                Be welcome.<br>
+                <br><br><br><br>
+                <br><br><br><br>
+            </p>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
 
 <div class="row parallax-content parallax-background-7">
     <a name="contact"></a>
