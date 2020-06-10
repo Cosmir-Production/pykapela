@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block heading %}
+    {% trans 'Shows' %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="row parallax-content-first events-index">
+        <div class="parallax-inside">
+            <div class="large-12 columns">
+
+                <h1>{% trans 'Shows' %}</h1>
+
+                {% if upcoming_events %}
+                    {% for event in upcoming_events %}
+                        {% include "events/event-small.html" %}
+                    {% endfor %}
+                    <h2>Last shows</h2>
+                {% endif %}
+
+                {% for event in events %}
+                    {% include "events/event-small.html" %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

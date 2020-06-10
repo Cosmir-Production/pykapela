@@ -14,8 +14,8 @@ class Event(BaseModel):
     title = models.CharField(max_length=256, verbose_name='Title')
     datetime = models.DateTimeField(verbose_name='Starts at')
 
-    location = models.CharField(max_length=256, default='', verbose_name=_('Name of a club or festival'))
-    address = models.CharField(max_length=256, verbose_name='Address')
+    location = models.CharField(max_length=256, default='', blank=True, verbose_name=_('Name of a club or festival'))
+    address = models.CharField(max_length=256, verbose_name='Address', blank=True)
 
     description = HTMLField(default='', blank=True, verbose_name=_('Event description (optional)'))
 
@@ -36,3 +36,6 @@ class Event(BaseModel):
         'large': ('900x', None),
         'bandzone': ('518x900', None),
     }
+
+    def __str__(self):
+        return self.name

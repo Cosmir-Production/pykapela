@@ -1,11 +1,12 @@
 <div class="row next-events">
     <div class="large-6 columns align-right">
-        <p class="event-date">{{ event.datetime|date:"j. n." }}</p>
+        <p class="event-date">{{ event.datetime|date:"j. n. 'y" }}</p>
     </div>
     <div class="large-6 columns">
         <p>
-            {{ event.title }}<br>
-            {{ event.venue }}
+            <a href="{% url "concert" slug=event.slug %}">
+                {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}
+            </a>
         </p>
     </div>
 </div>

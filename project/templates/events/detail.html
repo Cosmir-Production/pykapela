@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block heading %}
+    {% trans 'Shows' %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="row parallax-content-first events-index">
+        <div class="parallax-inside">
+            <div class="large-12 columns">
+
+                <h1>{{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}</h1>
+
+                <p>{{ event.datetime|date:"j. n. 'y" }}</p>
+
+                <p>{{ event.address }}</p>
+
+                {% if event.image %}
+                    <p><img src="{{ event.image }}"> </p>
+                {% endif %}
+
+                <p>{{ event.description|safe }}</p>
+
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

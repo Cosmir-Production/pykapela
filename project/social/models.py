@@ -15,3 +15,6 @@ class Social(BaseModel):
     is_published = models.BooleanField(default=True)
     position = models.IntegerField(default=0)
     widget_code = models.TextField(default='', blank=True)
+
+    def __str__(self):
+        return self.name
