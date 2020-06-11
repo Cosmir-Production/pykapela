@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.http import HttpResponse
 from django.template.defaultfilters import slugify
 from django.views import generic
@@ -27,7 +28,13 @@ class BaseView(generic.View):
 
     @staticmethod
     def _prepare_context():
-        context = {}
+        context = {
+            'SITE_NAME': settings.SITE_NAME,
+            'SITE_URL': settings.SITE_URL,
+            'SITE_URL_FULL': settings.SITE_URL_FULL,
+            'CONTACT_PHONE': settings.CONTACT_PHONE,
+            'CONTACT_EMAIL': settings.CONTACT_EMAIL,
+        }
 
         preferences = Preference().get_values()
         context.update(preferences)
