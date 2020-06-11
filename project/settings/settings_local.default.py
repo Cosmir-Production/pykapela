@@ -14,3 +14,7 @@ SITE_URL = 'www.example.com'
 CONTACT_EMAIL = ''
 
 CONTACT_PHONE = ''
+
+DEFAULT_FROM_EMAIL = 'info@my_project.com'
+
+ALLOWED_HOSTS = []

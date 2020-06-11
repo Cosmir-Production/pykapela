@@ -17,7 +17,7 @@
 		        <img src="{{ object.image.url }}" class="thumbnail" alt="{{ object.title }}">
 		    <!--</a>-->
 		    {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}
-            {% if user.is_superuser %}<a href="http://meteleska.natydary.cz/admin/photologue/photo/{{ object.id }}/change/">edit</a>{% endif %}
+            {% if user.is_superuser %}<a href="/admin/photologue/photo/{{ object.id }}/change/">edit</a>{% endif %}
         </div>
         <div class="col-md-6">
             {% if object.public_galleries %}

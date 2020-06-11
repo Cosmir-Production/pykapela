@@ -4,13 +4,15 @@
             <p><img src="{{ event.image }}"> </p>
         {% endif %}
 
-        <h1><span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n. \'y" }}</span></h1>
+        <h2><span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n. \'y" }}</span></h2>
 
     </div>
     <div class="large-6 columns">
-        <h1>
-            {{ event.title }}
-        </h1>
+        <h2>
+            <a href="{% url "concert" slug=event.slug %}">
+                {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}
+            </a>
+        </h2>
 
         {% if event.image %}
             <span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n. \'y" }}</span>

@@ -12,7 +12,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'meteleska',
+            'NAME': 'my_project',
             'USER': 'postgres',
             'PASSWORD': 'postgres',
             'HOST': '127.0.0.1'

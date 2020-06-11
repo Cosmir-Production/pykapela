@@ -12,4 +12,3 @@ EMAIL_HOST_PASSWORD = '45ef0c982cf840e997be6d8161afe5507cc4c880'
 
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'info@meteleska.com'
