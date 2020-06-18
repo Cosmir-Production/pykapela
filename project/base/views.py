@@ -41,6 +41,8 @@ class BaseView(generic.View):
 
         socials = Social.objects.filter(
             is_published=True,
+        ).order_by(
+            'position',
         )
         context.update({
             "socials": socials

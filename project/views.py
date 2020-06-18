@@ -28,7 +28,7 @@ class WebView(BaseView):
         context['events_count'] = context['events'].count()
 
         try:
-             socials = Social.objects.exclude(widget_code='').exclude(is_published=False)
+             socials = Social.objects.exclude(widget_code='').exclude(is_published=False).order_by('position')
              for widget in socials:
                 context[widget.name + '_widget'] = widget
         except Social.DoesNotExist:
