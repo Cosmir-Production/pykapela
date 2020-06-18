@@ -3,7 +3,7 @@ import os
 
 BASE_LOG_DIR = '/tmp'
 
-DEBUG_LOG_FILENAME = 'django-.log'
+DEBUG_LOG_FILENAME = 'django-project.log'
 DEBUG_LOG_FILE = os.path.join(BASE_LOG_DIR, DEBUG_LOG_FILENAME)
 
 LOGGING = {
