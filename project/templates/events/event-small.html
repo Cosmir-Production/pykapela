@@ -1,9 +1,9 @@
 <div class="row next-events">
-    <div class="large-6 columns align-right">
+    <div class="large-7 columns align-right">
         <p class="event-date">{{ event.datetime|date:"j. n. 'y" }}</p>
     </div>
-    <div class="large-6 columns">
-        <p>
+    <div class="large-5 columns">
+        <p class="event-title">
             <a href="{% url "concert" slug=event.slug %}">
                 {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}
             </a>

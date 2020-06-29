@@ -78,7 +78,7 @@ a:hover {
     position: fixed;
     width: 100%;
 }
-.parallax-content, .parallax-content-first {
+.parallax-content, .parallax-content-first, .events-detail, .events-index {
     height: 100vh;
     max-width: 100%;
     position: relative;
@@ -108,7 +108,7 @@ a:hover {
 /*.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }*/
 .parallax-background-events { }
 .parallax-background-1 {  }
-.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }
+.parallax-background-2, .events-detail, .events-index { background-image: url("/static/img/cover-2.jpg"); }
 .parallax-background-3 { background-image: url("/static/img/cover-3.jpg"); }
 .parallax-background-4 { background-image: url("/static/img/white.png"); }
 .parallax-background-5 { text-align:center;  }
@@ -132,6 +132,9 @@ a:hover {
 }
 .next-events .event-date {
     text-align: right;
+}
+.event-title {
+    text-align: left;
 }
 /* events page */
 .events-index {
