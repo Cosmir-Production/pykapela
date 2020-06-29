@@ -143,6 +143,15 @@ a:hover {
 .events-index h1 {
     padding-top: 8rem;
 }
+.page-events {
+    background-color: #fff;
+}
+.page-events h1{
+    margin-top: 3rem;
+}
+.page-events .edit a {
+    text-decoration: underline;
+}
 
 /* Music */
 .music .columns {

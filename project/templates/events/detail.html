@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block heading %}
-    {% trans 'Shows' %}
-{% endblock %}
+{% block heading %}{% endblock %}
+
+{% block body_class %}class="page-events"{% endblock %}
 
 {% block content %}
 
-    <div class="row parallax-content-first events-index">
-        <div class="parallax-inside">
+    <div class="row events-detail">
+        <div class="events-inside">
             <div class="large-12 columns">
+
 
                 <h1>{{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}</h1>
 
@@ -17,13 +18,15 @@
 
                 <p>{{ event.address }}</p>
 
+                {% if user.is_staff %}
+                    <p class="edit"><a href="/admin/events/event/{{ event.id }}/change/">edit</a></p>
+                {% endif %}
+
                 {% if event.image %}
-                    <p><img src="{{ event.image }}"> </p>
+                    <p><img src="{{ event.image.url }}" width="{{ event.image.width }}" height="{{ event.image.height }}"> </p>
                 {% endif %}
 
                 <p>{{ event.description|safe }}</p>
-
-
 
             </div>
         </div>
