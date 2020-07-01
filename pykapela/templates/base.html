@@ -15,6 +15,14 @@
         <link rel="stylesheet" href="{% static "css/app.css" %}">
         <link rel="stylesheet" href="{% static "css/foundation-icons.css" %}">
 
+        <style type="text/css">
+            {% for page in pages %}
+                {% if page.image %}
+                    .parallax-background-{{ forloop.counter }} { background-image: url("/media/{{ page.image }}"); }
+                {% endif %}
+            {% endfor %}
+        </style>
+
         <meta name="author" content="Dorian Podulka, https://github.com/dorianpodulka" />
 
     {% endblock %}

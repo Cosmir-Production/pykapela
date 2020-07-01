@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template.defaultfilters import slugify
 from django.views import generic
 
+from pykapela.pages.models import Page
 from pykapela.preferences.models import Preference
 from pykapela.social.models import Social
 
@@ -47,4 +48,13 @@ class BaseView(generic.View):
         context.update({
             "socials": socials
         })
+
+        try:
+            pages = Page.objects.filter(is_published=True).order_by('position')
+            context.update({
+                "pages": pages
+            })
+        except IndexError as e:
+            pass
+
         return context
