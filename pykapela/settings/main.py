@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'pykapela.app',
     'pykapela.social',
     'pykapela.events',
+    'pykapela.pages',
 ]
 
 MIDDLEWARE = [
