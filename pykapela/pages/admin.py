@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from project.pages.models import Page
+from pykapela.pages.models import Page
 
 
 @admin.register(Pages)

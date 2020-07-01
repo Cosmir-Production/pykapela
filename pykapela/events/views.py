@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.utils import timezone
 
-from project.base.views import BaseView
-from project.events.models import Event
-from project.social.models import Social
+from pykapela.base.views import BaseView
+from pykapela.events.models import Event
+from pykapela.social.models import Social
 
 
 class EventView(BaseView):

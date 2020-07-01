@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from project.preferences.models import Preference
+from pykapela.preferences.models import Preference
 
 
 @admin.register(Preference)

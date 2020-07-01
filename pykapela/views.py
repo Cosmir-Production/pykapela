@@ -4,9 +4,9 @@ from django.utils import timezone
 from django.views.decorators.cache import cache_page
 from photologue.models import Photo, Gallery
 
-from project.base.views import BaseView
-from project.events.models import Event
-from project.social.models import Social
+from pykapela.base.views import BaseView
+from pykapela.events.models import Event
+from pykapela.social.models import Social
 
 
 class WebView(BaseView):

@@ -2,8 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from project.base.models import BaseModel
-from project.preferences import choices
+from pykapela.base.models import BaseModel
+from pykapela.preferences import choices
 
 
 class Preference(BaseModel):

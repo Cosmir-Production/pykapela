@@ -1,6 +1,6 @@
 # README #
 
-This app is primary for music bands. It aims to offer almost everything what you need on a website for your band.
+This app is primary for music bands. It aims to offer almost everything what you need on a website for your band. Also some thinks are tweaked as bands can appriciate.
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
@@ -38,15 +38,15 @@ make virtualenv (I suggest Vitualenv):
 
 clone the code!
 
-`git clone git@bitbucket.org:dorianpodulka/meteleska-python.git .`
+`git clone git@bitbucket.org:Cosmir-Production/pykapela.git .`
 
 create and update database settings:
 
-`cp project/settings/database.default.py project/settings/database.py`
+`cp pykapela/settings/database.default.py project/settings/database.py`
 
 create and update local settings:
 
-`cp project/settings/settings_local.default.py project/settings/settings_local.py`
+`cp pykapela/settings/settings_local.default.py project/settings/settings_local.py`
 
 start environment:
 
@@ -78,11 +78,6 @@ Celebrate ;-)
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Writing tests, haha
+* Code review, maybe
+* Other guidelines, we'll see

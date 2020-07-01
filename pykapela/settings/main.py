@@ -44,12 +44,12 @@ INSTALLED_APPS = [
     'sortedm2m',
     'taggit',
 
-    'project.photologue_custom',
-    'project.preferences',
-    'project.base',
-    'project.app',
-    'project.social',
-    'project.events',
+    'pykapela.photologue_custom',
+    'pykapela.preferences',
+    'pykapela.base',
+    'pykapela.app',
+    'pykapela.social',
+    'pykapela.events',
 ]
 
 MIDDLEWARE = [
@@ -64,13 +64,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'pykapela.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'project/templates'
+            'pykapela/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
+WSGI_APPLICATION = 'pykapela.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

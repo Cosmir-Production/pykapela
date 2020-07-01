@@ -7,7 +7,7 @@ from django.template.defaultfilters import slugify
 from django.core import files
 from django.conf import settings
 
-from project.lib.instagram import *
+from pykapela.lib.instagram import *
 
 from photologue.models import Photo, Gallery
 

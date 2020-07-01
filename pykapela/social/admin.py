@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 
-from project.social.models import Social
+from pykapela.social.models import Social
 
 
 @admin.register(Social)

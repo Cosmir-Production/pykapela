@@ -5,7 +5,7 @@ from django.utils.translation import ugettext as _
 
 from tinymce.models import HTMLField
 
-from project.base.models import BaseModel
+from pykapela.base.models import BaseModel
 
 
 class Event(BaseModel):

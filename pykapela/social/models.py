@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from project.base.models import BaseModel
+from pykapela.base.models import BaseModel
 
 
 class Social(BaseModel):

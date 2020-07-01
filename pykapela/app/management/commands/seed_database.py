@@ -11,8 +11,8 @@ from django.core.management.base import BaseCommand
 from sitetree.sitetreeapp import register_dynamic_trees, compose_dynamic_tree, register_i18n_trees, get_sitetree
 from sitetree.utils import tree, item
 
-from project.events.models import Event
-from project.social.models import Social
+from pykapela.events.models import Event
+from pykapela.social.models import Social
 
 
 class Command(BaseCommand):

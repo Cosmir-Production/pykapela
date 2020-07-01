@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.template.defaultfilters import slugify
 from django.views import generic
 
-from project.preferences.models import Preference
-from project.social.models import Social
+from pykapela.preferences.models import Preference
+from pykapela.social.models import Social
 
 
 class BaseView(generic.View):
