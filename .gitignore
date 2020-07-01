@@ -153,7 +153,7 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
-project/static
+pykapela/static
 */locale/*/LC_MESSAGES
-/project/settings/database.py
-/project/settings/settings_local.py
+/pykapela/settings/database.py
+/pykapela/settings/settings_local.py
