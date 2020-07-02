@@ -9,6 +9,10 @@ from pykapela.preferences import choices
 class Preference(BaseModel):
 
     site_name = models.CharField(max_length=256)
+    slogan = models.CharField(max_length=255, default='', help_text='Optional.')
+
+    email = models.CharField(max_length=60, default='')
+    phone = models.CharField(max_length=32, default='')
 
     @staticmethod
     def get_values():
@@ -18,6 +22,9 @@ class Preference(BaseModel):
         except Preference.DoesNotExist:
             Preference(
                 site_name='My great project!',
+                slogan='This site is something special. Come and see.',
+                email='put_your@email.here',
+                phone='123 456 789',
             ).save()
             preferences = Preference.objects.get(pk=1)
 
