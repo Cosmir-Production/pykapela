@@ -99,7 +99,7 @@ a:hover {
     /*padding: 5em 2em;*/
 }
 .parallax-content.dark {
-    color: #fff;
+    color: #ffffff;
 }
 .parallax-inside h2 {
     margin-top: 2em;
@@ -107,15 +107,7 @@ a:hover {
 .parallax-background-2 .parallax-inside { /*background-image: url("/static/img/white.png");*/ }
 /*.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }*/
 .parallax-background-events { }
-.parallax-background-1 {  }
-.parallax-background-2, .events-detail, .events-index { background-image: url("/static/img/cover-2.jpg"); }
-.parallax-background-3 { background-image: url("/static/img/cover-3.jpg"); }
-.parallax-background-4 { background-image: url("/static/img/white.png"); }
-.parallax-background-5 { text-align:center;  }
-.parallax-background-5 .parallax-inside { background-image: url("/static/img/dark.png");}
-.parallax-background-6 { background-image: url("/static/img/dark.png"); }
-.parallax-background-7 { background-image: url("/static/img/white.png"); }
-.parallax-background-8 { background-image: url("/static/img/cover-8.jpg"); }
+
 
 .parallax-content .view-all {
     float: right;
