@@ -1,0 +1,7 @@
+
+@media screen and (max-width: 40em) {
+    .top-bar li {
+        display: block;
+        width: 100%;
+    }
+}

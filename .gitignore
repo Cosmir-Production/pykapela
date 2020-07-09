@@ -157,3 +157,4 @@ pykapela/static
 */locale/*/LC_MESSAGES
 /pykapela/settings/database.py
 /pykapela/settings/settings_local.py
+node_modules

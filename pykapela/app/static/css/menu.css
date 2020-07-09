@@ -1,0 +1,38 @@
+
+.main-logo {
+    text-indent: -3000px;
+    background-image: url("/static/img/logo.png");
+    width: 730px;
+    height: 88px;
+    margin: 1em auto 0em auto;
+}
+
+.top-bar {
+    text-align:center;
+    overflow: auto;
+    background-color: black;
+    padding: 0;
+    opacity: 0.9;
+}
+.top-bar ul {
+    background-color: black;
+    margin: 0;
+    opacity: 0.9;
+}
+.top-bar li {
+    display: inline-block;
+    background-color: black;
+    opacity: 1.0;
+}
+.top-bar li a {
+    color: #fff;
+    margin: 0;
+    padding: 0.9rem 1rem;
+    text-transform: uppercase;
+}
+.top-bar li:hover {
+    background-color: #323232;
+}
+.top-bar .current_item {
+    background-color: #303030;
+}
