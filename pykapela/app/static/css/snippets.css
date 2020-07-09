@@ -1,0 +1,48 @@
+
+/* Events */
+.promoted-event h2{
+    font-size: 1.3em;
+}
+.next-events {
+
+}
+.next-events .event-date {
+    text-align: right;
+}
+.event-title {
+    text-align: left;
+}
+/* events page */
+.events-index {
+    text-align: center;
+}
+.events-index .parallax-inside {
+    background-image: url("/static/img/white.png");
+}
+.events-index h1 {
+    padding-top: 8rem;
+}
+.page-events {
+    background-color: #fff;
+}
+.page-events h1{
+    margin-top: 3rem;
+}
+.page-events .edit a {
+    text-decoration: underline;
+}
+
+/* Music */
+.music .columns {
+    text-align: center;
+}
+.music iframe {
+    margin: 1rem auto;
+}
+
+
+/* Contact */
+.contact-us {
+    font-size: 2em;
+    text-align: center;
+}

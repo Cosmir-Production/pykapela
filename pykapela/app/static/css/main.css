@@ -1,0 +1,157 @@
+.columns,  .parallax-content{
+    /*border: 1px solid red;*/
+}
+#page, .sticky { /* , .row */
+    width: 100%;
+    max-width: 1984px;  /* Tribute to George Orwell */
+}
+.home-admin-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.home-admin-link a:hover {
+    background-color: #000;
+}
+
+body {
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+}
+a {
+    color: #393939;
+}
+a:hover {
+    text-decoration: underline;
+    color: #1f1f1f;
+}
+
+.parallax-background-1 {
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+}
+.parallax-content, .parallax-content-first, .events-detail, .events-index {
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
+    font-size: 20px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.parallax-content-first {
+
+}
+.parallax-inside {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    height: 100vh;
+    overflow: hidden;
+    /*padding: 5em 2em;*/
+}
+.parallax-content.dark {
+    color: #ffffff;
+}
+.parallax-inside h2 {
+    margin-top: 2em;
+}
+.parallax-background-2 .parallax-inside { background-image: url("/static/img/white.png"); }
+.parallax-background-4 .parallax-inside { background-image: url("/static/img/white.png"); }
+.parallax-background-6 .parallax-inside { background-image: url("/static/img/white.png"); }
+/*.parallax-background-2 { background-image: url("/static/img/cover-2.jpg"); }*/
+.parallax-background-events { }
+
+
+.parallax-content .view-all {
+    float: right;
+    clear: both;
+    margin-top: 14em;
+}
+
+
+/* Footer */
+#footer, #footer a:link, #footer a:visited {
+    text-align: center;
+    background: #000;
+    /*opacity: 0.9;*/
+    color: white;
+}
+#footer p {
+    margin: 0;
+    padding: 2em 0;
+}
+
+.section-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.socials {
+    font-size: 4em;
+    text-align: center;
+    /*position: absolute;*/
+    /*bottom: 1em;*/
+    width: 100%;
+}
+.socials a {
+    color: #808080;
+}
+.socials a:hover {
+    color: #FFF;
+}
+
+.fi-social-bandzone {
+    width: 59px;
+    height: 59px;
+    display: inline-block;
+    background-size: cover;
+    background-image: url("/static/css/img/bandzone.svg");
+}
+.fi-social-soundcloud {
+    width: 110px;
+    height: 63px;
+    display: inline-block;
+    background-size: cover;
+    background-image: url("/static/img/soundcloud.svg");
+}
+
+/* Images */
+.page-images .page-header {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
+.page-images #page {
+    color: #fff;
+}
+.page-images, .page-images table tbody {
+    background-color: #000; border: none;
+}
+.image-nav .thumbnail {
+    margin: 0; box-shadow: none; border-color: #000;
+}
+.image-nav td {
+    font-size: 7em;
+}
+
+.gallery-latest .image-table { display: table; }
+.gallery-latest .image-table .image-row{ display: table-row;  }
+.gallery-latest .image-table .image-td{ display: table-cell; }
+
+.gallery-latest .image-table img {border-color: #0a0a0a;}
+.gallery-latest .image-table a:hover {border-color: #000;}
+/* hacks */
+.homepage  .row, .homepage .row .row {
+    margin: 0;
+}

@@ -11,9 +11,12 @@
 
         <title>{% block title %}{{ config_site_name }}{% endblock %}</title>
 
-        <link rel="stylesheet" href="{% static "css/foundation.css" %}">
-        <link rel="stylesheet" href="{% static "css/app.css" %}">
-        <link rel="stylesheet" href="{% static "css/foundation-icons.css" %}">
+        <link rel="stylesheet" href="{% static "css/vendor/foundation.css" %}">
+        <link rel="stylesheet" href="{% static "css/main.css" %}">
+        <link rel="stylesheet" href="{% static "css/menu.css" %}">
+        <link rel="stylesheet" href="{% static "css/snippets.css" %}">
+        <link rel="stylesheet" href="{% static "css/mobile.css" %}">
+        <link rel="stylesheet" href="{% static "css/vendor/foundation-icons.css" %}">
 
         <style type="text/css">
             {% for page in pages %}
