@@ -19,3 +19,18 @@ class GalleryView(BaseView):
         context['object_list'] = Gallery.objects.on_site().is_public()
 
         return render(request, 'photologue/gallery_list.html', context)
+
+
+class GalleryDetailView(BaseView):
+
+    ordering = ['-date_added']
+
+    """
+    Gallery detail (all photos)
+    """
+    @staticmethod
+    def gallery_detail(request, context, slug, *args, **kwargs):
+
+        context['photos'] = Photo.objects.filter(galleries__slug=slug)
+
+        return render(request, 'photologue/gallery_detail.html', context)
