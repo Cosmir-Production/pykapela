@@ -19,6 +19,8 @@ class GalleryAdmin(GalleryAdminDefault):
 
 class PhotoAdmin(PhotoAdmin):
 
+    list_display = ('title', 'date_taken', 'date_added',
+                    'is_public', 'view_count', 'caption', 'admin_thumbnail')
     list_filter = ['date_added', 'is_public', 'galleries']
 
 
