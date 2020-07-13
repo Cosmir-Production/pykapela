@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from photologue.admin import GalleryAdmin as GalleryAdminDefault
-from photologue.models import Gallery
+from photologue.admin import GalleryAdmin as GalleryAdminDefault, PhotoAdmin
+from photologue.models import Gallery, Photo
 from .models import GalleryExtended
 
 
@@ -17,5 +17,13 @@ class GalleryAdmin(GalleryAdminDefault):
     inlines = [GalleryExtendedInline, ]
 
 
+class PhotoAdmin(PhotoAdmin):
+
+    list_filter = ['date_added', 'is_public', 'galleries']
+
+
 admin.site.unregister(Gallery)
 admin.site.register(Gallery, GalleryAdmin)
+
+admin.site.unregister(Photo)
+admin.site.register(Photo, PhotoAdmin)
