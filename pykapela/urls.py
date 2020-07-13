@@ -9,6 +9,7 @@ from django.urls import re_path
 from sitetree.sitetreeapp import register_i18n_trees
 
 from . import views
+from .gallery.views import GalleryView
 
 admin.autodiscover()
 
@@ -17,7 +18,8 @@ urlpatterns = [
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^admin/', admin.site.urls),
 
-    #(r'^photologue/', include('photologue_custom.urls')),
+    url(r'^media/photologue/gallery/$', GalleryView.as_view(), name='gallery'),
+
     re_path(r'^media/photologue/', include('photologue.urls', namespace='photologue')),
 
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
