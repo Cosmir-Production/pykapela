@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from photologue.admin import GalleryAdmin as GalleryAdminDefault, PhotoAdmin
+from photologue.admin import GalleryAdmin as GalleryAdminDefault, PhotoAdmin as PhotoAdminDefault
 from photologue.models import Gallery, Photo
 from .models import GalleryExtended
 
@@ -17,7 +17,7 @@ class GalleryAdmin(GalleryAdminDefault):
     inlines = [GalleryExtendedInline, ]
 
 
-class PhotoAdmin(PhotoAdmin):
+class PhotoAdmin(PhotoAdminDefault):
 
     list_display = ('title', 'date_taken', 'date_added',
                     'is_public', 'view_count', 'caption', 'admin_thumbnail')

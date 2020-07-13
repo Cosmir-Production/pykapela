@@ -5,7 +5,7 @@ from photologue.models import Gallery, Photo
 from photologue.views import GalleryListView
 
 from pykapela.base.views import BaseView
-from pykapela.photologue_custom.models import GalleryExtended
+from pykapela.photologue_custom.models import PykapelaGallery
 
 
 class GalleryView(BaseView):
@@ -16,7 +16,7 @@ class GalleryView(BaseView):
     @staticmethod
     def gallery(request, context, *args, **kwargs):
 
-        context['object_list'] = Gallery.objects.on_site().is_public()
+        context['object_list'] = PykapelaGallery.objects.on_site().is_public()
 
         return render(request, 'photologue/gallery_list.html', context)
 
