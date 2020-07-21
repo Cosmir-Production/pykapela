@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.translation import ugettext as _
 
 from pykapela.base.models import BaseModel
 from pykapela.preferences import choices
@@ -10,9 +11,21 @@ class Preference(BaseModel):
 
     site_name = models.CharField(max_length=256)
     slogan = models.CharField(max_length=255, default='', help_text='Optional.')
+    description = models.CharField(max_length=255, default='', help_text='Optional.')
 
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
+
+    logo = models.ImageField(
+        upload_to='images/logo/',
+        verbose_name=_('admin-logo'),
+        null=True,
+        blank=True,
+    )
+
+    IMAGE_GEOMETRY = {
+        'large': ('420x', None),
+    }
 
     @staticmethod
     def get_values():
