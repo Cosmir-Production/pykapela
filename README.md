@@ -34,7 +34,7 @@ get in working directory
 
 create enviroment (server):
 
-`cd ..`
+be in /srv or something so `cd ..`
 
 `python3 -m venv yourproject`
 
@@ -74,7 +74,7 @@ create and update local settings:
 
 install dependencies:
 
-`pip3 install -r requirements/production.txt`
+`pip install -r requirements/production.txt`
 
 run database migrations:
 
