@@ -32,13 +32,37 @@ get in working directory
 
 `cd <yourworkingdirectory>`
 
-make virtualenv (I suggest Vitualenv):
+create enviroment (server):
+
+`cd ..`
+
+`python3 -m venv yourproject`
+
+`cd yourproject; source bin/activate`
+
+create environment (local):
 
 `mkvirtualenv --python=/usr/bin/python3 <yourwebsitename>`
+
+`workon <yourwebsitename>`
+
+make sure to have correct rights:
+
+`sudo chmod 774 -R /srv/yourproject`
+
+`sudo chown www-data:www-data -R /srv/yourproject`
 
 clone the code!
 
 `git clone git@bitbucket.org:Cosmir-Production/pykapela.git .`
+
+create PostgreSQL database:
+
+`create database myproject;`
+
+`create user youruser with password 'yourcustompassword'`
+
+`grant all privileges on database youruser to myproject;`
 
 create and update database settings:
 
@@ -47,10 +71,6 @@ create and update database settings:
 create and update local settings:
 
 `cp pykapela/settings/settings_local.default.py project/settings/settings_local.py`
-
-start environment:
-
-`workon <yourwebsitename>`
 
 install dependencies:
 
