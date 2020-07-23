@@ -1,6 +1,8 @@
 
 DEBUG = False
 
+DEBUG_LOG_FILENAME = 'django-project.log'
+
 SECRET_KEY = 'TADYtohlejelokalniamuzemverzovatujusdzduicxyls,d.,us('
 
 INSTAGRAM_PROFILE_NAME = 'madonna'
