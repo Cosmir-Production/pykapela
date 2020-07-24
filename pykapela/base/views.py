@@ -51,9 +51,11 @@ class BaseView(generic.View):
 
         try:
             pages = Page.objects.filter(is_published=True).order_by('position')
-            context.update({
-                "pages": pages
-            })
+
+            for page in pages:
+                context.update({
+                    page.url: page
+                })
         except IndexError as e:
             pass
 

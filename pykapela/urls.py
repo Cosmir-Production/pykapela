@@ -2,9 +2,10 @@
 from django.conf.urls import url, include
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.views.generic import RedirectView
 from django.views.static import serve
 from django.conf import settings
-from django.urls import re_path
+from django.urls import re_path, path
 
 from sitetree.sitetreeapp import register_i18n_trees
 
@@ -15,7 +16,9 @@ admin.autodiscover()
 
 urlpatterns = [
 
-    url(r'^tinymce/', include('tinymce.urls')),
+    re_path(r'^favicon\.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
+
+    path('tinymce/', include('tinymce.urls')),
     url(r'^admin/', admin.site.urls),
 
     url(r'^media/photologue/gallery/(?P<slug>[\-\d\w]+)/$',
