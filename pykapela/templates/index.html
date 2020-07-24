@@ -21,7 +21,9 @@
     </div>
 
     <style type="text/css">
-        h1.main-logo { background-image: url("{{ config_logo.url }}"); }
+        {% if config_logo %}
+            h1.main-logo { background-image: url("{{ config_logo.url }}"); }
+        {% endif %}
     </style>
 
 
