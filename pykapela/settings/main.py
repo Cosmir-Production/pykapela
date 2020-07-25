@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'pykapela.social',
     'pykapela.events',
     'pykapela.pages',
+    'pykapela.gallery',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,8 @@ TRANSLATIONS_BASE_DIR = os.path.join(BASE_DIR, '')
 TRANSLATIONS_PROJECT_BASE_DIR = TRANSLATIONS_BASE_DIR
 
 PHOTOLOGUE_DIR = 'images'
+
+PHOTOLOGUE_GALLERY_LATEST_LIMIT = 6
 
 #PHOTOLOGUE_PATH = os.path.join(BASE_DIR, 'media')
 

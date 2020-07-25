@@ -3,6 +3,8 @@
 
 {% block heading %}{% endblock %}
 
+{% block title %} | {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}{% endblock %}
+
 {% block body_class %}class="page-events"{% endblock %}
 
 {% block content %}

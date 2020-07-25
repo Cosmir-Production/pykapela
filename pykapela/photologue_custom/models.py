@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 from taggit.managers import TaggableManager
@@ -20,3 +21,17 @@ class GalleryExtended(models.Model):
 
     def __str__(self):
         return self.gallery.title
+
+
+class PykapelaGallery(Gallery):
+
+    class Meta:
+        proxy = True
+
+    def latest(self, limit=settings.PHOTOLOGUE_GALLERY_LATEST_LIMIT, public=True):
+        if not limit:
+            limit = self.photo_count()
+        if public:
+            return self.public().order_by('-date_added')[:limit]
+        else:
+            return self.photos.filter(sites__id=settings.SITE_ID)[:limit]

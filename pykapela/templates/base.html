@@ -9,7 +9,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{% block title %}{{ config_site_name }}{% endblock %}</title>
+        <title>{{ config_site_name }}{% block title %}{% if config_description != '' %} | {{ config_description }}{% endif %}{% endblock %}</title>
 
         <link rel="stylesheet" href="{% static "css/vendor/foundation.css" %}">
         <link rel="stylesheet" href="{% static "css/main.css" %}">
@@ -26,7 +26,8 @@
             {% endfor %}
         </style>
 
-        <meta name="author" content="Dorian Podulka, https://github.com/dorianpodulka" />
+        <meta name="author" content="https://github.com/Cosmir-Production" />
+        <meta name="description" content="{{ config_description }}">
 
     {% endblock %}
     </head>

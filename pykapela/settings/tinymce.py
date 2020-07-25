@@ -1,9 +1,13 @@
 
 TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "table,spellchecker,paste,searchreplace",
-    'theme': "advanced",
-    'cleanup_on_startup': True,
-    'custom_undo_redo_levels': 10,
+    "theme": "silver",
+    "plugins": "code,table",
+    'menubar': 'edit view format table',
+    'toolbar': 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | code',
+    "theme_advanced_buttons3_add": "|",
 }
-TINYMCE_SPELLCHECKER = True
+
+TINYMCE_SPELLCHECKER = False
 TINYMCE_COMPRESSOR = True
+TINYMCE_INCLUDE_JQUERY = True
+
