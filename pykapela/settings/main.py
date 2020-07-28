@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    'django_extensions',
     'translation_manager',
     'sitetree',
     'debug_toolbar',

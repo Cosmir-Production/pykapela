@@ -10,9 +10,9 @@ from pykapela.preferences import choices
 class Preference(BaseModel):
 
     site_name = models.CharField(max_length=256)
-    slogan = models.CharField(max_length=255, default='', help_text='Optional.')
-    description = models.CharField(max_length=255, default='', help_text='Optional.')
-    footer_slogan = models.CharField(max_length=255, default='', help_text='Optional.')
+    slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
+    description = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
+    footer_slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
 
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
