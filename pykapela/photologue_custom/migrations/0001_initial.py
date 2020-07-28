@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('taggit', '0003_taggeditem_add_unique_index'),
-        ('photologue', '0012_auto_20200728_1323'),
+        # ('photologue', '0012_auto_20200728_1323'),
     ]
 
     operations = [
