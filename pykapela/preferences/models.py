@@ -12,6 +12,7 @@ class Preference(BaseModel):
     site_name = models.CharField(max_length=256)
     slogan = models.CharField(max_length=255, default='', help_text='Optional.')
     description = models.CharField(max_length=255, default='', help_text='Optional.')
+    footer_slogan = models.CharField(max_length=255, default='', help_text='Optional.')
 
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
@@ -38,6 +39,7 @@ class Preference(BaseModel):
                 slogan='This site is something special. Come and see.',
                 email='put_your@email.here',
                 phone='123 456 789',
+                footer_slogan='',
             ).save()
             preferences = Preference.objects.get(pk=1)
 

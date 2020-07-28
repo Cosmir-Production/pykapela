@@ -11,14 +11,18 @@
 
         <title>{{ config_site_name }}{% block title %}{% if config_description != '' %} | {{ config_description }}{% endif %}{% endblock %}</title>
 
-        <link rel="stylesheet" href="{% static "css/vendor/foundation.css" %}">
-        <link rel="stylesheet" href="{% static "css/main.css" %}">
-        <link rel="stylesheet" href="{% static "css/menu.css" %}">
-        <link rel="stylesheet" href="{% static "css/snippets.css" %}">
-        <link rel="stylesheet" href="{% static "css/mobile.css" %}">
-        <link rel="stylesheet" href="{% static "css/vendor/foundation-icons.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/app.css" %}">
 
         <style type="text/css">
+
+            {% if page_homepage %}.parallax-background-1 { background-image: url("/media/{{ page_homepage.image }}"); }{% endif %}
+            {% if page_events %}.parallax-background-2 { background-image: url("/media/{{ page_events.image }}"); }{% endif %}
+            {% if page_music %}.parallax-background-3 { background-image: url("/media/{{ page_music.image }}"); }{% endif %}
+            {% if page_news %}.parallax-background-4 { background-image: url("/media/{{ page_news.image }}"); }{% endif %}
+            {% if page_photos %}.parallax-background-5 { background-image: url("/media/{{ page_photos.image }}"); }{% endif %}
+            {% if page_about %}.parallax-background-6 { background-image: url("/media/{{ page_about.image }}"); }{% endif %}
+            {% if page_contact %}.parallax-background-7 { background-image: url("/media/{{ page_contact.image }}"); }{% endif %}
+
             {% for page in pages %}
                 {% if page.image %}
                     .parallax-background-{{ forloop.counter }} { background-image: url("/media/{{ page.image }}"); }
@@ -35,22 +39,20 @@
         <div id="page">
 
             {%  block main_menu %}
-            <div class="top-bar-container" data-sticky-container>
-                <div class="sticky" data-sticky data-options="marginTop: 0; stickyOn: small;">
-                    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-                        <button class="menu-icon" type="button" data-toggle></button>
-                        <div class="title-bar-title">Menu</div>
-                    </div>
-                    <div class="top-bar" id="main-menu">
-                        <div class="row column">
-                          <div class="top-bar-center">
-                            {% load sitetree %}
-                            {% sitetree_menu from "main_menu" include "trunk, menu" %}
-                          </div>
+                <div data-sticky-container>
+                    <div data-sticky data-options="marginTop:0;" style="width:100%">
+                        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+                            <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                            <div class="title-bar-title">Menu</div>
+                        </div>
+                        <div class="top-bar" id="main-menu">
+                            <div class="top-bar-center">
+                                {% load sitetree %}
+                                {% sitetree_menu from "main_menu" include "trunk, menu" %}
+                              </div>
                         </div>
                     </div>
                 </div>
-            </div>
             {%  endblock %}
 
             {% block heading %}
@@ -66,7 +68,7 @@
         {% block footer %}
             <div id="footer">
                 <p>© {{ SITE_NAME }} since 2009. All rights reserved. Všechna práva vyhrazena.<br>
-                   Thanks to all that support us! Děkujeme všem co nás podporují!<br>
+                   {{ config_footer_slogan }}<br>
                     <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a>
                 </p>
             </div>

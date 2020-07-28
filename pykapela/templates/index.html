@@ -7,8 +7,8 @@
 {% block content %}
 
     <a name="home"></a>
-    <div class="row parallax-content-first parallax-background-1">
-        <div class="large-12 columns">
+    <div class="grid-x parallax-content parallax-content-first parallax-background-1 dark main">
+        <div class="cell parallax-inside">
             <div class="">
                 <h1 class="main-logo"><span class="hide">{{ config_site_name }}</span></h1>
                 <div class="socials">
@@ -16,6 +16,11 @@
                         <a href="{{ social.url }}" title="{{ social.title }}"><i class="large fi-social-{{ social.name }}"></i></a>
                     {% endfor %}
                 </div>
+
+                {% if page_homepage %}
+                    {{ page_homepage.content|safe }}
+                {% endif %}
+
             </div>
         </div>
     </div>
@@ -30,15 +35,15 @@
 {% if events_count > 0 %} {# we show past events later - show fans some music first #}
 
     <a name="shows"></a>
-    <div class="row parallax-content parallax-background-2">
+    <div class="grid-x parallax-content parallax-background-2 shows">
         <div class="parallax-inside">
 
             {% if events_count > 1 %}
                 <h2 class="section-title">{% trans 'Upcomming Shows' %}</h2>
-                <div class="large-6 medium-6 small-12 columns">
+                <div class="cell small-6">
             {% else %}
                 <h2 class="section-title">{% trans 'Next Show' %}</h2>
-                <div class="large-12 medium-12 small-12 columns">
+                <div class="cell">
             {% endif %}
 
                 {# First show is promoted #}
@@ -48,7 +53,7 @@
 
             {% if events_count > 1 %}
                 </div>
-                <div class="large-6 medium-6 small-12 columns">
+                <div class="cell small-6">
             {% endif %}
 
                 {# few other events #}
@@ -59,62 +64,54 @@
             </div>
 
             <a href="{% url "concerts" %}" class="secondary button view-all">all concerts</a>
-            <div class="clearfix"></div>
 
         </div>
     </div>
 {% endif %}
 
-<div class="row parallax-content parallax-background-3 dark music">
-    <a name="music"></a>
-    <div class="parallax-inside">
-        <h2 class="section-title">{% trans 'Music' %}</h2>
-        <div class="small-12 medium-12 large-6 columns">
-            <div class="hide-for-small-only">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ak8-eMkWpnY?rel=0"
-                    frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="hide-for-medium hide-for-large">
-                <iframe width="320" height="315" src="https://www.youtube.com/embed/Ak8-eMkWpnY?rel=0"
-                    frameborder="0" allowfullscreen></iframe>
-            </div>
+{% if page_music %}
+    <div class="row parallax-content parallax-background-3 dark music">
+        <a name="music"></a>
+        <div class="parallax-inside">
+            <h2 class="section-title">{% trans 'Music' %}</h2>
+
+            {{ page_music.content|safe }}
+
         </div>
-        <div class="small-12 medium-12 large-6 columns">
-            <iframe width="560" height="315" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2653877&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-        </div>
-        <div class="clearfix"></div>
     </div>
-</div>
+{% endif %}
 
+{% if page_news %}
+    <div class="row parallax-content parallax-background-4 news">
+        <a name="news"></a>
+        <div class="parallax-inside">
+            <h2 class="section-title">{% trans 'News' %}</h2>
+            <div class="large-6 columns">
+                <p class="text-center">
+                    {% if facebook_widget %}
+                        {{ facebook_widget.widget_code|safe }}
+                    {% endif %}
+                </p>
+            </div>
+            <div class="large-6 columns">
+                <p class="text-center">
+                    {% if twitter_widget %}
+                        {{ twitter_widget.widget_code|safe }}
+                    {% endif %}
+                </p>
+            </div>
 
-<div class="row parallax-content parallax-background-4">
-    <a name="news"></a>
-    <div class="parallax-inside">
-        <h2 class="section-title">{% trans 'News' %}</h2>
-        <div class="large-6 columns">
-            <p class="text-center">
-                {% if facebook_widget %}
-                    {{ facebook_widget.widget_code|safe }}
-                {% endif %}
-            </p>
+            <div class="clearfix"></div>
         </div>
-        <div class="large-6 columns">
-            <p class="text-center">
-                {% if twitter_widget %}
-                    {{ twitter_widget.widget_code|safe }}
-                {% endif %}
-            </p>
-        </div>
-
-        <div class="clearfix"></div>
     </div>
-</div>
-
+{% endif %}
 
 <div class="row parallax-content parallax-background-5 dark gallery-latest">
     <a name="photos"></a>
-    <div class="parallax-inside">
-        <div class="large-12 columns">
+    <div class="grid-x parallax-inside">
+        <div class="cell columns">
+
+            {{ page_gallery.content|safe }}
         <h2 class="section-title">{% trans 'Photos' %}</h2>
             {% if images %}
                 <div class="row image-table">
@@ -130,13 +127,12 @@
         </div>
 
         <a href="{% url 'photologue:pl-photologue-root' %}" class="secondary button view-all">more</a>
-        <div class="clearfix"></div>
     </div>
 </div>
 
 <a name="bio"></a>
-<div class="row parallax-content parallax-background-6 dark">
-    <div class="parallax-inside">
+<div class="row parallax-content parallax-background-6">
+    <div class="grid-x parallax-inside">
         <div class="large-12 columns">
             <h2 class="section-title">{% trans 'About' %}</h2>
             <p>
@@ -155,7 +151,7 @@
 </div>
 
 
-<div class="row parallax-content parallax-background-7">
+<div class="row parallax-content parallax-background-7 dark">
     <a name="contact"></a>
     <div class="parallax-inside">
         <div class="large-12 columns">

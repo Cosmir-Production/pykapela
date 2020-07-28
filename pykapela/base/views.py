@@ -54,7 +54,7 @@ class BaseView(generic.View):
 
             for page in pages:
                 context.update({
-                    page.url: page
+                    'page_' + page.slug: page
                 })
         except IndexError as e:
             pass

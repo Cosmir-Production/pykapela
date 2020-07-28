@@ -39,6 +39,11 @@ if settings.DEBUG:
         url(r'^__debug__/', include(debug_toolbar.urls)),
     )
 
+    from django.contrib.staticfiles.views import serve
+    urlpatterns.append(
+        url(r'^static/(?P<path>.*)$', serve)
+    )
+
 urlpatterns += i18n_patterns(
     url(r'concerts/', include('pykapela.events.urls')),
     url(r'^$', views.WebView.as_view(), name='index'),

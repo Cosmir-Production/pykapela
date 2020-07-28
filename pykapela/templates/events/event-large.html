@@ -1,5 +1,5 @@
-<div class="row promoted-event">
-    <div class="large-6 columns text-right">
+<div class="grid-x promoted-event">
+    <div class="cell large-6 text-right">
         {% if event.image %}
             <p><img src="{{ event.image }}"> </p>
         {% endif %}
@@ -7,7 +7,7 @@
         <h2><span title="{{ event.datetime|date:"j. n. Y, H:i" }}">{{ event.datetime|date:"j. n. \'y" }}</span></h2>
 
     </div>
-    <div class="large-6 columns">
+    <div class="cell large-6">
         <h2>
             <a href="{% url "concert" slug=event.slug %}">
                 {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}

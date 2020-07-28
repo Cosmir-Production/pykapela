@@ -1,0 +1,45 @@
+
+#page {
+    .top-bar .top-bar-center {
+        overflow: auto;
+        background-color: black;
+        padding: 0;
+        opacity: 0.9;
+
+        ul {
+            text-align: center;
+            li {
+                display: inline-block;
+                background-color: black;
+                opacity: 1.0;
+                a {
+                    color: #fff;
+                    margin: 0;
+                    padding: 0.9rem 1rem;
+                    text-transform: uppercase;
+                    &:hover {
+                        background-color: #323232;
+                    }
+                    .current_item {
+                        background-color: #303030;
+                    }
+                }
+            }
+        }
+
+    }
+}
+//
+//
+//.top-bar ul {
+//    background-color: black;
+//    margin: 0;
+//    opacity: 0.9;
+//}
+//.top-bar li
+//.top-bar li:hover {
+//    background-color: #323232;
+//}
+//.top-bar .current_item {
+//    background-color: #303030;
+//}

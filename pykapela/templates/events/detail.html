@@ -9,27 +9,29 @@
 
 {% block content %}
 
-    <div class="row events-detail">
+    <div class="parallax-content parallax-content-first parallax-background-2 dark">
         <div class="parallax-inside">
-            <div class="large-12 columns">
 
+            <div class="grid-x">
+                <div class="cell">
 
-                <h1>{{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}</h1>
+                    <h1>{{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}</h1>
 
-                <p>{{ event.datetime|date:"j. n. 'y" }}</p>
+                    <p>{{ event.datetime|date:"j. n. 'y" }}</p>
 
-                <p>{{ event.address }}</p>
+                    <p>{{ event.address }}</p>
 
-                {% if user.is_staff %}
-                    <p class="edit"><a href="/admin/events/event/{{ event.id }}/change/">edit</a></p>
-                {% endif %}
+                    {% if user.is_staff %}
+                        <p class="edit"><a href="/admin/events/event/{{ event.id }}/change/">edit</a></p>
+                    {% endif %}
 
-                {% if event.image %}
-                    <p><img src="{{ event.image.url }}" width="{{ event.image.width }}" height="{{ event.image.height }}"> </p>
-                {% endif %}
+                    {% if event.image %}
+                        <p><img src="{{ event.image.url }}" width="{{ event.image.width }}" height="{{ event.image.height }}"> </p>
+                    {% endif %}
 
-                <p>{{ event.description|safe }}</p>
+                    <p>{{ event.description|safe }}</p>
 
+                </div>
             </div>
         </div>
     </div>
