@@ -32,38 +32,15 @@
     </style>
 
 
-{% if events_count > 0 %} {# we show past events later - show fans some music first #}
+{% if upcoming_events_count > 0 %} {# we show past events later - show fans some music first #}
 
-    <a name="shows"></a>
-    <div class="grid-x parallax-content parallax-background-2 shows">
+    <a name="events"></a>
+    <div class="grid-x parallax-content parallax-background-2 events">
         <div class="parallax-inside">
 
-            {% if events_count > 1 %}
-                <h2 class="section-title">{% trans 'Upcomming Shows' %}</h2>
-                <div class="cell small-6">
-            {% else %}
-                <h2 class="section-title">{% trans 'Next Show' %}</h2>
-                <div class="cell">
-            {% endif %}
+            {% include "events/events-upcomming.html" %}
 
-                {# First show is promoted #}
-                {% for event in events|slice:":1" %}
-                    {% include "events/event-large.html" %}
-                {% endfor %}
-
-            {% if events_count > 1 %}
-                </div>
-                <div class="cell small-6">
-            {% endif %}
-
-                {# few other events #}
-                {% for event in events|slice:"1:5" %}
-                    {% include "events/event-small.html" %}
-                {% endfor %}
-
-            </div>
-
-            <a href="{% url "concerts" %}" class="secondary button view-all">all concerts</a>
+            <a href="{% url "concerts" %}" class="secondary button large view-all">{% trans "View All Concerts" %}</a>
 
         </div>
     </div>

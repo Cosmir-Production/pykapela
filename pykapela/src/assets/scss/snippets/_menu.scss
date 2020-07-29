@@ -1,6 +1,6 @@
 
 #page {
-    .top-bar .top-bar-center {
+    .top-bar {
         overflow: auto;
         background-color: black;
         padding: 0;
@@ -27,6 +27,20 @@
             }
         }
 
+    }
+
+    .home-admin-link {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100px;
+        height: 30px;
+        border: 1px solid magenta;
+        &:hover {
+            background-color: magenta;
+            cursor: pointer;
+        }
     }
 }
 //

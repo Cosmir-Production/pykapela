@@ -1,92 +1,100 @@
+//
+//.cell {
+//    border: 1px solid red;
+//}
+html {
 
-body {
+    background-color: #000;
 
-    #page {
+    body {
 
-        .top-bar {
 
-            .top-bar-center {
-                text-align: center;
+        #page {
+
+            .top-bar {
+
+                .top-bar-center {
+                    text-align: center;
+                }
             }
-        }
 
-        .parallax-content {
-            height: 100vh;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            background-position: center center;
-            position: relative;
-            background-repeat: no-repeat;
-
-
-            &.parallax-background-1 {
+            .parallax-content {
                 height: 100vh;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
+                background-position: center center;
+                position: relative;
+                background-repeat: no-repeat;
+
+
+                &.parallax-background-1 {
+                    height: 100vh;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+
+                &.parallax-background-1 {
+                    background-attachment: fixed;
+                }
+                &.parallax-background-2 {
+                    .parallax-inside {
+                        background-image: url("/assets/img/white.png");
+                    }
+                }
+                &.parallax-background-3 {
+                    background-attachment: fixed;
+                    .parallax-inside {
+
+                    }
+                }
+                &.parallax-background-4 {
+                    .parallax-inside {
+                        background-image: url("/static/assets/img/white.png");
+                    }
+                }
+                &.parallax-background-5 {
+                    background-attachment: fixed;
+                    .parallax-inside {
+
+                    }
+                }
+                &.parallax-background-6 {
+                    .parallax-inside {
+                        background-image: url("/static/assets/img/white.png");
+                    }
+                }
+
+                .parallax-inside {
+                    margin: auto;
+                    height: 90vh;
+                    overflow: auto;
+                    text-align: center;
+                    width: 94vw;
+                    h2 {
+                        margin-top: 2em;
+                    }
+                }
+
+                &.dark {
+                    background-color: #000;
+                    color: #ffffff;
+                }
             }
 
-            &.parallax-background-1 {
-                background-attachment: fixed;
-            }
-            &.parallax-background-2 {
-                .parallax-inside {
-                    background-image: url("/static/img/white.png");
-                }
-            }
-            &.parallax-background-3 {
-                background-attachment: fixed;
-                .parallax-inside {
 
-                }
-            }
-            &.parallax-background-4 {
-                .parallax-inside {
-                    background-image: url("/static/img/white.png");
-                }
-            }
-            &.parallax-background-5 {
-                background-attachment: fixed;
-                .parallax-inside {
+        }
 
-                }
-            }
-            &.parallax-background-6 {
-                .parallax-inside {
-                    background-image: url("/static/img/white.png");
-                }
-            }
-
-            .parallax-inside {
-                margin: 0.3em;
-                height: 90vh;
-                overflow: auto;
+        .pykapela-footer {
+            p {
                 text-align: center;
-                width: 100vw;
-                h2 {
-                    margin-top: 2em;
-                }
+                padding: 2rem 0;
             }
 
-            &.dark {
-                background-color: #000;
-                color: #ffffff;
-            }
-        }
-
-
-    }
-
-    #footer {
-        background-color: #808080;
-        p {
-            text-align: center;
-            padding: 2rem 0;
         }
 
     }
-
 }

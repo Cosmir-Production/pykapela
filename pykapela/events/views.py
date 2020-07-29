@@ -19,12 +19,15 @@ class EventView(BaseView):
         # concerts
         self.context['upcoming_events'] = Event.objects.filter(
             is_published=True,
-            datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0),
+            datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3),
         )
-        self.context['events'] = Event.objects.filter(
+        self.context['upcoming_events_count'] = self.context['upcoming_events'].count()
+
+        self.context['archive_events'] = Event.objects.filter(
             is_published=True,
-            datetime__lte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0),
+            datetime__lte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3),
         )
+        self.context['archive_events_count'] = self.context['archive_events'].count()
 
         return render(request, 'events/index.html', self.context)
 
@@ -32,10 +35,10 @@ class EventView(BaseView):
 class EventDetailView(BaseView):
 
     """
-    Concerts
+    Concert detail
     """
     # @cache_page(settings.CACHE_VIEWS_DEFAULT_TIME)
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, slug=None, *args, **kwargs):
 
         self.context = super()._prepare_context()
 

@@ -21,11 +21,11 @@ class WebView(BaseView):
         context['homepage'] = True
 
         # concert stay on homepage till this midnight
-        context['events'] = Event.objects.filter(
+        context['upcoming_events'] = Event.objects.filter(
             is_published=True,
-            datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0)
+            datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3)
         )
-        context['events_count'] = context['events'].count()
+        context['upcoming_events_count'] = context['upcoming_events'].count()
 
         try:
              socials = Social.objects.exclude(widget_code='').exclude(is_published=False).order_by('position')

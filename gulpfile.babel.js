@@ -66,6 +66,11 @@ function javascript() {
     .pipe(gulp.dest(destination + 'assets/js'));
 }
 
+function asset_files() {
+  return gulp.src('pykapela/src/assets/img/*.*')
+      .pipe(gulp.dest(destination + 'assets/img'))
+}
+
 function serve() {
   browserSync.init({
     proxy: "localhost:8000",
@@ -87,6 +92,6 @@ gulp.task('runserver', function() {
 });
 
 gulp.task('sass', sass);
-gulp.task('start', gulp.series('sass', javascript, serve));
-gulp.task('default', gulp.series('sass', javascript, serve));
-gulp.task('build', gulp.series('sass', javascript));
+gulp.task('start', gulp.series('sass', asset_files, javascript, serve));
+gulp.task('default', gulp.series('sass', asset_files, javascript, serve));
+gulp.task('build', gulp.series('sass', asset_files, javascript));

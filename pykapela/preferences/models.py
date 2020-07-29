@@ -17,9 +17,17 @@ class Preference(BaseModel):
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
 
+    favicon = models.FileField(
+        upload_to="images/",
+        verbose_name="Favicon",
+        help_text=_("User some generator to create your favicon.ico file."),
+        null=True,
+        blank=True,
+    )
+
     logo = models.ImageField(
         upload_to='images/logo/',
-        verbose_name=_('admin-logo'),
+        verbose_name=_('Logo'),
         null=True,
         blank=True,
     )

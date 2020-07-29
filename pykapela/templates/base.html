@@ -5,7 +5,7 @@
     {% block head %}
 
         <meta charset="utf-8">
-        <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
+        <link rel="shortcut icon" href="{{ config_favicon.url }}" type="image/x-icon" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -66,10 +66,19 @@
         </div>
 
         {% block footer %}
-            <div id="footer">
-                <p>© {{ SITE_NAME }} since 2009. All rights reserved. Všechna práva vyhrazena.<br>
-                   {{ config_footer_slogan }}<br>
-                    <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a>
+            <div class="pykapela-footer">
+                <p>
+                    <span class="copyright">
+                        © {{ SITE_NAME }} since 2009. All rights reserved. Všechna práva vyhrazena.
+                    </span>
+                    <br>
+                    <span class="footer_slogan">
+                        {{ config_footer_slogan }}
+                    </span>
+                    <br>
+                    <span span="creator">
+                        <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> | <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>
+                    </span>
                 </p>
             </div>
         {% endblock %}
