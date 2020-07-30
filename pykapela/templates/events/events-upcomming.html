@@ -8,23 +8,23 @@
 
 <div class="grid-x">
 
-        <div class="cell">
+    <div class="cell">
 
-    {# First show is promoted, with huge space #}
-    {% for event in upcoming_events|slice:":1" %}
-        {% include "events/event-large.html" %}
-    {% endfor %}
-
-    {% if upcoming_events_count > 1 %}
-        <br /><br />
-        <div class="cell">
-
-        {# few other events #}
-        {% for event in upcoming_events|slice:"1:5" %}
-            {% include "events/event-small.html" %}
+        {# First show is promoted, with huge space #}
+        {% for event in upcoming_events|slice:":1" %}
+            {% include "events/event-large.html" %}
         {% endfor %}
 
-        </div>
-    {% endif %}
+        {% if upcoming_events_count > 1 %}
+            <br /><br />
+
+            {# few other events #}
+            {% for event in upcoming_events|slice:"1:5" %}
+                {% include "events/event-small.html" %}
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
 
 </div>

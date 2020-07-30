@@ -15,7 +15,7 @@
 
         <link rel="stylesheet" href="{% static "assets/css/app.css" %}">
 
-        <style type="text/css">
+        <style>
 
             {% if page_homepage and page_homepage.image %}.parallax-background-1 { background-image: url("/media/{{ page_homepage.image }}"); }{% endif %}
             {% if page_events and page_events.image %}.parallax-background-2 { background-image: url("/media/{{ page_events.image }}"); }{% endif %}
@@ -80,7 +80,7 @@
                         {{ config_footer_slogan }}
                     </span>
                     <br>
-                    <span span="creator">
+                    <span class="creator">
                         <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> |
                         <a href="/admin/" class="home-admin-link">admin</a> |
                         <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>

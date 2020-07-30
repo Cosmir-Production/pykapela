@@ -78,7 +78,6 @@
                 </p>
             </div>
 
-            <div class="clearfix"></div>
         </div>
     </div>
 {% endif %}
@@ -136,7 +135,7 @@
             {{ page_contact.content|safe }}
 
             <p class="contact-us">
-                <a href="tel:{{ CONTACT_PHONE }}">{{ CONTACT_PHONE }}</a><br>
+                <a href="tel:{{ CONTACT_PHONE|cut:" " }}">{{ CONTACT_PHONE }}</a><br>
                 <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a><br>
             </p>
         </div>
