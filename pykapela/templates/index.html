@@ -59,34 +59,37 @@
 {% endif %}
 
 {% if page_news %}
-    <div class="row parallax-content parallax-background-4 news">
-        <a name="news"></a>
+    <a name="news"></a>
+    <div class="grid-x parallax-content parallax-background-4 news">
         <div class="parallax-inside">
             <h2 class="section-title">{% trans page_news.title %}</h2>
-            <div class="large-6 columns">
+            <div class="cell {% if twitter_widget.widget_code %} large-6{% endif %}">
                 <p class="text-center">
                     {% if facebook_widget %}
                         {{ facebook_widget.widget_code|safe }}
                     {% endif %}
                 </p>
             </div>
-            <div class="large-6 columns">
-                <p class="text-center">
-                    {% if twitter_widget %}
-                        {{ twitter_widget.widget_code|safe }}
-                    {% endif %}
-                </p>
-            </div>
+
+            {% if twitter_widget.widget_code %}
+                <div class="cell large-6">
+                    <p class="text-center">
+                        {% if twitter_widget %}
+                            {{ twitter_widget.widget_code|safe }}
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
 
         </div>
     </div>
 {% endif %}
 
 {% if page_gallery %}
-<div class="row parallax-content parallax-background-5 dark gallery-latest">
+<div class="grid-x parallax-content parallax-background-5 dark gallery-latest">
     <a name="photos"></a>
-    <div class="grid-x parallax-inside">
-        <div class="cell columns">
+    <div class="parallax-inside">
+        <div class="cell">
 
             <h2 class="section-title">{% trans page_gallery.title %}</h2>
 
@@ -105,23 +108,22 @@
             {% endif %}
         </div>
 
-        <a href="{% url 'photologue:pl-photologue-root' %}" class="secondary button view-all">more</a>
+        <a href="{% url 'photologue:pl-photologue-root' %}" class="secondary button view-all">{% trans "See All Photos" %}</a>
     </div>
 </div>
 {% endif %}
 
 {% if page_bio %}
-<a name="bio"></a>
-<div class="row parallax-content parallax-background-6">
-    <div class="grid-x parallax-inside">
-        <div class="large-12 columns">
+<div class="grid-x parallax-content parallax-background-6">
+    <a name="bio"></a>
+    <div class="parallax-inside">
+        <div class="cell large-12">
             <h2 class="section-title">{% trans page_bio.title %}</h2>
 
             {{ page_bio.content|safe }}
 
         </div>
 
-        <div class="clearfix"></div>
     </div>
 </div>
 {% endif %}
