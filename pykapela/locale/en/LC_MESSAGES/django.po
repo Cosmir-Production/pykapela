@@ -1,77 +1,20 @@
-#: base/models.py:10
-msgid "admin-base-base-time-model-created"
+#
+msgid ""
 msgstr ""
-
-#: base/models.py:14
-msgid "admin-base-base-time-model-changed"
-msgstr ""
-
-#: pages/models.py:25
-msgid "admin-pages-image"
-msgstr ""
-
-#: pages/templates/concerts.html:5
-msgid "Shows"
-msgstr ""
-
-#: preferences/models.py:23
-msgid "User some generator to create your favicon.ico file."
-msgstr ""
-
-#: preferences/models.py:30
-msgid "Logo"
-msgstr ""
-
-#: settings/main.py:116
-msgid "English"
-msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: info@meteleska.com\n"
+"POT-Creation-Date: 2020-07-30 14:37:55\n"
+"PO-Revision-Date: 2020-07-30 14:37:55\n"
+"Last-Translator: Server <root@localhost>\n"
+"Language-Team: English <info@meteleska.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: settings/main.py:117
 msgid "Cesky"
-msgstr ""
+msgstr "Česky"
 
-#: templates/events/events-archive.html:2
-msgid "Last Shows"
-msgstr ""
-
-#: templates/events/events-upcomming.html:4
-msgid "Upcomming Shows"
-msgstr ""
-
-#: templates/events/events-upcomming.html:6
-msgid "Next Show"
-msgstr ""
-
-#: templates/index.html:43
-msgid "View All Concerts"
-msgstr ""
-
-#: templates/index.html:111
-msgid "See All Photos"
-msgstr ""
-
-#: templates/photologue/gallery_detail.html:11
-#: templates/photologue/gallery_list.html:16
-msgid "Published"
-msgstr ""
-
-#: templates/photologue/gallery_detail.html:18
-msgid "View all galleries"
-msgstr ""
-
-#: templates/photologue/gallery_list.html:4
-#: templates/photologue/gallery_list.html:9
-msgid "All galleries"
-msgstr ""
-
-#: templates/photologue/gallery_list.html:26
-msgid "No galleries were found"
-msgstr ""
-
-#: templates/photologue/tags/next_in_gallery.html:7
-msgid "Next"
-msgstr ""
-
-#: templates/photologue/tags/prev_in_gallery.html:6
-msgid "Previous"
-msgstr ""
+#: settings/main.py:116
+msgid "English"
+msgstr "English"
