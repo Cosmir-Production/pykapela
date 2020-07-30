@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
     'translation_manager',
+    'modeltranslation',
     'sitetree',
     'debug_toolbar',
     'tinymce',
@@ -45,9 +46,11 @@ INSTALLED_APPS = [
     'sortedm2m',
     'taggit',
 
+    'pykapela',
+    'pykapela.base',
+    'pykapela.menu',
     'pykapela.photologue_custom',
     'pykapela.preferences',
-    'pykapela.base',
     'pykapela.app',
     'pykapela.social',
     'pykapela.events',
@@ -142,3 +145,6 @@ PHOTOLOGUE_GALLERY_LATEST_LIMIT = 6
 #PHOTOLOGUE_PATH = os.path.join(BASE_DIR, 'media')
 
 CACHE_VIEWS_DEFAULT_TIME = 60 * 60  # one hour
+
+SITETREE_MODEL_TREE = 'menu.MenuTree'
+SITETREE_MODEL_TREE_ITEM = 'menu.MenuItem'
