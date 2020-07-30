@@ -6,42 +6,36 @@
         padding: 0;
         opacity: 0.9;
 
-        ul {
-            text-align: center;
-            li {
-                display: inline-block;
-                background-color: black;
-                opacity: 1.0;
-                a {
-                    color: #fff;
-                    margin: 0;
-                    padding: 0.9rem 1rem;
-                    text-transform: uppercase;
-                    &:hover {
-                        background-color: #323232;
-                    }
-                    .current_item {
-                        background-color: #303030;
+        .top-bar-center {
+            width: 100%;
+            ul {
+                //text-align: center;
+                display: table;
+                margin: 0 auto;
+
+                li {
+                    display: table-cell;
+                    background-color: black;
+                    opacity: 1.0;
+                    a {
+                        color: #fff;
+                        margin: 0;
+                        padding: 0.9rem 1rem;
+                        text-transform: uppercase;
+                        &:hover {
+                            background-color: #323232;
+                        }
+                        .current_item {
+                            background-color: #303030;
+                        }
                     }
                 }
             }
         }
 
+
     }
 
-    .home-admin-link {
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: block;
-        width: 100px;
-        height: 30px;
-        border: 1px solid magenta;
-        &:hover {
-            background-color: magenta;
-            cursor: pointer;
-        }
-    }
 }
 //
 //

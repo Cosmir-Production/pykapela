@@ -76,6 +76,8 @@ function serve() {
     proxy: "localhost:8000",
     port: 8000,
     notify: false,
+    open: false,
+    reloadOnRestart: true,
   });
 
   gulp.watch("pykapela/src/assets/scss/*.scss", sass);
