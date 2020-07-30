@@ -39,7 +39,6 @@
     </head>
     <body {% block body_class %}class="page-homepage"{% endblock %}>
 
-        <span class="home-admin-link"><a href="/admin/">{% if user.is_authenticated %}Admin{% else %}&nbsp;{% endif %}</a></span>
 
         <div id="page">
 
@@ -82,8 +81,12 @@
                     </span>
                     <br>
                     <span span="creator">
-                        <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> | <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>
+                        <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> |
+                        <a href="/admin/" class="home-admin-link">admin</a> |
+                        <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>
                     </span>
+                    <br>
+
                 </p>
             </div>
         {% endblock %}
