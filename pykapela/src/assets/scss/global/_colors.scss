@@ -1,21 +1,26 @@
 
+#page {
 
-.parallax-content {
+    background-color: #000;
 
-    a {
-        color: #000;
-        text-decoration: underline;
+    .parallax-content {
 
-        &:hover {
-            text-decoration: none;
-            color: #2b2b2b;
+        a {
+            color: #000;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+                color: #2b2b2b;
+            }
         }
-    }
 
-    &.dark a {
-        color: #fff;
-        &:hover {
+        &.dark a {
+            color: #fff;
+            &:hover {
+            }
         }
+
     }
 
 }

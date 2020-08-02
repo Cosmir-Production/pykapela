@@ -2,6 +2,7 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template.defaultfilters import slugify
 from django.views import generic
+from django.utils.translation import get_language
 
 from pykapela.pages.models import Page
 from pykapela.preferences.models import Preference
@@ -39,6 +40,17 @@ class BaseView(generic.View):
 
         preferences = Preference().get_values()
         context.update(preferences)
+
+        # languages:
+        current_language = get_language()
+        available_languages = [{'code': item[0], 'name': item[1]} for item in settings.LANGUAGES if item[0] == current_language[:2]]
+
+        for lang in settings.LANGUAGES:
+            if lang[0] != current_language[:2]:
+                available_languages.append({'code': lang[0], 'name': lang[1]})
+
+        context['languages'] = available_languages
+        context['current_language'] = current_language[:2]
 
         socials = Social.objects.filter(
             is_published=True,

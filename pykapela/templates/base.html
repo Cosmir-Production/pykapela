@@ -39,24 +39,49 @@
     </head>
     <body {% block body_class %}class="page-homepage"{% endblock %}>
 
-
         <div id="page">
 
-            {%  block main_menu %}
+            {% block main_menu %}
                 <div data-sticky-container>
-                    <div data-sticky data-options="marginTop:0;" style="width:100%">
+
+                    <div class="title-bar" data-responsive-toggle="pykapela-main-menu" data-hide-for="medium">
+                        <button class="menu-icon" type="button" data-toggle="pykapela-main-menu"></button>
+                        <div class="title-bar-title">MENU</div>
+                    </div>
+
+                    <div class="title-bar" data-options="marginTop:0;" style="width:100%">
+                        <div class="title-bar-center" id="pykapela-main-menu">
+                            {% load sitetree %}
+                            {% sitetree_menu from "main_menu" include "trunk, menu" %}
+                        </div>
+                        <div class="title-bar-right" id="pykapela-language-menu">
+                            {% include "snippets/languages.html" %}
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %}
+                <div data-sticky-container>
+                    <div class="sticky" data-sticky>
+
                         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-                            <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                            <button class="menu-icon" type="button" data-toggle="main-menu"></button>
                             <div class="title-bar-title">Menu</div>
                         </div>
+
                         <div class="top-bar" id="main-menu">
                             <div class="top-bar-center">
                                 {% load sitetree %}
                                 {% sitetree_menu from "main_menu" include "trunk, menu" %}
                               </div>
+                            <div class="top-bar-right" id="languages">
+                                {% include "snippets/languages.html" %}
+                            </div>
                         </div>
+
                     </div>
                 </div>
+                {% endcomment %}
             {%  endblock %}
 
             {% block heading %}

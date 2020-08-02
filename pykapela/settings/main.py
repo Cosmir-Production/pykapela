@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'sortedm2m',
     'taggit',
 
-    'pykapela',
     'pykapela.base',
     'pykapela.menu',
     'pykapela.photologue_custom',
