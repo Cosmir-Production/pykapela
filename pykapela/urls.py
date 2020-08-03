@@ -10,7 +10,7 @@ from django.urls import re_path, path
 from sitetree.sitetreeapp import register_i18n_trees
 
 from . import views
-from .gallery.views import GalleryView, GalleryDetailView
+from .gallery.views import GalleryView, GalleryDetailView, PhotoView
 
 admin.autodiscover()
 
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^media/photologue/gallery/(?P<slug>[\-\d\w]+)/$',
         GalleryDetailView.as_view(), name='gallery_detail'),
     url(r'^media/photologue/gallery/$', GalleryView.as_view(), name='gallery'),
+    url(r'^media/photologue/photo/(?P<slug>[\-\d\w]+)/$', PhotoView.as_view(), name='photo'),
 
     re_path(r'^media/photologue/', include('photologue.urls', namespace='photologue')),
 
