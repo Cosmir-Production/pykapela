@@ -43,11 +43,19 @@ class BaseView(generic.View):
 
         # languages:
         current_language = get_language()
-        available_languages = [{'code': item[0], 'name': item[1]} for item in settings.LANGUAGES if item[0] == current_language[:2]]
+        available_languages = [{
+            'code': item[0],
+            'name': item[1],
+            'flag': 'assets/img/flag-' + item[0] + '.png'
+        } for item in settings.LANGUAGES if item[0] == current_language[:2]]
 
         for lang in settings.LANGUAGES:
             if lang[0] != current_language[:2]:
-                available_languages.append({'code': lang[0], 'name': lang[1]})
+                available_languages.append({
+                    'code': lang[0],
+                    'name': lang[1],
+                    'flag': 'assets/img/flag-' + lang[0] + '.png',
+                })
 
         context['languages'] = available_languages
         context['current_language'] = current_language[:2]

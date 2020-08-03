@@ -2,7 +2,7 @@
 #page {
     .title-bar {
 
-        opacity: 0.9;
+        //opacity: 0.9;
 
         ul {
             li {
@@ -27,7 +27,6 @@
             width: 100%;
 
             ul {
-
                 display: table;
                 margin: 0 auto;
 
@@ -39,15 +38,17 @@
             }
         }
 
-        .title-bar-right {
+        .title-bar-right { // languages
+
+            position: absolute;
+            right: 0px;
+            top: 3px;
+
             ul {
 
-                min-width: 200px;
-                display: table;
+                min-width: 130px;
 
                 li {
-
-                    display: table-cell;
 
                     a {
 
@@ -55,5 +56,35 @@
                 }
             }
         }
+
     }
+
+    @media screen and (max-width: 640px) {
+
+        .title-bar {
+
+            //min-height: 2.4rem;
+
+            .title-bar-title {
+                margin-left: 0.3rem;
+                color: #fff;
+            }
+
+
+            .title-bar-center {
+
+                ul {
+                    margin-top: 3rem;
+                    display: block;
+                    height: 50vh;
+                    li {
+                        display: inline;
+                    }
+                }
+            }
+
+        }
+    }
+
+
 }

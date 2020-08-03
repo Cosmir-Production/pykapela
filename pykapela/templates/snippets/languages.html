@@ -1,5 +1,8 @@
+{% load static %}
 <ul class="dropdown menu" data-dropdown-menu>
     {% for lang in languages %}
-        <li><a href="/{{ lang.code }}/">{{ lang.name }}</a></li>
+        <li class="{% if current_language == lang.code %}is-active{% endif %}">
+            <a href="/{{ lang.code }}/" title="{{ lang.name }}"><img title="{{ lang.name }}" src="{% static lang.flag %}"></a>
+        </li>
     {% endfor %}
 </ul>
