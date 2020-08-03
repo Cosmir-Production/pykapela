@@ -1,8 +1,10 @@
 
-#page {
+body {
+    position: relative;
     .title-bar {
 
-        //opacity: 0.9;
+        opacity: 0.9;
+
 
         ul {
             li {
@@ -32,7 +34,6 @@
 
                 li {
                     display: table-cell;
-                    background-color: black;
                     opacity: 1.0;
                 }
             }
