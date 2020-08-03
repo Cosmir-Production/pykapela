@@ -60,6 +60,13 @@ body {
 
     }
 
+    // smaller font, so menu will fit
+    @media screen and (min-width: 640px) and (max-width: 940px) {
+        .title-bar .title-bar-center {
+            font-size: 0.9rem;
+        }
+    }
+
     @media screen and (max-width: 640px) {
 
         .title-bar {
