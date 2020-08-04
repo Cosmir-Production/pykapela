@@ -5,7 +5,7 @@
 
 {% block title %} | {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}{% endblock %}
 
-{% block body_class %}class="page-events"{% endblock %}
+{% block body_class %}class="page-event"{% endblock %}
 
 {% block content %}
 
@@ -17,19 +17,20 @@
 
                     <h1>{{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}</h1>
 
-                    <p>{{ event.datetime|date:"j. n. 'y" }}</p>
+                    <h3>{{ event.datetime|date:"j. n. 'y" }}</h3>
 
                     <p>{{ event.address }}</p>
 
-                    {% if user.is_staff %}
-                        <p class="edit"><a href="/admin/events/event/{{ event.id }}/change/">edit</a></p>
-                    {% endif %}
 
                     {% if event.image %}
                         <p><a href="{{ event.image.url }}"><img src="{{ event.image.url }}" height="500"></a></p>
                     {% endif %}
 
                     <p>{{ event.description|safe }}</p>
+
+                    {% if user.is_staff %}
+                        <p class="edit"><a href="/admin/events/event/{{ event.id }}/change/">edit</a></p>
+                    {% endif %}
 
                 </div>
             </div>
