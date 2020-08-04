@@ -4,7 +4,9 @@
             <p><img src="/media/{{ event.image }}" width="250"> </p>
         {% endif %}
 
-        <h2><span title="{{ event.datetime|date:"j.n.Y, H:i" }}">{{ event.datetime|date:"j.n.\'y" }}</span></h2>
+        {% if not event.image %}
+            <h2><span title="{{ event.datetime|date:"j.n.Y, H:i" }}">{{ event.datetime|date:"j.n.\'y" }}</span></h2>
+        {% endif %}
 
     </div>
     <div class="cell small-9 medium-9 large-6 text-left event-inside">
