@@ -14,6 +14,8 @@ class Preference(BaseModel):
     description = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
     footer_slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
 
+    promoted_gallery = models.IntegerField(default=1, help_text='ID of gallery to be promoted on homepage.')
+
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
 
