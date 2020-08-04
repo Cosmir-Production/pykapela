@@ -6,16 +6,17 @@
     }
 }
 
-.home-admin-link {
-    a {
-        color: #fff;
+.pykapela-footer .admin {
+
+    a.home-admin-link {
+
+        color: #636363;
         padding: 0.1rem 0.3rem;
         &:hover {
             cursor: pointer;
             color: #fff;
-            background-color: #787878;
 
         }
-    }
 
+    }
 }

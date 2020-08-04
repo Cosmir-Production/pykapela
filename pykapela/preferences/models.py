@@ -13,6 +13,7 @@ class Preference(BaseModel):
     slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
     description = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
     footer_slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
+    footer_copyright = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
 
     promoted_gallery = models.IntegerField(default=1, help_text='ID of gallery to be promoted on homepage.')
 
