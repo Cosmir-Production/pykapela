@@ -22,7 +22,6 @@ html {
             }
 
             .parallax-content {
-                height: 100vh;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
@@ -33,7 +32,6 @@ html {
 
 
                 &.parallax-background-1 {
-                    height: 100vh;
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                     -o-background-size: cover;
@@ -73,8 +71,8 @@ html {
 
                 .parallax-inside {
                     margin: auto;
-                    height: 90vh;
-                    overflow: auto;
+                    min-height: 90vh;
+                    margin-bottom: 30vh;
                     text-align: center;
                     width: 94vw;
                     h2 {
@@ -82,10 +80,14 @@ html {
                     }
                 }
 
-                &.long {
-                    height: auto;
+                &.fixed-height {
+                    height: 100vh;
+                    .parallax-background-1 {
+                        height: 100vh;
+                    }
                     .parallax-inside {
-                        height: auto;
+                        height: 90vh;
+                        overflow: auto;
                     }
                 }
 

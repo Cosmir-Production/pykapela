@@ -26,7 +26,7 @@ class EventView(BaseView):
         self.context['archive_events'] = Event.objects.filter(
             is_published=True,
             datetime__lte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3),
-        )
+        ).order_by('-datetime')
         self.context['archive_events_count'] = self.context['archive_events'].count()
 
         return render(request, 'events/index.html', self.context)

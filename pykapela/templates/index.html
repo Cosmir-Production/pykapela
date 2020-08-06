@@ -35,7 +35,7 @@
 {% if upcoming_events_count > 0 %} {# we show past events later - show fans some music first #}
 
     <a name="events"></a>
-    <div class="grid-x parallax-content parallax-background-2 events">
+    <div class="grid-x parallax-content parallax-background-2 events fixed-height">
         <div class="parallax-inside">
 
             {% include "events/events-upcomming.html" %}
@@ -47,7 +47,7 @@
 {% endif %}
 
 {% if page_music %}
-    <div class="row parallax-content parallax-background-3 dark music">
+    <div class="row parallax-content parallax-background-3 dark music fixed-height">
         <a name="music"></a>
         <div class="parallax-inside">
             <h2 class="section-title">{{ page_music.title }}</h2>
@@ -60,7 +60,7 @@
 
 {% if page_news %}
     <a name="news"></a>
-    <div class="grid-x parallax-content parallax-background-4 news">
+    <div class="grid-x parallax-content parallax-background-4 news fixed-height">
         <div class="parallax-inside">
             <h2 class="section-title">{% trans page_news.title %}</h2>
             <div class="cell {% if twitter_widget.widget_code %} large-6{% endif %}">
@@ -86,7 +86,7 @@
 {% endif %}
 
 {% if page_gallery %}
-<div class="grid-x parallax-content parallax-background-5 dark gallery-latest">
+<div class="grid-x parallax-content parallax-background-5 dark gallery-latest fixed-height">
     <a name="photos"></a>
     <div class="parallax-inside">
         <div class="cell">
@@ -114,7 +114,7 @@
 {% endif %}
 
 {% if page_bio %}
-<div class="grid-x parallax-content parallax-background-6">
+<div class="grid-x parallax-content parallax-background-6 fixed-height">
     <a name="bio"></a>
     <div class="parallax-inside">
         <div class="cell large-12">
@@ -128,7 +128,7 @@
 </div>
 {% endif %}
 
-<div class="row parallax-content parallax-background-7 dark">
+<div class="row parallax-content parallax-background-7 dark fixed-height">
     <a name="contact"></a>
     <div class="parallax-inside">
         <div class="large-12 columns">
