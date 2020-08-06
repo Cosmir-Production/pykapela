@@ -11,7 +11,10 @@ class Preference(BaseModel):
 
     site_name = models.CharField(max_length=256)
     slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
-    description = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
+    title_slogan = models.CharField(max_length=100, default='', blank=True,
+                                    help_text="Visible on homepage in browser's title or favourites.")
+    description = models.CharField(max_length=255, default='', blank=True,
+                                   help_text='Visible in Google on basic search.')
     footer_slogan = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
     footer_copyright = models.CharField(max_length=255, default='', blank=True, help_text='Optional.')
 
