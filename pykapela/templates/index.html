@@ -140,6 +140,22 @@
                 <a href="tel:{{ CONTACT_PHONE|cut:" " }}">{{ CONTACT_PHONE }}</a><br>
                 <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a><br>
             </p>
+
+            {% if config_rider_file or config_press_zip_file %}
+                <h2>{% trans "Downloads" %}</h2>
+                {% if config_rider_file %}
+                    <p><a href="{{ config_rider_file.url }}">{% trans "Rider" %}</a></p>
+                {% endif %}
+                {% if config_press_zip_file %}
+                    <p><a href="{{ config_press_zip_file.url }}">{% trans "Press Photos (high quality)" %}</a></p>
+                {% endif %}
+
+                {% if config_logo_file %}
+                    <p><a href="{{ config_logo_file.url }}">{% trans "Logo" %}</a></p>
+                {% endif %}
+
+            {% endif %}
+
         </div>
 
         <div class="clearfix"></div>

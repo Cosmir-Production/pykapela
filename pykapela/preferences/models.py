@@ -20,6 +20,29 @@ class Preference(BaseModel):
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
 
+    rider_file = models.FileField(
+        upload_to="files/",
+        verbose_name=_("Rider"),
+        help_text=_("Rider - technical and other demands for promoters."),
+        null=True,
+        blank=True,
+    )
+
+    press_zip_file = models.FileField(
+        upload_to="files/",
+        verbose_name=_("Press Photos"),
+        help_text=_("ZIP file with high quality photos."),
+        null=True,
+        blank=True,
+    )
+
+    logo_file = models.FileField(
+        upload_to="files/",
+        verbose_name=_("Logo for download."),
+        null=True,
+        blank=True,
+    )
+
     favicon = models.FileField(
         upload_to="images/",
         verbose_name="Favicon",
