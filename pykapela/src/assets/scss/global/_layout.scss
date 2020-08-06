@@ -91,6 +91,11 @@ html {
                     }
                 }
 
+                .parallax-left {
+                    margin: 0 auto;
+                    max-width: 560px;
+                }
+
                 &.dark {
                     background-color: #000;
                     color: #ffffff;

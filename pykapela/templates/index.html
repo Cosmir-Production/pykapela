@@ -142,18 +142,20 @@
             </p>
 
             {% if config_rider_file or config_press_zip_file %}
-                <h2>{% trans "Downloads" %}</h2>
-                {% if config_rider_file %}
-                    <p><a href="{{ config_rider_file.url }}">{% trans "Rider" %}</a></p>
-                {% endif %}
-                {% if config_press_zip_file %}
-                    <p><a href="{{ config_press_zip_file.url }}">{% trans "Press Photos (high quality)" %}</a></p>
-                {% endif %}
+                <div class="parallax-left">
+                    <h2>{% trans "Downloads" %}</h2>
 
-                {% if config_logo_file %}
-                    <p><a href="{{ config_logo_file.url }}">{% trans "Logo" %}</a></p>
-                {% endif %}
+                    {% if config_rider_file %}
+                        <p class="text-left"><a href="{{ config_rider_file.url }}">{% trans "Rider" %} ({{ config_rider_file.size|filesizeformat }})</a></p>
+                    {% endif %}
+                    {% if config_press_zip_file %}
+                        <p class="text-left"><a href="{{ config_press_zip_file.url }}">{% trans "Press Photos in High Quality" %} ({{ config_press_zip_file.size|filesizeformat }})</a></p>
+                    {% endif %}
+                    {% if config_logo_file %}
+                        <p class="text-left"><a href="{{ config_logo_file.url }}">{% trans "Logo" %} ({{ config_logo_file.size|filesizeformat }})</a></p>
+                    {% endif %}
 
+                </div>
             {% endif %}
 
         </div>
