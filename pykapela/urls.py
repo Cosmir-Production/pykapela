@@ -11,6 +11,7 @@ from sitetree.sitetreeapp import register_i18n_trees
 
 from . import views
 from .gallery.views import GalleryView, GalleryDetailView, PhotoView
+from .pages.views import PageView
 
 admin.autodiscover()
 
@@ -47,7 +48,11 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns(
     url(r'concerts/', include('pykapela.events.urls')),
+
+
     url(r'^$', views.WebView.as_view(), name='index'),
+    url(r'^(?P<slug>.*)$', PageView.as_view(), name='pages'),
+
 )
 
 register_i18n_trees(['main_menu'])
