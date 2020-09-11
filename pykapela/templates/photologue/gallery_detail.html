@@ -4,16 +4,19 @@
 {% block title %}{{ gallery.title }}{% endblock %}
 
 {% block content %}
-
-	<div class="row col-lg-12">
-        <h1 class="page-header">{{ gallery.title }}</h1>
-        <p class="muted"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>        
-        {% if gallery.description %}{{ gallery.description|safe }}{% endif %}
-	    {% for photo in photos %}
-	        <a href="{{ photo.get_absolute_url }}">
-	             <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
-	        </a>
-	    {% endfor %}
-        <div><a href="{% url 'photologue:gallery-list' %}" class="btn btn-default">{% trans "View all galleries" %}</a></div>
-	</div>
+    <div class="parallax-content parallax-content-first parallax-background-5 dark">
+        <div class="grid-x parallax-inside">
+            <div class="cell">
+                <h1 class="page-header">{{ gallery.title }}</h1>
+                <p class="muted"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>
+                {% if gallery.description %}{{ gallery.description|safe }}{% endif %}
+                {% for photo in photos %}
+                    <a href="{{ photo.get_absolute_url }}">
+                         <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+                    </a>
+                {% endfor %}
+                <div><a href="{% url 'photologue:gallery-list' %}" class="btn btn-default">{% trans "View all galleries" %}</a></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

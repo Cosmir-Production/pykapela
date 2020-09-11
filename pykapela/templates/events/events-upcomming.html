@@ -1,0 +1,30 @@
+{% load i18n %}
+
+{% if upcoming_events_count > 1 %}
+    <h2 class="section-title">{% trans 'Upcomming Shows' %}</h2>
+{% else %}
+    <h2 class="section-title">{% trans 'Next Show' %}</h2>
+{% endif %}
+
+<div class="grid-x">
+
+    <div class="cell">
+
+        {# First show is promoted, with huge space #}
+        {% for event in upcoming_events|slice:":1" %}
+            {% include "events/event-large.html" %}
+        {% endfor %}
+
+        {% if upcoming_events_count > 1 %}
+            <br /><br />
+
+            {# few other events #}
+            {% for event in upcoming_events|slice:"1:5" %}
+                {% include "events/event-small.html" %}
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+</div>

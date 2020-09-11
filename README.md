@@ -96,6 +96,18 @@ Type this in your browser
 
 Celebrate ;-)
 
+
+### Working with Translation Manager ###
+On Localhost
+* update translations
+* translate
+* make them public
+* version via GIT
+
+On server:
+* load translations from *po, public translations
+* restart supervizorctl 
+
 ### Contribution guidelines ###
 
 * Writing tests, haha

@@ -1,8 +1,29 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.utils.translation import ugettext as _
+
+from pykapela.base.views import BaseView
+from pykapela.pages.models import Page
 
 
-def index(request):
-    return HttpResponse("Pages")
+class PageView(BaseView):
+
+    """
+    Pages from DB
+    """
+    # @cache_page(settings.CACHE_VIEWS_DEFAULT_TIME)
+    def get(self, request, slug, *args, **kwargs):
+
+        self.context = super()._prepare_context()
+
+        if slug == '':
+            raise Http404(_("Page not found. That's an error. Sorry. 404."))
+
+        try:
+            self.context['page'] = Page.objects.get(slug=slug, is_published=True)
+        except Page.DoesNotExist:
+            raise Http404(_("Page not found. That's an error. Sorry. 404."))
+
+        return render(request, 'page.html', self.context)

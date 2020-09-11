@@ -1,0 +1,98 @@
+
+body {
+    position: relative;
+    .title-bar {
+
+        opacity: 0.9;
+
+
+        ul {
+            li {
+                a {
+                    color: #fff;
+                    margin: 0;
+                    padding: 0.9rem 1rem;
+                    text-transform: uppercase;
+                    &:hover {
+                        background-color: #323232;
+                    }
+                    &.current_item {
+                        background-color: #303030;
+                    }
+                }
+            }
+        }
+
+
+        .title-bar-center {
+
+            width: 100%;
+
+            ul {
+                display: table;
+                margin: 0 auto;
+
+                li {
+                    display: table-cell;
+                    opacity: 1.0;
+                }
+            }
+        }
+
+        .title-bar-right { // languages
+
+            position: absolute;
+            right: 0px;
+            top: 3px;
+
+            ul {
+
+                min-width: 130px;
+
+                li {
+
+                    a {
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    // smaller font, so menu will fit
+    @media screen and (min-width: 640px) and (max-width: 940px) {
+        .title-bar .title-bar-center {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+
+        .title-bar {
+
+            //min-height: 2.4rem;
+
+            .title-bar-title {
+                margin-left: 0.3rem;
+                color: #fff;
+            }
+
+
+            .title-bar-center {
+
+                ul {
+                    margin-top: 3rem;
+                    display: block;
+                    height: 50vh;
+                    li {
+                        display: inline;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+}

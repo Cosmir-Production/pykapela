@@ -7,8 +7,8 @@
 {% block content %}
 
     <a name="home"></a>
-    <div class="row parallax-content-first parallax-background-1">
-        <div class="large-12 columns">
+    <div class="grid-x parallax-content parallax-content-first parallax-background-1 dark main">
+        <div class="cell parallax-inside">
             <div class="">
                 <h1 class="main-logo"><span class="hide">{{ config_site_name }}</span></h1>
                 <div class="socials">
@@ -16,6 +16,11 @@
                         <a href="{{ social.url }}" title="{{ social.title }}"><i class="large fi-social-{{ social.name }}"></i></a>
                     {% endfor %}
                 </div>
+
+                {% if page_homepage %}
+                    {{ page_homepage.content|safe }}
+                {% endif %}
+
             </div>
         </div>
     </div>
@@ -27,95 +32,69 @@
     </style>
 
 
-{% if events_count > 0 %} {# we show past events later - show fans some music first #}
+{% if upcoming_events_count > 0 %} {# we show past events later - show fans some music first #}
 
-    <a name="shows"></a>
-    <div class="row parallax-content parallax-background-2">
+    <a name="events"></a>
+    <div class="grid-x parallax-content parallax-background-2 events fixed-height">
         <div class="parallax-inside">
 
-            {% if events_count > 1 %}
-                <h2 class="section-title">{% trans 'Upcomming Shows' %}</h2>
-                <div class="large-6 medium-6 small-12 columns">
-            {% else %}
-                <h2 class="section-title">{% trans 'Next Show' %}</h2>
-                <div class="large-12 medium-12 small-12 columns">
-            {% endif %}
+            {% include "events/events-upcomming.html" %}
 
-                {# First show is promoted #}
-                {% for event in events|slice:":1" %}
-                    {% include "events/event-large.html" %}
-                {% endfor %}
-
-            {% if events_count > 1 %}
-                </div>
-                <div class="large-6 medium-6 small-12 columns">
-            {% endif %}
-
-                {# few other events #}
-                {% for event in events|slice:"1:5" %}
-                    {% include "events/event-small.html" %}
-                {% endfor %}
-
-            </div>
-
-            <a href="{% url "concerts" %}" class="secondary button view-all">all concerts</a>
-            <div class="clearfix"></div>
+            <a href="{% url "concerts" %}" class="secondary button large view-all">{% trans "View All Concerts" %}</a>
 
         </div>
     </div>
 {% endif %}
 
-<div class="row parallax-content parallax-background-3 dark music">
-    <a name="music"></a>
-    <div class="parallax-inside">
-        <h2 class="section-title">{% trans 'Music' %}</h2>
-        <div class="small-12 medium-12 large-6 columns">
-            <div class="hide-for-small-only">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ak8-eMkWpnY?rel=0"
-                    frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="hide-for-medium hide-for-large">
-                <iframe width="320" height="315" src="https://www.youtube.com/embed/Ak8-eMkWpnY?rel=0"
-                    frameborder="0" allowfullscreen></iframe>
-            </div>
+{% if page_music %}
+    <div class="row parallax-content parallax-background-3 dark music fixed-height">
+        <a name="music"></a>
+        <div class="parallax-inside">
+            <h2 class="section-title">{{ page_music.title }}</h2>
+
+            {{ page_music.content|safe }}
+
         </div>
-        <div class="small-12 medium-12 large-6 columns">
-            <iframe width="560" height="315" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2653877&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-        </div>
-        <div class="clearfix"></div>
     </div>
-</div>
+{% endif %}
 
-
-<div class="row parallax-content parallax-background-4">
+{% if page_news %}
     <a name="news"></a>
-    <div class="parallax-inside">
-        <h2 class="section-title">{% trans 'News' %}</h2>
-        <div class="large-6 columns">
-            <p class="text-center">
-                {% if facebook_widget %}
-                    {{ facebook_widget.widget_code|safe }}
-                {% endif %}
-            </p>
-        </div>
-        <div class="large-6 columns">
-            <p class="text-center">
-                {% if twitter_widget %}
-                    {{ twitter_widget.widget_code|safe }}
-                {% endif %}
-            </p>
-        </div>
+    <div class="grid-x parallax-content parallax-background-4 news fixed-height">
+        <div class="parallax-inside">
+            <h2 class="section-title">{% trans page_news.title %}</h2>
+            <div class="cell {% if twitter_widget.widget_code %} large-6{% endif %}">
+                <p class="text-center">
+                    {% if facebook_widget %}
+                        {{ facebook_widget.widget_code|safe }}
+                    {% endif %}
+                </p>
+            </div>
 
-        <div class="clearfix"></div>
+            {% if twitter_widget.widget_code %}
+                <div class="cell large-6">
+                    <p class="text-center">
+                        {% if twitter_widget %}
+                            {{ twitter_widget.widget_code|safe }}
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
+
+        </div>
     </div>
-</div>
+{% endif %}
 
-
-<div class="row parallax-content parallax-background-5 dark gallery-latest">
+{% if page_gallery %}
+<div class="grid-x parallax-content parallax-background-5 dark gallery-latest fixed-height">
     <a name="photos"></a>
     <div class="parallax-inside">
-        <div class="large-12 columns">
-        <h2 class="section-title">{% trans 'Photos' %}</h2>
+        <div class="cell">
+
+            <h2 class="section-title">{% trans page_gallery.title %}</h2>
+
+            {{ page_gallery.content|safe }}
+
             {% if images %}
                 <div class="row image-table">
                     <div class="image-row">
@@ -129,41 +108,56 @@
             {% endif %}
         </div>
 
-        <a href="{% url 'photologue:pl-photologue-root' %}" class="secondary button view-all">more</a>
-        <div class="clearfix"></div>
+        <a href="{% url 'photologue:pl-photologue-root' %}" class="secondary button view-all">{% trans "View All Photos" %}</a>
     </div>
 </div>
+{% endif %}
 
-<a name="bio"></a>
-<div class="row parallax-content parallax-background-6 dark">
+{% if page_bio %}
+<div class="grid-x parallax-content parallax-background-6 fixed-height">
+    <a name="bio"></a>
     <div class="parallax-inside">
-        <div class="large-12 columns">
-            <h2 class="section-title">{% trans 'About' %}</h2>
-            <p>
-                Meteleska started in December 2008 in Prague (Kbely) in Czech Republic.<br>
-                <br>
-                Meteleska is based on rock, ska, balkan, reggae, gypsy and World Music.<br>
-                Come and join our dancing session.<br>
-                Be welcome.<br>
-                <br><br><br><br>
-                <br><br><br><br>
-            </p>
+        <div class="cell large-12">
+            <h2 class="section-title">{% trans page_bio.title %}</h2>
+
+            {{ page_bio.content|safe }}
+
         </div>
 
-        <div class="clearfix"></div>
     </div>
 </div>
+{% endif %}
 
-
-<div class="row parallax-content parallax-background-7">
+<div class="row parallax-content parallax-background-7 dark fixed-height">
     <a name="contact"></a>
     <div class="parallax-inside">
         <div class="large-12 columns">
-        <h2 class="section-title">{% trans 'Contact' %}</h2>
+        <h2 class="section-title">{% trans page_contact.title %}</h2>
+
+            {{ page_contact.content|safe }}
+
             <p class="contact-us">
-                <a href="tel:{{ CONTACT_PHONE }}">{{ CONTACT_PHONE }}</a><br>
+                <a href="tel:{{ CONTACT_PHONE|cut:" " }}">{{ CONTACT_PHONE }}</a><br>
                 <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a><br>
             </p>
+
+            {% if config_rider_file or config_press_zip_file %}
+                <div class="parallax-left">
+                    <h2>{% trans "Downloads" %}</h2>
+
+                    {% if config_rider_file %}
+                        <p class="text-left"><a href="{{ config_rider_file.url }}">{% trans "Rider" %} ({{ config_rider_file.size|filesizeformat }})</a></p>
+                    {% endif %}
+                    {% if config_press_zip_file %}
+                        <p class="text-left"><a href="{{ config_press_zip_file.url }}">{% trans "Press Photos in High Quality" %} ({{ config_press_zip_file.size|filesizeformat }})</a></p>
+                    {% endif %}
+                    {% if config_logo_file %}
+                        <p class="text-left"><a href="{{ config_logo_file.url }}">{% trans "Logo" %} ({{ config_logo_file.size|filesizeformat }})</a></p>
+                    {% endif %}
+
+                </div>
+            {% endif %}
+
         </div>
 
         <div class="clearfix"></div>

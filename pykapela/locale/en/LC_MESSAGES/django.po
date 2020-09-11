@@ -1,0 +1,20 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: info@meteleska.com\n"
+"POT-Creation-Date: 2020-07-30 14:37:55\n"
+"PO-Revision-Date: 2020-07-30 14:37:55\n"
+"Last-Translator: Server <root@localhost>\n"
+"Language-Team: English <info@meteleska.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings/main.py:117
+msgid "Cesky"
+msgstr "Česky"
+
+#: settings/main.py:116
+msgid "English"
+msgstr "English"

@@ -17,7 +17,7 @@
     text-align: center;
 }
 .events-index .parallax-inside {
-    background-image: url("/static/img/white.png");
+    background-image: url("/static/assets/img/white.png");
 }
 .events-index h1 {
     padding-top: 8rem;

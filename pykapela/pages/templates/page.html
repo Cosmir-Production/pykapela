@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block heading %}{% endblock %}
+
+{% block title %} | {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}{% endblock %}
+
+{% block body_class %}class="page-page"{% endblock %}
+
+{% block content %}
+
+    <div class="parallax-content parallax-content-first parallax-background-2">
+        <div class="parallax-inside">
+
+            <div class="grid-x">
+                <div class="cell">
+
+                    <h1>{{ page.title }}</h1>
+
+                    {{ page.content|safe }}
+
+                    {% if user.is_staff %}
+                        <p class="edit"><a href="/admin/pages/page/{{ page.id }}/change/">edit</a></p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

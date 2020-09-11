@@ -1,0 +1,117 @@
+html {
+
+    background-color: #000;
+
+    body {
+
+
+        #page {
+
+            .main-logo {
+                text-indent: -3000px;
+                width: 730px;
+                height: 88px;
+                margin: 1em auto 0em auto;
+            }
+
+            .top-bar {
+
+                .top-bar-center {
+                    text-align: center;
+                }
+            }
+
+            .parallax-content {
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-position: center center;
+                position: relative;
+                background-repeat: no-repeat;
+
+
+                &.parallax-background-1 {
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+
+                &.parallax-background-1 {
+                    background-attachment: fixed;
+                }
+                &.parallax-background-2 {
+                    .parallax-inside {
+                        background-image: url("/static/assets/img/white.png");
+                    }
+                }
+                &.parallax-background-3 {
+                    background-attachment: fixed;
+                    .parallax-inside {
+
+                    }
+                }
+                &.parallax-background-4 {
+                    .parallax-inside {
+                        background-image: url("/static/assets/img/white.png");
+                    }
+                }
+                &.parallax-background-5 {
+                    background-attachment: fixed;
+                    .parallax-inside {
+
+                    }
+                }
+                &.parallax-background-6 {
+                    .parallax-inside {
+                        background-image: url("/static/assets/img/white.png");
+                    }
+                }
+
+                .parallax-inside {
+                    margin: auto;
+                    min-height: 90vh;
+                    margin-bottom: 30vh;
+                    text-align: center;
+                    width: 94vw;
+                    h2 {
+                        margin-top: 2em;
+                    }
+                }
+
+                &.fixed-height {
+                    height: 100vh;
+                    .parallax-background-1 {
+                        height: 100vh;
+                    }
+                    .parallax-inside {
+                        height: 90vh;
+                        overflow: auto;
+                    }
+                }
+
+                .parallax-left {
+                    margin: 0 auto;
+                    max-width: 560px;
+                }
+
+                &.dark {
+                    background-color: #000;
+                    color: #ffffff;
+                }
+            }
+
+
+        }
+
+        .pykapela-footer {
+            p {
+                text-align: center;
+                padding: 2rem 0;
+            }
+
+        }
+
+    }
+}

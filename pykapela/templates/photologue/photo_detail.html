@@ -4,37 +4,37 @@
 {% block title %}{{ object.title }}{% endblock %}
 
 {% block content %}
+    <div class="parallax-content parallax-content-first dark">
+        <div class="grid-x parallax-inside">
 
-    <div class="row col-lg-12">
-        <h1 class="page-header">{{ object.title }}</h1>
-        <a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a>
-        {#<p class="muted"><small>{% trans "Published" %} {{ object.date_added }}</small></p>#}
+            <div class="cell small-12">
+                <h1 class="page-header">{{ object.title }}</h1>
+                <a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a>
+                {#<p class="muted"><small>{% trans "Published" %} {{ object.date_added }}</small></p>#}
+            </div>
+
+            <div class="cell small-12">
+                        <!--<a href="{{ object.image.url }}">-->
+                            <img src="{{ object.image.url }}" class="thumbnail" alt="{{ object.title }}">
+                        <!--</a>-->
+                        {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}
+                        {% if user.is_superuser %}<a href="/admin/photologue/photo/{{ object.id }}/change/">edit</a>{% endif %}
+            </div>
+            <div class="cell small-12">
+                {% if object.public_galleries %}
+                    <table class="image-nav">
+                        {% for gallery in object.public_galleries %}
+                            <tr>
+                                <td class="text-center">{% previous_in_gallery object gallery %}</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">{% next_in_gallery object gallery %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6 text-center">
-		    <!--<a href="{{ object.image.url }}">-->
-		        <img src="{{ object.image.url }}" class="thumbnail" alt="{{ object.title }}">
-		    <!--</a>-->
-		    {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}
-            {% if user.is_superuser %}<a href="/admin/photologue/photo/{{ object.id }}/change/">edit</a>{% endif %}
-        </div>
-        <div class="col-md-6">
-            {% if object.public_galleries %}
-                <table class="image-nav">
-                    {% for gallery in object.public_galleries %}
-                        <tr>
-                            <td class="text-center">{% previous_in_gallery object gallery %}</td>
-	                        <td class="text-center"></td>
-	                        <td class="text-center">{% next_in_gallery object gallery %}</td>
-                        </tr>
-					{% endfor %}
-				</table>
-			{% endif %}
-        </div>
-    </div>
-
-{% endblock %}
-
-{% block footer %}
 {% endblock %}

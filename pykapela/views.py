@@ -20,12 +20,14 @@ class WebView(BaseView):
 
         context['homepage'] = True
 
-        # concert stay on homepage till this midnight
-        context['events'] = Event.objects.filter(
+        # concert stay on homepage three more hours
+        context['upcoming_events'] = Event.objects.filter(
             is_published=True,
-            datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0)
+            datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3)
+        ).order_by(
+            '-is_promoted'
         )
-        context['events_count'] = context['events'].count()
+        context['upcoming_events_count'] = context['upcoming_events'].count()
 
         try:
              socials = Social.objects.exclude(widget_code='').exclude(is_published=False).order_by('position')
@@ -35,7 +37,7 @@ class WebView(BaseView):
             pass
 
         try:
-            context['images'] = Photo.objects.filter(sites__gallery=Gallery.objects.on_site().is_public().get(pk=1))[0:4]
+            context['images'] = Photo.objects.filter(galleries=context['config_promoted_gallery'])[0:10]
         except Gallery.DoesNotExist:
             pass
 

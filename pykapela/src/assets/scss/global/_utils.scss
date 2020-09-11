@@ -1,0 +1,22 @@
+
+
+#page {
+    .view-all {
+        margin: 5rem auto 0 auto;
+    }
+}
+
+.pykapela-footer .admin {
+
+    a.home-admin-link {
+
+        color: #636363;
+        padding: 0.1rem 0.3rem;
+        &:hover {
+            cursor: pointer;
+            color: #fff;
+
+        }
+
+    }
+}

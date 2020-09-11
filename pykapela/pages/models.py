@@ -12,7 +12,10 @@ class Page(BaseModel):
     title = models.CharField(max_length=256)
     content = HTMLField(default='', blank=True)
 
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True, help_text='Modules available: '
+                                                             'homepage, events, music, news, gallery, bio, contact, '
+                                                             'Add these pages with equivalent position '
+                                                             'to match background images.')
     is_published = models.BooleanField(default=True)
 
     position = models.IntegerField(default=1)

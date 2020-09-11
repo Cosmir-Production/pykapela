@@ -1,0 +1,70 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: info@meteleska.com\n"
+"POT-Creation-Date: 2020-07-30 14:37:55\n"
+"PO-Revision-Date: 2020-07-30 14:37:55\n"
+"Last-Translator: Server <root@localhost>\n"
+"Language-Team: English <info@meteleska.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/photologue/gallery_list.html:4
+#: templates/photologue/gallery_list.html:9
+msgid "All galleries"
+msgstr "Všechny galerie"
+
+#: settings/main.py:117
+msgid "Cesky"
+msgstr "Česky"
+
+#: settings/main.py:116
+msgid "English"
+msgstr "English"
+
+#: templates/events/events-archive.html:2
+msgid "Last Shows"
+msgstr "Proběhlé koncerty"
+
+#: templates/photologue/tags/next_in_gallery.html:7
+msgid "Next"
+msgstr "Další"
+
+#: templates/events/events-upcomming.html:6
+msgid "Next Show"
+msgstr "Nejbližší akce"
+
+#: templates/photologue/tags/prev_in_gallery.html:6
+msgid "Previous"
+msgstr "Předchozí"
+
+#: templates/photologue/gallery_detail.html:11
+#: templates/photologue/gallery_list.html:16
+msgid "Published"
+msgstr "Publikováno"
+
+#: pages/templates/concerts.html:5
+msgid "Shows"
+msgstr "Koncerty"
+
+#: templates/events/events-upcomming.html:4
+msgid "Upcomming Shows"
+msgstr "Koncerty"
+
+#: preferences/models.py:23
+msgid "User some generator to create your favicon.ico file."
+msgstr "Použijte generátor faviconek, abyste měli vlastní favicon.ico"
+
+#: templates/index.html:43
+msgid "View All Concerts"
+msgstr "Zobrazit všechny akce"
+
+#: templates/photologue/gallery_detail.html:18
+msgid "View all galleries"
+msgstr "Zobrazit všechny galerie"
+
+#: templates/index.html:111
+msgid "View All Photos"
+msgstr "Zobrazit všechny galerie"

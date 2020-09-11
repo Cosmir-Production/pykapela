@@ -5,20 +5,26 @@
     {% block head %}
 
         <meta charset="utf-8">
-        <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
+        {% if config_favicon %}
+            <link rel="shortcut icon" href="{{ config_favicon.url }}" type="image/x-icon" />
+        {% endif %}
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ config_site_name }}{% block title %}{% if config_description != '' %} | {{ config_description }}{% endif %}{% endblock %}</title>
+        <title>{{ config_site_name }}{% block title %}{% if config_title_slogan != '' %} | {{ config_title_slogan }}{% endif %}{% endblock %}</title>
 
-        <link rel="stylesheet" href="{% static "css/vendor/foundation.css" %}">
-        <link rel="stylesheet" href="{% static "css/main.css" %}">
-        <link rel="stylesheet" href="{% static "css/menu.css" %}">
-        <link rel="stylesheet" href="{% static "css/snippets.css" %}">
-        <link rel="stylesheet" href="{% static "css/mobile.css" %}">
-        <link rel="stylesheet" href="{% static "css/vendor/foundation-icons.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/app.css" %}">
 
-        <style type="text/css">
+        <style>
+
+            {% if page_homepage and page_homepage.image %}.parallax-background-1 { background-image: url("/media/{{ page_homepage.image }}"); }{% endif %}
+            {% if page_events and page_events.image %}.parallax-background-2 { background-image: url("/media/{{ page_events.image }}"); }{% endif %}
+            {% if page_music and page_music.image %}.parallax-background-3 { background-image: url("/media/{{ page_music.image }}"); }{% endif %}
+            {% if page_news and page_news.image %}.parallax-background-4 { background-image: url("/media/{{ page_news.image }}"); }{% endif %}
+            {% if page_gallery and page_gallery.image %}.parallax-background-5 { background-image: url("/media/{{ page_gallery.image }}"); }{% endif %}
+            {% if page_bio and page_bio.image %}.parallax-background-6 { background-image: url("/media/{{ page_bio.image }}"); }{% endif %}
+            {% if page_contact and page_contact.image %}.parallax-background-7 { background-image: url("/media/{{ page_contact.image }}"); }{% endif %}
+
             {% for page in pages %}
                 {% if page.image %}
                     .parallax-background-{{ forloop.counter }} { background-image: url("/media/{{ page.image }}"); }
@@ -31,27 +37,27 @@
 
     {% endblock %}
     </head>
-    <body {% block body_class %}class="page-homepage"{% endblock %}>
-        <div id="page">
+    <body {% block body_class %}class="page-homepage"{% endblock %} data-sticky-container>
 
-            {%  block main_menu %}
-            <div class="top-bar-container" data-sticky-container>
-                <div class="sticky" data-sticky data-options="marginTop: 0; stickyOn: small;">
-                    <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-                        <button class="menu-icon" type="button" data-toggle></button>
-                        <div class="title-bar-title">Menu</div>
+            {% block main_menu %}
+                <div class="title-bar sticky" data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%">
+
+                    <div class="title-bar" data-responsive-toggle="pykapela-main-menu" data-hide-for="medium">
+                        <button class="menu-icon" type="button" data-toggle="pykapela-main-menu"></button>
+                        <a class="title-bar-title" data-toggle="pykapela-main-menu">MENU</a>
                     </div>
-                    <div class="top-bar" id="main-menu">
-                        <div class="row column">
-                          <div class="top-bar-center">
-                            {% load sitetree %}
-                            {% sitetree_menu from "main_menu" include "trunk, menu" %}
-                          </div>
-                        </div>
+
+                    <div class="title-bar-center" id="pykapela-main-menu">
+                        {% load sitetree %}
+                        {% sitetree_menu from "main_menu" include "trunk, menu" %}
+                    </div>
+                    <div class="title-bar-right" id="pykapela-language-menu">
+                        {% include "snippets/languages.html" %}
                     </div>
                 </div>
-            </div>
             {%  endblock %}
+
+        <div id="page">
 
             {% block heading %}
             {%  endblock %}
@@ -64,10 +70,25 @@
         </div>
 
         {% block footer %}
-            <div id="footer">
-                <p>© {{ SITE_NAME }} since 2009. All rights reserved. Všechna práva vyhrazena.<br>
-                   Thanks to all that support us! Děkujeme všem co nás podporují!<br>
-                    <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a>
+            <div class="pykapela-footer">
+                <p>
+                    <span class="footer_slogan">
+                        {{ config_footer_slogan }}
+                    </span>
+                    <br>
+                    <span class="copyright">
+                        {{ config_footer_copyright }}
+                    </span>
+                    <br>
+                    <span class="creator">
+                        <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> |
+                        <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>
+                    </span>
+                    <br>
+                    <span class="admin">
+                        <a href="/admin/" class="home-admin-link">admin</a>
+                    </span>
+
                 </p>
             </div>
         {% endblock %}
@@ -76,5 +97,6 @@
         <script src="{% static "js/vendor/what-input.js" %}"></script>
         <script src="{% static 'js/vendor/foundation.js' %}"></script>
         <script src="{% static 'js/app.js' %}"></script>
+
     </body>
 </html>

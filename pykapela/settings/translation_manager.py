@@ -9,7 +9,7 @@ Usage can be found in example project.
 #     '/foo/bar/locale',
 #     '/foo/foo/bar/locale',
 # ]
-
+# THIS IS SET in settings_main.py !!!
 
 # Mode the translation manager behaves when creating
 # translations mainly from multiple locale files
@@ -20,8 +20,7 @@ Usage can be found in example project.
 # instance for every locale file. It's useful, i.e.
 # if you want has original system trasnlations and
 # also client's custom translations
-
-TRANSLATIONS_MODE = "N"
+TRANSLATIONS_MODE = "P"
 
 # For storing all translations to db regardless they have
 # any occurrencies or not set True, otherwise set False.
@@ -71,7 +70,7 @@ TRANSLATIONS_UPDATE_FORCED_LOCALE_PATHS = []
 
 # List of django domains for translation strings.
 # Defaults are ['django', 'djangojs']
-TRANSLATIONS_DOMAINS = ['django', 'djangojs']
+TRANSLATIONS_DOMAINS = ['django', 'djangojs', 'pykapela']
 
 # auto create directories by translation languages
 TRANSLATIONS_AUTO_CREATE_LANGUAGE_DIRS = True

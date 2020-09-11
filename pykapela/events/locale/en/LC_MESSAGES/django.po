@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-05 21:34+0100\n"
+"POT-Creation-Date: 2020-07-30 14:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: events/models.py:16
-msgid "admin-events-perex"
-msgstr ""
 
 #: events/models.py:17
-msgid "admin-events-description"
+msgid "Name of a club or festival"
 msgstr ""
 
-#: events/models.py:18
-msgid "admin-events-venue"
+#: events/models.py:20
+msgid "Event description (optional)"
 msgstr ""
 
-#: events/models.py:26
+#: events/models.py:28
 msgid "admin-events-image"
 msgstr ""

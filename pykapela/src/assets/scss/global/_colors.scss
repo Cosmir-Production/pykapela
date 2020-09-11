@@ -1,0 +1,27 @@
+
+#page {
+
+    background-color: #000;
+
+    .parallax-content {
+
+        a {
+            color: #000;
+
+            &:hover {
+                text-decoration: underline;
+                color: #2b2b2b;
+            }
+        }
+
+        &.dark a {
+            color: #fff;
+            &:hover {
+            }
+        }
+
+    }
+
+}
+
+
