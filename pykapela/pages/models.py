@@ -22,12 +22,23 @@ class Page(BaseModel):
 
     image = models.ImageField(
         upload_to='images/pages/',
-        verbose_name=_('admin-pages-image'),
+        verbose_name=_('Main Image'),
         null=True,
         blank=True
     )
 
     IMAGE_GEOMETRY = {
+        'large': ('1080x', None),
+    }
+
+    portrait_image = models.ImageField(
+        upload_to='images/pages/',
+        verbose_name=_('Portrait Image (optional)'),
+        null=True,
+        blank=True
+    )
+
+    PORTRAIT_IMAGE_GEOMETRY = {
         'large': ('1080x', None),
     }
 

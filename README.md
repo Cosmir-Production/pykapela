@@ -52,7 +52,9 @@ make sure to have correct rights:
 
 `sudo chown www-data:www-data -R /srv/yourproject`
 
-clone the code!
+clone the code! 
+
+**!!!Using Venv you need to do this in separate directory and move final results!!!**
 
 `git clone git@bitbucket.org:Cosmir-Production/pykapela.git .`
 
