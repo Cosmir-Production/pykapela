@@ -30,6 +30,26 @@
                     .parallax-background-{{ forloop.counter }} { background-image: url("/media/{{ page.image }}"); }
                 {% endif %}
             {% endfor %}
+
+
+            /* change background positioning on portrait devices */
+            @media (orientation: portrait) {
+
+                    {% if page_homepage and page_homepage.portrait_image %}.parallax-background-1 {
+                        background-image: url("/media/{{ page_homepage.portrait_image }}") !important; }{% endif %}
+                    {% if page_events and page_events.portrait_image %}.parallax-background-2 {
+                        background-image: url("/media/{{ page_events.portrait_image }}") !important; }{% endif %}
+                    {% if page_music and page_music.portrait_image %}.parallax-background-3 {
+                        background-image: url("/media/{{ page_music.portrait_image }}") !important; }{% endif %}
+                    {% if page_news and page_news.portrait_image %}.parallax-background-4 {
+                        background-image: url("/media/{{ page_news.portrait_image }}") !important; }{% endif %}
+                    {% if page_gallery and page_gallery.portrait_image %}.parallax-background-5 {
+                        background-image: url("/media/{{ page_gallery.portrait_image }}") !important; }{% endif %}
+                    {% if page_bio and page_bio.portrait_image %}.parallax-background-6 {
+                        background-image: url("/media/{{ page_bio.portrait_image }}") !important; }{% endif %}
+                    {% if page_contact and page_contact.portrait_image %}.parallax-background-7 {
+                        background-image: url("/media/{{ page_contact.portrait_image }}") !important; }{% endif %}
+            }
         </style>
 
         <meta name="author" content="https://github.com/Cosmir-Production" />
