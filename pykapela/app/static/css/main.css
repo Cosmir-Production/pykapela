@@ -104,27 +104,6 @@ a:hover {
     /*bottom: 1em;*/
     width: 100%;
 }
-.socials a {
-    color: #808080;
-}
-.socials a:hover {
-    color: #FFF;
-}
-
-.fi-social-bandzone {
-    width: 59px;
-    height: 59px;
-    display: inline-block;
-    background-size: cover;
-    background-image: url("/static/css/img/bandzone.svg");
-}
-.fi-social-soundcloud {
-    width: 110px;
-    height: 63px;
-    display: inline-block;
-    background-size: cover;
-    background-image: url("/static/img/soundcloud.svg");
-}
 
 /* Images */
 .page-images .page-header {

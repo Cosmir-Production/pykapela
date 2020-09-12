@@ -1,0 +1,50 @@
+
+#page {
+    .socials {
+        font-size: 4em;
+        text-align: center;
+        /*position: absolute;*/
+        /*bottom: 1em;*/
+        width: 72px;
+        position: fixed;
+        right: 0;
+        top: 14vh;
+    }
+    .socials a {
+        width: 72px;
+        height: 72px;
+        background-color: #dcdcdc;
+        display: block;
+        float: left;
+        margin-bottom: 18px;
+    }
+
+    .socials a i {
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin: 12px auto 12px auto;
+        background-image: url("/static/assets/img/socials-48.png");
+        opacity: 0.8;
+    }
+
+    .pykapela-social-youtube { background-position: 0 0; }
+    .pykapela-social-spotify { background-position: -49px 0; }
+    .pykapela-social-facebook { background-position: -97px 0; }
+    .pykapela-social-soundcloud { background-position: -145px 0; }
+    .pykapela-social-twitter { background-position: -193px 0; }
+    .pykapela-social-instagram { background-position: -241px 0; }
+    .socials a:hover {
+        background-color: #343434;
+    }
+
+    a:hover .pykapela-social-youtube { background-position: 0 -48px; }
+    a:hover .pykapela-social-spotify { background-position: -49px -48px; }
+    a:hover .pykapela-social-facebook { background-position: -97px -48px; }
+    a:hover .pykapela-social-soundcloud { background-position: -145px -48px; }
+    a:hover .pykapela-social-twitter { background-position: -193px -48px; }
+    a:hover .pykapela-social-instagram { background-position: -241px -48px; }
+    .socials a:hover i {
+        opacity: 1;
+    }
+}
