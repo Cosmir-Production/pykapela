@@ -18,7 +18,9 @@ class Page(BaseModel):
                                                              'to match background images.')
     is_published = models.BooleanField(default=True)
 
-    position = models.IntegerField(default=1)
+    position = models.IntegerField(default=1, help_text=_('Background images on homepage are sorted by position.'))
+
+    is_dark = models.BooleanField(default=True, help_text=_('Dark background and white font color.'))
 
     image = models.ImageField(
         upload_to='images/pages/',

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block heading %}{% endblock %}
+
+{% block title %} | {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}{% endblock %}
+
+{% block body_class %}class="page-event"{% endblock %}
+
+{% block content %}
+
+    <style>
+        {% if page_contact.image %}
+            .parallax-background-custom { background-image: url("/media/{{ page_contact.image }}"); }
+        {% endif %}
+    </style>
+
+    <div class="parallax-content parallax-content-first parallax-background-custom">
+        <div class="parallax-inside">
+
+            <div class="grid-x">
+                <div class="cell">
+
+                    <h1>{{ page.title }}</h1>
+
+                    <p>{{ page.content|safe }}</p>
+
+                    {% if user.is_staff %}
+                        <p class="edit"><a href="/admin/pages/page/{{ page.id }}/change/">edit</a></p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
