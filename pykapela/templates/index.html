@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <a name="home"></a>
+    <a id="home"></a>
     <div class="grid-x parallax-content parallax-content-first parallax-background-1 dark main">
         <div class="cell parallax-inside">
             <div class="">
@@ -34,7 +34,7 @@
 
 {% if upcoming_events_count > 0 %} {# we show past events later - show fans some music first #}
 
-    <a name="events"></a>
+    <a id="events"></a>
     <div class="grid-x parallax-content parallax-background-2 events fixed-height">
         <div class="parallax-inside">
 
@@ -48,7 +48,7 @@
 
 {% if page_music %}
     <div class="row parallax-content parallax-background-3 dark music fixed-height">
-        <a name="music"></a>
+        <a id="music"></a>
         <div class="parallax-inside">
             <h2 class="section-title">{{ page_music.title }}</h2>
 
@@ -59,7 +59,7 @@
 {% endif %}
 
 {% if page_news %}
-    <a name="news"></a>
+    <a id="news"></a>
     <div class="grid-x parallax-content parallax-background-4 news fixed-height">
         <div class="parallax-inside">
             <h2 class="section-title">{% trans page_news.title %}</h2>
@@ -87,7 +87,7 @@
 
 {% if page_gallery %}
 <div class="grid-x parallax-content parallax-background-5 dark gallery-latest fixed-height">
-    <a name="photos"></a>
+    <a id="photos"></a>
     <div class="parallax-inside">
         <div class="cell">
 
@@ -115,7 +115,7 @@
 
 {% if page_bio %}
 <div class="grid-x parallax-content parallax-background-6 fixed-height">
-    <a name="bio"></a>
+    <a id="bio"></a>
     <div class="parallax-inside">
         <div class="cell large-12">
             <h2 class="section-title">{% trans page_bio.title %}</h2>
@@ -129,7 +129,7 @@
 {% endif %}
 
 <div class="row parallax-content parallax-background-7 dark fixed-height">
-    <a name="contact"></a>
+    <a id="contact"></a>
     <div class="parallax-inside">
         <div class="large-12 columns">
         <h2 class="section-title">{% trans page_contact.title %}</h2>
