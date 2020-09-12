@@ -1,6 +1,8 @@
 .parallax-inside {
     p {
         margin: 1em;
+    }
+    p.long-text {
         max-width: 760px;
     }
 }
