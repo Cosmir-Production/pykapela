@@ -48,6 +48,7 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns(
     url(r'concerts', include('pykapela.events.urls')),
+    url(r'concerts/', include('pykapela.events.urls')),
 
 
     url(r'^$', views.WebView.as_view(), name='index'),
