@@ -1,25 +1,27 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n sitetree %}
 
 {% block heading %}{% endblock %}
 
-{% block title %} | {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}{% endblock %}
+{% block title %} | {{ page.title }}{% endblock %}
 
-{% block body_class %}class="page-event"{% endblock %}
+{% block body_class %}class="page-page"{% endblock %}
 
 {% block content %}
 
     <style>
-        {% if page_contact.image %}
-            .parallax-background-custom { background-image: url("/media/{{ page_contact.image }}"); }
+        {% if page.image %}
+            .parallax-background-custom { background-image: url("/media/{{ page.image }}"); }
         {% endif %}
     </style>
 
-    <div class="parallax-content parallax-content-first parallax-background-custom">
+    <div class="parallax-content parallax-content-first parallax-background-custom{% if page.is_dark %} dark{% endif %}">
         <div class="parallax-inside">
 
             <div class="grid-x">
                 <div class="cell">
+
+                    {% sitetree_menu from "main_menu" include "this-children" %}
 
                     <h1>{{ page.title }}</h1>
 

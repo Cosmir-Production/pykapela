@@ -71,9 +71,11 @@
                         {% load sitetree %}
                         {% sitetree_menu from "main_menu" include "trunk, menu" %}
                     </div>
-                    <div class="title-bar-right" id="pykapela-language-menu">
-                        {% include "snippets/languages.html" %}
-                    </div>
+                    {% if config_show_languages %}
+                        <div class="title-bar-right" id="pykapela-language-menu">
+                            {% include "snippets/languages.html" %}
+                        </div>
+                    {% endif %}
                 </div>
             {%  endblock %}
 

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'pykapela.social',
     'pykapela.events',
     'pykapela.pages',
+    'pykapela.files',
     'pykapela.gallery',
 ]
 

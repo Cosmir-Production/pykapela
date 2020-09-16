@@ -23,6 +23,8 @@ class Preference(BaseModel):
     email = models.CharField(max_length=60, default='')
     phone = models.CharField(max_length=32, default='')
 
+    show_languages = models.BooleanField(default=True, help_text=_('Show languages menu on top?'))
+
     rider_file = models.FileField(
         upload_to="files/",
         verbose_name=_("Rider"),
