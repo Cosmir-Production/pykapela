@@ -51,8 +51,10 @@
                         background-image: url("/media/{{ page_contact.portrait_image }}") !important; }{% endif %}
             }
 
-            #page .button.primary { background-color: {{ config_primary_color }}; }
-            #page .button.secondary { background-color: {{ config_primary_color }}; }
+            #page .dark .button.primary, #page .button.primary { color: #fff; background-color: {{ config_primary_color }}; }
+            #page .dark .button.primary:hover, #page .button.primary:hover { color: #fff; background-color: {{ config_primary_color }}; }
+            #page .dark .button.secondary, #page .button.secondary { color: #fff;  background-color: {{ config_primary_color }}; }
+            #page .dark .button.secondary:hover, #page .button.secondary:hover { color: #fff;  background-color: {{ config_primary_color }}; }
             #page .socials a { background-color: {{ config_primary_color }}; }
             #page .socials a:hover { color: {{ config_primary_color }}; }
 
