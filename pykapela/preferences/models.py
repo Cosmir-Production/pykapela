@@ -25,6 +25,9 @@ class Preference(BaseModel):
 
     show_languages = models.BooleanField(default=True, help_text=_('Show languages menu on top?'))
 
+    primary_color = models.CharField(max_length=16, default='#000000')
+    secondary_color = models.CharField(max_length=16, default='#c0c0c0')
+
     rider_file = models.FileField(
         upload_to="files/",
         verbose_name=_("Rider"),

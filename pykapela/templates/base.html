@@ -50,6 +50,12 @@
                     {% if page_contact and page_contact.portrait_image %}.parallax-background-7 {
                         background-image: url("/media/{{ page_contact.portrait_image }}") !important; }{% endif %}
             }
+
+            #page .button.primary { background-color: {{ config_primary_color }}; }
+            #page .button.secondary { background-color: {{ config_primary_color }}; }
+            #page .socials a { background-color: {{ config_primary_color }}; }
+            #page .socials a:hover { color: {{ config_primary_color }}; }
+
         </style>
 
         <meta name="author" content="https://github.com/Cosmir-Production" />
