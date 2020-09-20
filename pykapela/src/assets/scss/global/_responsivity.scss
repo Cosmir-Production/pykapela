@@ -9,5 +9,11 @@
     .parallax-inside .image-table img { width: 36%; }
 }
 @media screen and (max-width: 640px) {
-
+    .pykapela-footer {
+        p {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            font-size: 0.6rem;
+        }
+    }
 }
