@@ -15,10 +15,14 @@ class File(BaseModel):
         help_text=_('Upload your file here'),
     )
 
+    class Meta:
+        verbose_name = _('file')
+        verbose_name_plural = _('files')
+
     def __str__(self):
         return self.name
 
-    def save(self):
+    def save(self, *args, **kwargs):
 
         if self.name == '':
             self.name = self.file.name

@@ -16,25 +16,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
-"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
-
-#: events/models.py:14
-msgid "Venue name"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: files/models.py:15
+msgid "Upload your file here"
 msgstr ""
 
-#: events/models.py:17
-msgid "Name of a club or festival"
+#: files/models.py:19
+msgid "file"
 msgstr ""
 
-#: events/models.py:20
-msgid "Event description (optional)"
-msgstr ""
-
-#: events/models.py:25
-msgid "Promoted events will be first. Otherwise sorted by datetime"
-msgstr ""
-
-#: events/models.py:29
-msgid "Image"
+#: files/models.py:20
+msgid "files"
 msgstr ""

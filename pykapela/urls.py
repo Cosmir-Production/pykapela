@@ -20,7 +20,6 @@ urlpatterns = [
     re_path(r'^favicon\.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
 
     path('tinymce/', include('tinymce.urls')),
-    url(r'^admin/', admin.site.urls),
 
     url(r'^media/photologue/gallery/(?P<slug>[\-\d\w]+)/$',
         GalleryDetailView.as_view(), name='gallery_detail'),
@@ -47,8 +46,9 @@ if settings.DEBUG:
     )
 
 urlpatterns += i18n_patterns(
+    url(r'^admin/', admin.site.urls, name='admin'),
     url(r'concerts', include('pykapela.events.urls')),
-    url(r'concerts/', include('pykapela.events.urls')),
+    url(r'^concerts/', include('pykapela.events.urls')),
 
 
     url(r'^$', views.WebView.as_view(), name='index'),

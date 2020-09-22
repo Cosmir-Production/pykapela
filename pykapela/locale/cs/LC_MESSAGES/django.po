@@ -3,22 +3,46 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: info@meteleska.com\n"
-"POT-Creation-Date: 2020-09-12 14:53:04\n"
-"PO-Revision-Date: 2020-09-12 14:53:04\n"
+"POT-Creation-Date: 2020-09-22 11:27:34\n"
+"PO-Revision-Date: 2020-09-22 11:27:34\n"
 "Last-Translator: Server <root@localhost>\n"
 "Language-Team: English <info@meteleska.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: menu/admin.py:23
+msgid "Access settings"
+msgstr "Nastavení přístupu"
+
+#: menu/admin.py:31
+msgid "Additional settings"
+msgstr "Další nastavení"
+
 #: templates/photologue/gallery_list.html:4
 #: templates/photologue/gallery_list.html:9
 msgid "All galleries"
 msgstr "Všechny galerie"
 
+#: pages/models.py:21
+msgid "Background images on homepage are sorted by position."
+msgstr "Obrázky na homepage jsou srovnány dle \"position\""
+
+#: menu/admin.py:20
+msgid "Basic settings"
+msgstr "Základní nastavení"
+
 #: settings/main.py:117
 msgid "Cesky"
 msgstr "Česky"
+
+#: pages/models.py:23
+msgid "Dark background and white font color."
+msgstr "Tmavé pozadí a bílé písmo."
+
+#: templates/index.html:146
+msgid "Downloads"
+msgstr "Ke stažení"
 
 #: settings/main.py:116
 msgid "English"
@@ -28,6 +52,14 @@ msgstr "English"
 msgid "Last Shows"
 msgstr "Proběhlé koncerty"
 
+#: preferences/models.py:49
+msgid "Logo for download."
+msgstr "Logo ke stažení"
+
+#: pages/models.py:27
+msgid "Main Image"
+msgstr "Hlavní fotka"
+
 #: templates/photologue/tags/next_in_gallery.html:7
 msgid "Next"
 msgstr "Další"
@@ -35,6 +67,10 @@ msgstr "Další"
 #: templates/events/events-upcomming.html:6
 msgid "Next Show"
 msgstr "Nejbližší akce"
+
+#: templates/index.html:152
+msgid "Press Photos in High Quality"
+msgstr "Press fotografie ve vysokém rozlišení"
 
 #: templates/photologue/tags/prev_in_gallery.html:6
 msgid "Previous"
@@ -45,9 +81,17 @@ msgstr "Předchozí"
 msgid "Published"
 msgstr "Publikováno"
 
-#: pages/templates/concerts.html:5
-msgid "Shows"
-msgstr "Koncerty"
+#: preferences/models.py:33 templates/index.html:149
+msgid "Rider"
+msgstr "Rider"
+
+#: preferences/models.py:34
+msgid "Rider - technical and other demands for promoters."
+msgstr "Rider - technický list pro promotéry"
+
+#: preferences/models.py:26
+msgid "Show languages menu on top?"
+msgstr "Zobrazit menu jazyků?"
 
 #: templates/events/events-upcomming.html:4
 msgid "Upcomming Shows"
@@ -68,3 +112,7 @@ msgstr "Zobrazit všechny galerie"
 #: templates/index.html:111
 msgid "View All Photos"
 msgstr "Zobrazit všechny galerie"
+
+#: preferences/models.py:42
+msgid "ZIP file with high quality photos."
+msgstr "Fotky ve vysokém rozlišení"
