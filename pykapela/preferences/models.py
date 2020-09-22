@@ -28,6 +28,8 @@ class Preference(BaseModel):
     primary_color = models.CharField(max_length=16, default='#000000')
     secondary_color = models.CharField(max_length=16, default='#c0c0c0')
 
+    custom_css = models.TextField(default='', blank=True)
+
     rider_file = models.FileField(
         upload_to="files/",
         verbose_name=_("Rider"),

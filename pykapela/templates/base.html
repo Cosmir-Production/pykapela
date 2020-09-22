@@ -58,6 +58,10 @@
             #page .socials a { background-color: {{ config_primary_color }}; }
             #page .socials a:hover { color: {{ config_primary_color }}; }
 
+            {% if config_custom_css %}
+                {{ config_custom_css }}
+            {% endif %}
+
         </style>
 
         <meta name="author" content="https://github.com/Cosmir-Production" />
