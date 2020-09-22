@@ -29,7 +29,6 @@ urlpatterns = [
     re_path(r'^media/photologue/', include('photologue.urls', namespace='photologue')),
 
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 
 ]
 
@@ -46,6 +45,9 @@ if settings.DEBUG:
     )
 
 urlpatterns += i18n_patterns(
+
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+
     url(r'^admin/', admin.site.urls, name='admin'),
     url(r'concerts', include('pykapela.events.urls')),
     url(r'^concerts/', include('pykapela.events.urls')),
@@ -53,7 +55,7 @@ urlpatterns += i18n_patterns(
 
     url(r'^$', views.WebView.as_view(), name='index'),
     url(r'^(?P<slug>.*)$', PageView.as_view(), name='pages'),
-
+    prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE,
 )
 
 register_i18n_trees(['main_menu'])
