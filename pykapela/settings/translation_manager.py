@@ -10,6 +10,7 @@ Usage can be found in example project.
 #     '/foo/foo/bar/locale',
 # ]
 # THIS IS SET in settings_main.py !!!
+PREFIX_DEFAULT_LANGUAGE = 'cs'
 
 # Mode the translation manager behaves when creating
 # translations mainly from multiple locale files
