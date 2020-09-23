@@ -72,6 +72,8 @@ class Preference(BaseModel):
         'large': ('420x', None),
     }
 
+    google_analytics = models.TextField(default='', blank=True)
+
     @staticmethod
     def get_values():
 
