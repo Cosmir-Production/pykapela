@@ -14,7 +14,7 @@ class PageView(BaseView):
     Pages from DB
     """
     # @cache_page(settings.CACHE_VIEWS_DEFAULT_TIME)
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, slug='', *args, **kwargs):
 
         self.context = super()._prepare_context()
 

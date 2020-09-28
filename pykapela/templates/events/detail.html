@@ -28,6 +28,10 @@
 
                     <p>{{ event.description|safe }}</p>
 
+                    {% if event.facebook_link %}
+                        <p><a href="{{ event.facebook_link }}">{% trans "Facebook Event" %}</a></p>
+                    {% endif %}
+
                     {% if user.is_staff %}
                         <p class="edit"><a href="/admin/events/event/{{ event.id }}/change/">edit</a></p>
                     {% endif %}

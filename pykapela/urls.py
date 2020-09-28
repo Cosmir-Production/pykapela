@@ -55,7 +55,7 @@ urlpatterns += i18n_patterns(
 
 
     url(r'^$', views.WebView.as_view(), name='index'),
-    url(r'^(?P<slug>.*)$', PageView.as_view(), name='pages'),
+    url(r'^(?P<slug>.*)/$', PageView.as_view(), name='pages'),
     prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE,
 )
 

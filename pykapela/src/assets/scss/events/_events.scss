@@ -1,6 +1,13 @@
 #page {
     .event-inside {
         padding: 0 1em;
+        h2 {
+            font-size: 2rem;
+            @media all and (max-width: 480px){
+                font-size: 1.4rem;
+            }
+        }
+
     }
 }
 
@@ -9,6 +16,9 @@
         padding-top: 6rem;
         img {
             max-height: 50vh;
+        }
+        a {
+            text-decoration: underline;
         }
     }
 
