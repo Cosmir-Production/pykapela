@@ -21,7 +21,9 @@
             <div class="grid-x">
                 <div class="cell">
 
-                    {% sitetree_menu from "main_menu" include "this-children" %}
+                    <div class="submenu">
+                        {% sitetree_menu from "main_menu" include "this-children,this-siblings" %}
+                    </div>
 
                     <h1>{{ page.title }}</h1>
 
