@@ -104,37 +104,37 @@
             {% endblock %}
 
 
+            {% block footer %}
+                <div class="pykapela-footer">
+                    <p>
+                        <span class="footer_slogan">
+                            {{ config_footer_slogan }}
+                        </span>
+                        <br>
+                        <span class="copyright">
+                            {{ config_footer_copyright }}
+                        </span>
+                        <br>
+                        <span class="creator">
+                            <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> |
+                            <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>
+                        </span>
+
+                        {% if facebook_widget %}
+                            <div class="fb-like" style="width:520px; margin: 0 auto; clear:both;position:relative;left:200px;top:0;text-align:center;">
+                                <iframe src="http://www.facebook.com/plugins/like.php?app_id=140840069325711&amp;href={{ facebook_widget.url|urlencode }}&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=arial&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:520px; height:35px;text-align:center;" allowTransparency="true"></iframe>
+                            </div>
+                        {% endif %}
+                        <br>
+                        <span class="footer-admin-link">
+                            <a href="/admin/">admin</a>
+                        </span>
+
+                    </p>
+                </div>
+            {% endblock %}
         </div>
 
-        {% block footer %}
-            <div class="pykapela-footer">
-                <p>
-                    <span class="footer_slogan">
-                        {{ config_footer_slogan }}
-                    </span>
-                    <br>
-                    <span class="copyright">
-                        {{ config_footer_copyright }}
-                    </span>
-                    <br>
-                    <span class="creator">
-                        <a href="{{ SITE_URL_FULL }}">{{ SITE_URL }}</a> |
-                        <a href="http://www.cosmirproduction.com">www.cosmirproduction.com</a>
-                    </span>
-
-                    {% if facebook_widget %}
-                        <div class="fb-like" style="width:520px; margin: 0 auto; clear:both;position:relative;left:200px;top:0;text-align:center;">
-                            <iframe src="http://www.facebook.com/plugins/like.php?app_id=140840069325711&amp;href={{ facebook_widget.url|urlencode }}&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=arial&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:520px; height:35px;text-align:center;" allowTransparency="true"></iframe>
-                        </div>
-                    {% endif %}
-                    <br>
-                    <span class="footer-admin-link">
-                        <a href="/admin/">admin</a>
-                    </span>
-
-                </p>
-            </div>
-        {% endblock %}
 
         <script src="{% static "js/vendor/jquery.js" %}"></script>
         <script src="{% static "js/vendor/what-input.js" %}"></script>
