@@ -13,9 +13,9 @@ class GalleryView(BaseView):
     """
     Galleries
     """
-    @staticmethod
-    def gallery(request, context, *args, **kwargs):
+    def gallery(self, request, *args, **kwargs):
 
+        context = self._prepare_context()
         context['object_list'] = PykapelaGallery.objects.on_site().is_public()
 
         return render(request, 'photologue/gallery_list.html', context)
