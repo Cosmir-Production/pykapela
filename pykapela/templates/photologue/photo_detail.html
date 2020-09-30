@@ -26,9 +26,9 @@
                     <table class="image-nav">
                         {% for gallery in object.public_galleries %}
                             <tr>
-                                <td class="text-center">{% previous_in_gallery object gallery %}</td>
+                                <td class="text-center">&nbsp;{% previous_in_gallery object gallery %}</td>
                                 <td class="text-center"></td>
-                                <td class="text-center">{% next_in_gallery object gallery %}</td>
+                                <td class="text-center">{% next_in_gallery object gallery %}&nbsp;</td>
                             </tr>
                         {% endfor %}
                     </table>
