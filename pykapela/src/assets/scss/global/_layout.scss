@@ -115,6 +115,16 @@ html {
             }
 
         }
+        .footer-admin-link {
+            position: absolute;
+            left: 20px;
+            a  {
+                color: #2f2f2f;
+                &:hover {
+                    color: #a5a5a5;
+                }
+            }
+        }
 
     }
 }

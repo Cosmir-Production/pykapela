@@ -23,6 +23,7 @@ class GalleryExtended(models.Model):
         return self.gallery.title
 
 
+# todo move to GalleryExtended?
 class PykapelaGallery(Gallery):
 
     class Meta:
