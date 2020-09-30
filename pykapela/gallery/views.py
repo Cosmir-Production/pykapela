@@ -32,6 +32,10 @@ class GalleryDetailView(BaseView):
     def gallery_detail(request, context, slug, *args, **kwargs):
 
         context['photos'] = Photo.objects.filter(galleries__slug=slug)
+        try:
+            context['gallery'] = context['photos'][0].galleries.last()
+        except Exception as e:
+            pass
 
         return render(request, 'photologue/gallery_detail.html', context)
 
