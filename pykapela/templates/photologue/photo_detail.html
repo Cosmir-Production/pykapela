@@ -16,12 +16,12 @@
 
             <div class="cell small-12">
                         <!--<a href="{{ object.image.url }}">-->
-                            <img src="{{ object.image.url }}" class="thumbnail" alt="{{ object.title }}">
+                            <img src="{{ object.image.url }}" class="thumbnail image-detail" alt="{{ object.title }}">
                         <!--</a>-->
                         {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}
-                        {% if user.is_superuser %}<a href="/admin/photologue/photo/{{ object.id }}/change/">edit</a>{% endif %}
             </div>
             <div class="cell small-12">
+                {% if user.is_superuser %}<a href="/admin/photologue/photo/{{ object.id }}/change/">edit</a>{% endif %}
                 {% if object.public_galleries %}
                     <table class="image-nav">
                         {% for gallery in object.public_galleries %}
