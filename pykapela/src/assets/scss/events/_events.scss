@@ -1,29 +1,42 @@
-#page {
-    .event-inside {
-        padding: 0 1em;
-        h2 {
-            font-size: 2rem;
-            @media all and (max-width: 480px){
-                font-size: 1.4rem;
+html {
+    body {
+
+
+        /* all events page */
+        &.page-events #page .parallax-content .parallax-inside {
+            padding: 0 1em;
+
+            p.event-image {
+                margin: 0;
+            }
+
+            .event h2 {
+                font-size: 2rem;
+                margin: 0;
+                @media all and (max-width: 480px) {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        /* single event */
+        &.page-event #page {
+            .parallax-inside {
+                padding-top: 6rem;
+
+                h2 {
+                    margin-top: 0;
+                }
+
+                img {
+                    max-height: 50vh;
+                }
+
+                a {
+                    text-decoration: underline;
+                }
             }
         }
 
     }
-}
-
-.page-event {
-    .parallax-inside {
-        padding-top: 6rem;
-        h2 {
-            margin-top: 0;
-        }
-        img {
-            max-height: 50vh;
-        }
-        a {
-            text-decoration: underline;
-        }
-    }
-
-
 }

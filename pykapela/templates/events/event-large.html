@@ -1,7 +1,7 @@
-<div class="grid-x promoted-event">
+<div class="grid-x grid-margin-x event promoted-event">
     <div class="cell small-5 medium-3 large-6 text-right event-inside">
         {% if event.image %}
-            <p><a href="{% url "concert" slug=event.slug %}"><img src="/media/{{ event.image }}" width="250"></a></p>
+            <p class="event-image"><a href="{% url "concert" slug=event.slug %}"><img src="/media/{{ event.image }}" width="250"></a></p>
         {% endif %}
 
         {% if not event.image %}
