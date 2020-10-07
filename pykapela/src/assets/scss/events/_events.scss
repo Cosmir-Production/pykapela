@@ -2,8 +2,8 @@ html {
     body {
 
 
-        /* all events page */
-        &.page-events #page .parallax-content .parallax-inside {
+        /* all events page and homepage events */
+        &.page-events #page .parallax-content .parallax-inside, &.page-homepage #page .parallax-content .parallax-inside  {
             padding: 0 1em;
 
             p.event-image {
@@ -16,6 +16,9 @@ html {
                 @media all and (max-width: 480px) {
                     font-size: 1.4rem;
                 }
+            }
+            .event-right {
+                padding-left: 10px;
             }
         }
 

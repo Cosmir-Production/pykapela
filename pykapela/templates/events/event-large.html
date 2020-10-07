@@ -1,5 +1,5 @@
-<div class="grid-x grid-margin-x event promoted-event">
-    <div class="cell small-5 medium-3 large-6 text-right event-inside">
+<div class="grid-x event promoted-event">
+    <div class="cell small-5 medium-3 large-6 text-right event-inside event-left">
         {% if event.image %}
             <p class="event-image"><a href="{% url "concert" slug=event.slug %}"><img src="/media/{{ event.image }}" width="250"></a></p>
         {% endif %}
@@ -9,7 +9,7 @@
         {% endif %}
 
     </div>
-    <div class="cell small-7 medium-9 large-6 text-left event-inside">
+    <div class="cell small-7 medium-9 large-6 text-left event-inside event-right">
         <h2>
             <a href="{% url "concert" slug=event.slug %}">
                 {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}
