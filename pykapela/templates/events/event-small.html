@@ -5,7 +5,7 @@
     <div class="cell small-7 medium-9 large-6 text-left event-inside event-right">
         <h4 class="event-title">
             <a href="{% url "concert" slug=event.slug %}">
-                {{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}
+                {{ event.title }} {% if event.location %}– {{ event.location }}{% endif %}
             </a>
         </h4>
     </div>

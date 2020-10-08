@@ -43,7 +43,7 @@ class Event(BaseModel):
     }
 
     def __str__(self):
-        return self.title + ' @ ' + self.location
+        return self.title + ' – ' + self.location
 
     def admin_title(self):
-        return self.title + ' @ ' + self.location
+        return self.title + ' – ' + self.location
