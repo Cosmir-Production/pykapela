@@ -20,7 +20,7 @@ class EventView(BaseView):
         self.context['upcoming_events'] = Event.objects.filter(
             is_published=True,
             datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3),
-        ).order_by('-is_promoted')
+        ).order_by('-is_promoted', '-datetime')
         self.context['upcoming_events_count'] = self.context['upcoming_events'].count()
 
         self.context['archive_events'] = Event.objects.filter(

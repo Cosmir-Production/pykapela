@@ -25,7 +25,8 @@ class WebView(BaseView):
             is_published=True,
             datetime__gte=timezone.now().replace(hour=0, minute=0, second=0, microsecond=0) - timezone.timedelta(hours=3)
         ).order_by(
-            '-is_promoted'
+            '-is_promoted',
+            '-datetime'
         )
         context['upcoming_events_count'] = context['upcoming_events'].count()
 
