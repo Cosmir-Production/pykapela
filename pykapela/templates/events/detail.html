@@ -17,7 +17,7 @@
 
                     <h1>{{ event.title }} {% if event.location %}@ {{ event.location }}{% endif %}</h1>
 
-                    <h3>{{ event.datetime|date:"j. n. 'y" }}</h3>
+                    <h3>{{ event.datetime|date:"j. n. Y, H:i" }}</h3>
 
                     <p>{{ event.address }}</p>
 

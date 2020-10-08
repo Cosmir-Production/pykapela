@@ -5,7 +5,7 @@
         {% endif %}
 
         {% if not event.image %}
-            <h2><span title="{{ event.datetime|date:"j.n.Y, H:i" }}">{{ event.datetime|date:"j.n.\'y" }}</span></h2>
+            <h2><span>{{ event.datetime|date:"j. n. Y"}}</span></h2>
         {% endif %}
 
     </div>
@@ -17,7 +17,7 @@
         </h2>
 
         {% if event.image %}
-            <span title="{{ event.datetime|date:"j.n.Y, H:i" }}">{{ event.datetime|date:"j.n.\'y" }}</span>
+            <span>{{ event.datetime|date:"j. n. Y" }}</span>
         {% endif %}
     </div>
 </div>
