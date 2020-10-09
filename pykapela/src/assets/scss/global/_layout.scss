@@ -41,20 +41,10 @@ html {
                 &.parallax-background-1 {
                     background-attachment: fixed;
                 }
-                &.parallax-background-2 {
-                    .parallax-inside {
-                        background-image: url("/static/assets/img/white.png");
-                    }
-                }
                 &.parallax-background-3 {
                     background-attachment: fixed;
                     .parallax-inside {
 
-                    }
-                }
-                &.parallax-background-4 {
-                    .parallax-inside {
-                        background-image: url("/static/assets/img/white.png");
                     }
                 }
                 &.parallax-background-5 {
@@ -63,7 +53,7 @@ html {
 
                     }
                 }
-                &.parallax-background-6 {
+                &:not(.dark) {
                     .parallax-inside {
                         background-image: url("/static/assets/img/white.png");
                     }
