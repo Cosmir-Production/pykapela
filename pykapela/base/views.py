@@ -42,23 +42,19 @@ class BaseView(generic.View):
         context.update(preferences)
 
         # languages:
-        current_language = get_language()
-        available_languages = [{
-            'code': item[0],
-            'name': item[1],
-            'flag': 'assets/img/flag-' + item[0] + '.png'
-        } for item in settings.LANGUAGES if item[0] == current_language[:2]]
-
+        context['languages'] = []
+        context['current_language'] = get_language()
         for lang in settings.LANGUAGES:
-            if lang[0] != current_language[:2]:
-                available_languages.append({
-                    'code': lang[0],
-                    'name': lang[1],
-                    'flag': 'assets/img/flag-' + lang[0] + '.png',
-                })
+            language = {
+                'code': lang[0],
+                'name': lang[1],
+                'current': False,
+                'flag': 'assets/img/flag-' + lang[0] + '.png'
+            }
+            if context['current_language'] == lang[0]:
+                language['current'] = True
 
-        context['languages'] = available_languages
-        context['current_language'] = current_language[:2]
+            context['languages'].append(language)
 
         socials = Social.objects.filter(
             is_published=True,
