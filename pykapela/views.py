@@ -30,12 +30,6 @@ class WebView(BaseView):
         )
         context['upcoming_events_count'] = context['upcoming_events'].count()
 
-        try:
-             socials = Social.objects.exclude(widget_code='').exclude(is_published=False).order_by('position')
-             for widget in socials:
-                context[widget.name + '_widget'] = widget
-        except Social.DoesNotExist:
-            pass
 
         try:
             context['images'] = Photo.objects.filter(galleries=context['config_promoted_gallery'])[0:10]

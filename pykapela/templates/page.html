@@ -29,6 +29,52 @@
 
                     <p>{{ page.content|safe }}</p>
 
+                    {% if page.slug == 'news' %}
+                        <div class="cell {% if twitter_widget.widget_code %} large-6{% endif %}">
+                            <p class="text-center">
+                                {% if facebook_widget %}
+                                    {{ facebook_widget.widget_code|safe }}
+                                {% endif %}
+                            </p>
+                        </div>
+
+                        {% if twitter_widget.widget_code %}
+                            <div class="cell large-6">
+                                <p class="text-center">
+                                    {% if twitter_widget %}
+                                        {{ twitter_widget.widget_code|safe }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if page.slug == 'contact' %}
+
+                        <p class="contact-us">
+                            <a href="tel:{{ CONTACT_PHONE|cut:" " }}">{{ CONTACT_PHONE }}</a><br>
+                            <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a><br>
+                        </p>
+
+                        {% if config_rider_file or config_press_zip_file %}
+                            <div class="parallax-left">
+                                <h2>{% trans "Downloads" %}</h2>
+
+                                {% if config_rider_file %}
+                                    <p class="text-left"><a href="{{ config_rider_file.url }}">{% trans "Rider" %} ({{ config_rider_file.size|filesizeformat }})</a></p>
+                                {% endif %}
+                                {% if config_press_zip_file %}
+                                    <p class="text-left"><a href="{{ config_press_zip_file.url }}">{% trans "Press Photos in High Quality" %} ({{ config_press_zip_file.size|filesizeformat }})</a></p>
+                                {% endif %}
+                                {% if config_logo_file %}
+                                    <p class="text-left"><a href="{{ config_logo_file.url }}">{% trans "Logo" %} ({{ config_logo_file.size|filesizeformat }})</a></p>
+                                {% endif %}
+
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
                     {% if user.is_staff %}
                         <p class="edit"><a href="/admin/pages/page/{{ page.id }}/change/">edit</a></p>
                     {% endif %}

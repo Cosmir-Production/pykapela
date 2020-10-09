@@ -65,6 +65,16 @@ class BaseView(generic.View):
             "socials": socials
         })
 
+        # widgets
+        try:
+            socials = Social.objects.exclude(widget_code='').exclude(is_published=False).order_by('position')
+            for widget in socials:
+                context.update({
+                    widget.name + '_widget': widget,
+                })
+        except Social.DoesNotExist:
+            pass
+
         try:
             pages = Page.objects.filter(is_published=True).order_by('position')
 
