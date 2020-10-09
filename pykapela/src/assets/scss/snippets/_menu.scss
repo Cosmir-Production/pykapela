@@ -24,9 +24,12 @@ body {
                     &:hover {
                         background-color: #323232;
                     }
-                    &.current_item {
-                        background-color: #303030;
-                    }
+                }
+            }
+
+            &.is-current {
+                a{
+                    background-color: #323232;
                 }
             }
         }
@@ -43,7 +46,13 @@ body {
                 li {
                     display: table-cell;
                     opacity: 1.0;
+                    &.is-current {
+                        a{
+                            background-color: #323232;
+                        }
+                    }
                 }
+
             }
         }
 
