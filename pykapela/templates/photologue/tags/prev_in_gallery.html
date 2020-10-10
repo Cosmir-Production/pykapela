@@ -1,6 +1,6 @@
 {% load i18n %}
 {% if photo %}
-	<a title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
+	<a title="{{ photo.title }}" href="{% url 'photo' photo.slug %}">
 		<img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}" />
         <br />
         &lt; {% trans "Previous" %}

@@ -10,7 +10,7 @@
                 <h1 class="page-header">{{ gallery.title }}</h1>
                 {#<p class="muted"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>#}
                 {% for photo in photos %}
-                    <a href="{{ photo.get_absolute_url }}">
+                    <a href="{% url 'photo' photo.slug %}">
                          <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
                     </a>
                 {% endfor %}

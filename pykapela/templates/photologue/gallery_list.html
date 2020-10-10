@@ -14,10 +14,10 @@
             {% if object_list %}
                 {% for gallery in object_list %}
                     <div class="cell">
-                        <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+                        <h2><a href="{% url 'gallery_detail' gallery.slug %}">{{ gallery.title }}</a></h2>
                         {% if gallery.description %}<p>{{ gallery.description|safe }}</p>{% endif %}
                         {% for photo in gallery.latest %}
-                            <a href="{{ photo.get_absolute_url }}">
+                            <a href="{% url 'photo' photo.slug %}">
                                  <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
                             </a>
                         {% endfor %}
