@@ -21,13 +21,6 @@ urlpatterns = [
 
     path('tinymce/', include('tinymce.urls')),
 
-    url(r'^media/photologue/gallery/(?P<slug>[\-\d\w]+)/$',
-        GalleryDetailView.as_view(), name='gallery_detail'),
-    url(r'^media/photologue/gallery/$', GalleryView.as_view(), name='gallery'),
-    url(r'^media/photologue/photo/(?P<slug>[\-\d\w]+)/$', PhotoView.as_view(), name='photo'),
-
-    re_path(r'^media/photologue/', include('photologue.urls', namespace='photologue')),
-
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
@@ -53,6 +46,11 @@ urlpatterns += i18n_patterns(
     url(r'concerts', include('pykapela.events.urls')),
     url(r'^concerts/', include('pykapela.events.urls')),
 
+    url(r'^gallery/(?P<slug>[\-\d\w]+)/$',
+        GalleryDetailView.as_view(), name='gallery_detail'),
+    url(r'^gallery/$', GalleryView.as_view(), name='gallery'),
+    url(r'^gallery/photo/(?P<slug>[\-\d\w]+)/$', PhotoView.as_view(), name='photo'),
+    re_path(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
     url(r'^$', views.WebView.as_view(), name='index'),
     url(r'^(?P<slug>.*)/$', PageView.as_view(), name='pages'),
