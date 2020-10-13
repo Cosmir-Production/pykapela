@@ -16,7 +16,7 @@
 
         <title>{{ config_site_name }}{% block title %}{% if config_title_slogan != '' %} | {{ config_title_slogan }}{% endif %}{% endblock %}</title>
 
-        <link rel="stylesheet" href="{% static "assets/css/app.css" %}?v=2">
+        <link rel="stylesheet" href="{% static "assets/css/app.css" %}?v=3">
 
         <style>
 
@@ -58,8 +58,10 @@
             #page .dark .button.primary:hover, #page .button.primary:hover { color: #fff; background-color: {{ config_primary_color }}; }
             #page .dark .button.secondary, #page .button.secondary { color: #fff;  background-color: {{ config_primary_color }}; }
             #page .dark .button.secondary:hover, #page .button.secondary:hover { color: #fff;  background-color: {{ config_primary_color }}; }
-            #page .socials a { background-color: {{ config_primary_color }}; }
-            #page .socials a:hover { color: {{ config_primary_color }}; }
+            #page .socials-heading a { background-color: {{ config_primary_color }}; }
+            #page .socials-heading a:hover { color: {{ config_primary_color }}; }
+            #page .socials-footer a {}
+            #page .socials-footer a:hover { background-color: {{ config_primary_color }}; }
 
             {% if config_custom_css %}
                 {{ config_custom_css }}
@@ -106,6 +108,12 @@
 
             {% block footer %}
                 <div class="parallax-content pykapela-footer">
+
+                    <p class="socials socials-footer">
+                        {% for social in socials %}
+                            <a href="{{ social.url }}" title="{{ social.title }}" target="_blank"><i class="large pykapela-social-{{ social.name }}"></i></a>
+                        {% endfor %}
+                    </p>
                     <p>
                         <span class="footer_slogan">
                             {{ config_footer_slogan }}

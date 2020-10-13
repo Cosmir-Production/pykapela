@@ -11,9 +11,11 @@
         <div class="cell parallax-inside">
             <div class="">
                 <h1 class="main-logo"><span class="hide">{{ config_site_name }}</span></h1>
-                <div class="socials">
+                <div class="socials socials-heading">
                     {% for social in socials %}
-                        <a href="{{ social.url }}" title="{{ social.title }}" target="_blank"><i class="large pykapela-social-{{ social.name }}"></i></a>
+                        {% if social.is_promoted %}
+                            <a href="{{ social.url }}" title="{{ social.title }}" target="_blank"><i class="large pykapela-social-{{ social.name }}"></i></a>
+                        {% endif %}
                     {% endfor %}
                 </div>
 
@@ -108,7 +110,7 @@
             {% endif %}
         </div>
 
-        <a href="{% url 'photologue:pl-photologue-root' %}" class="secondary button view-all">{% trans "View All Photos" %}</a>
+        <a href="{% url 'gallery' %}" class="secondary button view-all">{% trans "View All Photos" %}</a>
     </div>
 </div>
 {% endif %}
