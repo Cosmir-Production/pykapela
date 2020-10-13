@@ -148,3 +148,5 @@ CACHE_VIEWS_DEFAULT_TIME = 60 * 60  # one hour
 
 SITETREE_MODEL_TREE = 'menu.MenuTree'
 SITETREE_MODEL_TREE_ITEM = 'menu.MenuItem'
+
+PREPEND_WWW = True
