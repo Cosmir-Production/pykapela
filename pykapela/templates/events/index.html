@@ -13,6 +13,8 @@
 
             <div class="cell">
 
+                {{ page_events.content|safe }}
+
                 {% if upcoming_events %}
                     {% include "events/events-upcomming.html" %}
                 {% endif %}

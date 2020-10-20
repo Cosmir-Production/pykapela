@@ -40,6 +40,8 @@
     <div class="grid-x parallax-content parallax-background-2 events fixed-height{% if page_events.is_dark %} dark{% endif %}">
         <div class="parallax-inside">
 
+            {{ page_events.content|safe }}
+
             {% include "events/events-upcomming.html" %}
 
             <a href="{% url "concerts" %}" class="secondary button view-all">{% trans "View All Concerts" %}</a>
