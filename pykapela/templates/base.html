@@ -20,7 +20,7 @@
             <meta property="og:title" content="{{ config_site_name }}{% if config_title_slogan != '' %} | {{ config_title_slogan }}{% endif %}" />
             <meta property="og:description" content="{{ config_description }}" />
             {% if page_homepage and page_homepage.image %}
-                <meta property="og:image" content="/media/{{ page_homepage.image }}" />
+                <meta property="og:image" content="{{ SITE_URL_FULL }}/media/{{ page_homepage.image }}" />
                 <meta property="og:image:width" content="{{ page_homepage.image.width }}">
                 <meta property="og:image:height" content="{{ page_homepage.image.height }}">
             {% endif %}
