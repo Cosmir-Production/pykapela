@@ -27,3 +27,12 @@ class PageView(BaseView):
             raise Http404(_("Page not found. That's an error. Sorry. 404."))
 
         return render(request, 'page.html', self.context)
+
+
+def not_found_view(request, exception, *args, **kwargs):
+
+    from pykapela.base.views import BaseView
+
+    context = BaseView._prepare_context()
+
+    return render(request, '404.html', context, status=404)
