@@ -57,4 +57,6 @@ urlpatterns += i18n_patterns(
     prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE,
 )
 
+handler404 = 'pykapela.pages.views.not_found_view'
+
 register_i18n_trees(['main_menu'])
