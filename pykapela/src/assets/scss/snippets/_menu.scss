@@ -119,6 +119,9 @@ body {
         background-color: #181818;
         ul {
             text-align: center;
+            a:link, a:visited {
+                color: #fff;
+            }
             .is-current a {
                 font-weight: bold;
             }
