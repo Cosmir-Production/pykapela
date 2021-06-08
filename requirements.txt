@@ -12,6 +12,6 @@ django-translation-manager==1.1.1
 django-utils==0.0.2
 ipython==7.16.1
 gunicorn==20.0.4
-Pillow==7.2.0
+Pillow==8.2.0
 psycopg2==2.8.5
 raven==6.10.0
