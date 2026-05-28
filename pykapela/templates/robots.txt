@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# AI crawlers
+{% for crawler in ai_crawlers %}
+User-agent: {{ crawler }}
+Allow: /
+
+{% endfor %}
+Sitemap: {{ sitemap_url }}

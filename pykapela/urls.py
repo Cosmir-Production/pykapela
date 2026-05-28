@@ -18,6 +18,8 @@ admin.autodiscover()
 urlpatterns = [
 
     re_path(r'^favicon\.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
+    path('robots.txt', views.robots_txt, name='robots_txt'),
+    path('sitemap.xml', views.sitemap_xml, name='sitemap_xml'),
 
     path('tinymce/', include('tinymce.urls')),
 
