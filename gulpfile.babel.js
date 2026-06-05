@@ -7,6 +7,9 @@ var $             = require('gulp-load-plugins')();
 var autoprefixer  = require('autoprefixer');
 var webpack       = require("webpack");
 var webpackStream = require('webpack-stream');
+// gulp-sass v5 requires the Sass compiler to be passed in explicitly.
+// Foundation 6.7+ uses Dart-Sass-only syntax (`@use "sass:math"`), so we use `sass` (Dart Sass).
+var sass          = require('gulp-sass')(require('sass'));
 
 
 // Check for --production flag
@@ -38,13 +41,13 @@ let webpackConfig = {
   devtool: !PRODUCTION && 'source-map'
 }
 
-function sass() {
+function buildSass() {
   return gulp.src('pykapela/src/assets/scss/app.scss')
-    .pipe($.sass({
+    .pipe(sass({
       includePaths: sassPaths,
       outputStyle: 'compressed' // if css compressed **file size**
     })
-      .on('error', $.sass.logError))
+      .on('error', sass.logError))
     // .pipe($.postcss([
     //   autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] })
     // ]))
@@ -80,8 +83,8 @@ function serve() {
     reloadOnRestart: true,
   });
 
-  gulp.watch("pykapela/src/assets/scss/*.scss", sass);
-  gulp.watch("pykapela/src/assets/scss/*/*.scss", sass);
+  gulp.watch("pykapela/src/assets/scss/*.scss", buildSass);
+  gulp.watch("pykapela/src/assets/scss/*/*.scss", buildSass);
   gulp.watch("pykapela/src/assets/js/*.js").on('change', browserSync.reload);
   gulp.watch("pykapela/templates/*.html").on('change', browserSync.reload);
   gulp.watch("pykapela/templates/*/*.html").on('change', browserSync.reload);
@@ -93,7 +96,7 @@ gulp.task('runserver', function() {
   var proc = exec('python manage.py runserver')
 });
 
-gulp.task('sass', sass);
+gulp.task('sass', buildSass);
 gulp.task('start', gulp.series('sass', asset_files, javascript, serve));
 gulp.task('default', gulp.series('sass', asset_files, javascript, serve));
 gulp.task('build', gulp.series('sass', asset_files, javascript));
